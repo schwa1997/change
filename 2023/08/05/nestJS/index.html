@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"schwa1997.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="NestJS Framework: Building Scalable and Maintainable Node.js Applications IntroductionNestJS is a powerful and flexible Node.js framework designed to make building scalable and maintainable server-sid">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="NestJS Framework">
+<meta property="og:url" content="http://schwa1997.github.io/2023/08/05/nestJS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NestJS Framework: Building Scalable and Maintainable Node.js Applications IntroductionNestJS is a powerful and flexible Node.js framework designed to make building scalable and maintainable server-sid">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://nestjs.com/img/logo-small.svg">
+<meta property="article:published_time" content="2023-08-05T17:08:23.440Z">
+<meta property="article:modified_time" content="2023-08-05T17:15:02.104Z">
+<meta property="article:author" content="Chen HuiMin">
+<meta property="article:tag" content="Operations, Another Tag">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nestjs.com/img/logo-small.svg">
+
+
+<link rel="canonical" href="http://schwa1997.github.io/2023/08/05/nestJS/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://schwa1997.github.io/2023/08/05/nestJS/","path":"2023/08/05/nestJS/","title":"NestJS Framework"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NestJS Framework | Hexo</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NestJS-Framework-Building-Scalable-and-Maintainable-Node-js-Applications"><span class="nav-number">1.</span> <span class="nav-text">NestJS Framework: Building Scalable and Maintainable Node.js Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Features"><span class="nav-number">1.2.</span> <span class="nav-text">Key Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Modular-Architecture"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. Modular Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Dependency-Injection"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. Dependency Injection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Decorators"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. Decorators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Built-in-HTTP-Server"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. Built-in HTTP Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-WebSockets-and-Microservices"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. WebSockets and Microservices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Interceptors-Guards-and-Pipelines"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. Interceptors, Guards, and Pipelines</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Getting-Started"><span class="nav-number">1.3.</span> <span class="nav-text">Getting Started</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Resources"><span class="nav-number">1.4.</span> <span class="nav-text">Resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chen HuiMin</p>
+  <div class="site-description" itemprop="description">Hello! 你好! Ciao! こんにちは!안녕하세요! Hej! สวัสดี!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/08/05/nestJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chen HuiMin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Hello! 你好! Ciao! こんにちは!안녕하세요! Hej! สวัสดี!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NestJS Framework | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NestJS Framework
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-08-05 19:08:23 / Modified: 19:15:02" itemprop="dateCreated datePublished" datetime="2023-08-05T19:08:23+02:00">2023-08-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="NestJS-Framework-Building-Scalable-and-Maintainable-Node-js-Applications"><a href="#NestJS-Framework-Building-Scalable-and-Maintainable-Node-js-Applications" class="headerlink" title="NestJS Framework: Building Scalable and Maintainable Node.js Applications"></a>NestJS Framework: Building Scalable and Maintainable Node.js Applications</h1><p><img src="https://nestjs.com/img/logo-small.svg" alt="NestJS Logo"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>NestJS is a powerful and flexible Node.js framework designed to make building scalable and maintainable server-side applications a breeze. It combines the best features of modern JavaScript with a modular architecture inspired by Angular, making it an excellent choice for developing APIs, microservices, and web applications.</p>
+<h2 id="Key-Features"><a href="#Key-Features" class="headerlink" title="Key Features"></a>Key Features</h2><h3 id="1-Modular-Architecture"><a href="#1-Modular-Architecture" class="headerlink" title="1. Modular Architecture"></a>1. <strong>Modular Architecture</strong></h3><p>NestJS promotes a modular structure where applications are divided into smaller, reusable modules. This approach enhances code organization, maintainability, and testability, allowing developers to easily manage complex projects.</p>
+<h3 id="2-Dependency-Injection"><a href="#2-Dependency-Injection" class="headerlink" title="2. Dependency Injection"></a>2. <strong>Dependency Injection</strong></h3><p>NestJS leverages dependency injection to manage the creation and sharing of components across different parts of the application. This design pattern improves code readability, reusability, and testability.</p>
+<h3 id="3-Decorators"><a href="#3-Decorators" class="headerlink" title="3. Decorators"></a>3. <strong>Decorators</strong></h3><p>Decorators are a fundamental part of NestJS. They are used to enhance classes, methods, and properties, enabling the framework to automatically perform actions such as route binding, parameter validation, and more.</p>
+<h3 id="4-Built-in-HTTP-Server"><a href="#4-Built-in-HTTP-Server" class="headerlink" title="4. Built-in HTTP Server"></a>4. <strong>Built-in HTTP Server</strong></h3><p>NestJS comes with a built-in HTTP server based on the popular Express.js library. This provides a solid foundation for building RESTful APIs and web applications while also allowing seamless integration with Express middleware.</p>
+<h3 id="5-WebSockets-and-Microservices"><a href="#5-WebSockets-and-Microservices" class="headerlink" title="5. WebSockets and Microservices"></a>5. <strong>WebSockets and Microservices</strong></h3><p>NestJS supports real-time communication through WebSockets and enables the development of microservices using tools like RabbitMQ and Redis. This makes it suitable for building event-driven architectures and scalable applications.</p>
+<h3 id="6-Interceptors-Guards-and-Pipelines"><a href="#6-Interceptors-Guards-and-Pipelines" class="headerlink" title="6. Interceptors, Guards, and Pipelines"></a>6. <strong>Interceptors, Guards, and Pipelines</strong></h3><p>NestJS offers a range of interceptors, guards, and pipelines that help you handle cross-cutting concerns such as logging, authentication, and validation. These features contribute to cleaner and more maintainable code.</p>
+<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>To begin using NestJS, follow these steps:</p>
+<ol>
+<li><p><strong>Installation</strong>: Install the Nest CLI globally using npm or yarn.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @nestjs/cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Create a New Project</strong>: Generate a new NestJS project using the CLI.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nest new project-name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Generate Modules and Controllers</strong>: Use the CLI to generate modules, controllers, and other components.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nest generate module <span class="built_in">users</span></span><br><span class="line">nest generate controller <span class="built_in">users</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Run the Application</strong>: Start the NestJS application.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Building Blocks</strong>: Familiarize yourself with decorators, dependency injection, and other core concepts while building your application.</p>
+</li>
+</ol>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><ul>
+<li>Official Website: <a target="_blank" rel="noopener" href="https://nestjs.com/">https://nestjs.com</a></li>
+<li>Documentation: <a target="_blank" rel="noopener" href="https://docs.nestjs.com/">https://docs.nestjs.com</a></li>
+<li>GitHub Repository: <a target="_blank" rel="noopener" href="https://github.com/nestjs/nest">https://github.com/nestjs/nest</a></li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>NestJS is a versatile and powerful framework for building Node.js applications that are easy to scale, maintain, and test. Its modular architecture, dependency injection, decorators, and built-in features make it an excellent choice for developers who want to create robust server-side applications efficiently. Whether you’re building APIs, microservices, or web applications, NestJS provides a solid foundation to help you succeed.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Operations-Another-Tag/" rel="tag"># Operations, Another Tag</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/05/TailWindCSS/" rel="prev" title="Tailwind CSS">
+                  <i class="fa fa-chevron-left"></i> Tailwind CSS
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/05/Geometry%20data%20in%20PostGIS/" rel="next" title="Geometry in PostGIS">
+                  Geometry in PostGIS <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chen HuiMin</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

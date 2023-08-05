@@ -123,7 +123,7 @@
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -140,6 +140,295 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/08/05/nestFramework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chen HuiMin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Hello! 你好! Ciao! こんにちは!안녕하세요! Hej! สวัสดี!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/05/nestFramework/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-08-05 19:13:59" itemprop="dateCreated datePublished" datetime="2023-08-05T19:13:59+02:00">2023-08-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/08/05/Geometry%20data%20in%20PostGIS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chen HuiMin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Hello! 你好! Ciao! こんにちは!안녕하세요! Hej! สวัสดี!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/05/Geometry%20data%20in%20PostGIS/" class="post-title-link" itemprop="url">Geometry in PostGIS</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-08-05 19:10:46 / Modified: 19:12:47" itemprop="dateCreated datePublished" datetime="2023-08-05T19:10:46+02:00">2023-08-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Geometry-in-PostGIS-Spatial-Data-Handling-and-Analysis"><a href="#Geometry-in-PostGIS-Spatial-Data-Handling-and-Analysis" class="headerlink" title="Geometry in PostGIS: Spatial Data Handling and Analysis"></a>Geometry in PostGIS: Spatial Data Handling and Analysis</h1><p><img src="https://postgis.net/wp-content/uploads/2017/09/postgis-logo.png" alt="PostGIS Logo"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>PostGIS is an open-source extension for the PostgreSQL database that adds support for geographic objects, allowing you to store, manipulate, and analyze spatial data. This markdown file provides an overview of working with geometry data in PostGIS, covering basic concepts, data types, functions, and examples.</p>
+<h2 id="Basic-Concepts"><a href="#Basic-Concepts" class="headerlink" title="Basic Concepts"></a>Basic Concepts</h2><h3 id="Geometry-Types"><a href="#Geometry-Types" class="headerlink" title="Geometry Types"></a>Geometry Types</h3><p>PostGIS supports various geometry types, including:</p>
+<ul>
+<li><strong>Point</strong>: Represents a single coordinate in space.</li>
+<li><strong>LineString</strong>: Represents a sequence of connected points.</li>
+<li><strong>Polygon</strong>: Represents a closed, bounded area.</li>
+<li><strong>MultiPoint</strong>: Collection of points.</li>
+<li><strong>MultiLineString</strong>: Collection of LineStrings.</li>
+<li><strong>MultiPolygon</strong>: Collection of Polygons.</li>
+</ul>
+<h3 id="Spatial-Reference-Systems-SRS"><a href="#Spatial-Reference-Systems-SRS" class="headerlink" title="Spatial Reference Systems (SRS)"></a>Spatial Reference Systems (SRS)</h3><p>SRS defines how real-world locations are mapped to coordinates. PostGIS supports different SRS, allowing you to work with data from different sources and projections.</p>
+<h3 id="Spatial-Indexing"><a href="#Spatial-Indexing" class="headerlink" title="Spatial Indexing"></a>Spatial Indexing</h3><p>PostGIS uses spatial indexing (e.g., R-Tree) to efficiently manage and query large spatial datasets.</p>
+<h2 id="Geometry-Data-Types"><a href="#Geometry-Data-Types" class="headerlink" title="Geometry Data Types"></a>Geometry Data Types</h2><p>PostGIS provides several geometry data types, such as:</p>
+<ul>
+<li><code>POINT</code></li>
+<li><code>LINESTRING</code></li>
+<li><code>POLYGON</code></li>
+<li><code>MULTIPOINT</code></li>
+<li><code>MULTILINESTRING</code></li>
+<li><code>MULTIPOLYGON</code></li>
+</ul>
+<p>Example:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> places (</span><br><span class="line">    id SERIAL <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    name TEXT,</span><br><span class="line">    location GEOMETRY(Point, <span class="number">4326</span>) <span class="comment">-- Point with SRS 4326 (WGS 84)</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Spatial-Functions"><a href="#Spatial-Functions" class="headerlink" title="Spatial Functions"></a>Spatial Functions</h2><p>PostGIS offers numerous functions for spatial data analysis:</p>
+<ul>
+<li><code>ST_Distance</code>: Calculates distance between geometries.</li>
+<li><code>ST_Intersects</code>: Checks if geometries intersect.</li>
+<li><code>ST_Union</code>: Computes the union of geometries.</li>
+<li><code>ST_Buffer</code>: Creates a buffer around a geometry.</li>
+<li><code>ST_Area</code>: Calculates the area of a geometry.</li>
+</ul>
+<p>Example:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Calculate distance between two points</span></span><br><span class="line"><span class="keyword">SELECT</span> ST_Distance(</span><br><span class="line">    ST_GeomFromText(<span class="string">&#x27;POINT(1 2)&#x27;</span>),</span><br><span class="line">    ST_GeomFromText(<span class="string">&#x27;POINT(4 6)&#x27;</span>)</span><br><span class="line">) <span class="keyword">AS</span> distance;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Querying-Geometry"><a href="#Querying-Geometry" class="headerlink" title="Querying Geometry"></a>Querying Geometry</h2><p>You can query geometry data using spatial operators:</p>
+<ul>
+<li><code>=</code>: Equal</li>
+<li><code>&lt;&gt;</code>: Not equal</li>
+<li><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>: Comparison</li>
+<li><code>&amp;&amp;</code>: Overlaps</li>
+<li><code>ST_Contains</code>: Checks if one geometry contains another.</li>
+</ul>
+<p>Example:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Find places within a certain distance from a point</span></span><br><span class="line"><span class="keyword">SELECT</span> name</span><br><span class="line"><span class="keyword">FROM</span> places</span><br><span class="line"><span class="keyword">WHERE</span> ST_Distance(location, ST_GeomFromText(<span class="string">&#x27;POINT(1 2)&#x27;</span>)) <span class="operator">&lt;</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Indexing-for-Performance"><a href="#Indexing-for-Performance" class="headerlink" title="Indexing for Performance"></a>Indexing for Performance</h2><p>Use spatial indexes to improve query performance:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Create a spatial index</span></span><br><span class="line"><span class="keyword">CREATE</span> INDEX idx_places_location <span class="keyword">ON</span> places <span class="keyword">USING</span> GIST (location);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>PostGIS extends PostgreSQL’s capabilities to handle spatial data, enabling you to work with geographic objects, perform spatial analysis, and build location-aware applications. By understanding geometry types, spatial reference systems, functions, and indexing, you can effectively manage and analyze spatial data within the PostGIS environment.</p>
+<p>For more information, consult the <a target="_blank" rel="noopener" href="https://postgis.net/documentation/">PostGIS documentation</a>.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/08/05/nestJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chen HuiMin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Hello! 你好! Ciao! こんにちは!안녕하세요! Hej! สวัสดี!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/05/nestJS/" class="post-title-link" itemprop="url">NestJS Framework</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-08-05 19:08:23 / Modified: 19:15:02" itemprop="dateCreated datePublished" datetime="2023-08-05T19:08:23+02:00">2023-08-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="NestJS-Framework-Building-Scalable-and-Maintainable-Node-js-Applications"><a href="#NestJS-Framework-Building-Scalable-and-Maintainable-Node-js-Applications" class="headerlink" title="NestJS Framework: Building Scalable and Maintainable Node.js Applications"></a>NestJS Framework: Building Scalable and Maintainable Node.js Applications</h1><p><img src="https://nestjs.com/img/logo-small.svg" alt="NestJS Logo"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>NestJS is a powerful and flexible Node.js framework designed to make building scalable and maintainable server-side applications a breeze. It combines the best features of modern JavaScript with a modular architecture inspired by Angular, making it an excellent choice for developing APIs, microservices, and web applications.</p>
+<h2 id="Key-Features"><a href="#Key-Features" class="headerlink" title="Key Features"></a>Key Features</h2><h3 id="1-Modular-Architecture"><a href="#1-Modular-Architecture" class="headerlink" title="1. Modular Architecture"></a>1. <strong>Modular Architecture</strong></h3><p>NestJS promotes a modular structure where applications are divided into smaller, reusable modules. This approach enhances code organization, maintainability, and testability, allowing developers to easily manage complex projects.</p>
+<h3 id="2-Dependency-Injection"><a href="#2-Dependency-Injection" class="headerlink" title="2. Dependency Injection"></a>2. <strong>Dependency Injection</strong></h3><p>NestJS leverages dependency injection to manage the creation and sharing of components across different parts of the application. This design pattern improves code readability, reusability, and testability.</p>
+<h3 id="3-Decorators"><a href="#3-Decorators" class="headerlink" title="3. Decorators"></a>3. <strong>Decorators</strong></h3><p>Decorators are a fundamental part of NestJS. They are used to enhance classes, methods, and properties, enabling the framework to automatically perform actions such as route binding, parameter validation, and more.</p>
+<h3 id="4-Built-in-HTTP-Server"><a href="#4-Built-in-HTTP-Server" class="headerlink" title="4. Built-in HTTP Server"></a>4. <strong>Built-in HTTP Server</strong></h3><p>NestJS comes with a built-in HTTP server based on the popular Express.js library. This provides a solid foundation for building RESTful APIs and web applications while also allowing seamless integration with Express middleware.</p>
+<h3 id="5-WebSockets-and-Microservices"><a href="#5-WebSockets-and-Microservices" class="headerlink" title="5. WebSockets and Microservices"></a>5. <strong>WebSockets and Microservices</strong></h3><p>NestJS supports real-time communication through WebSockets and enables the development of microservices using tools like RabbitMQ and Redis. This makes it suitable for building event-driven architectures and scalable applications.</p>
+<h3 id="6-Interceptors-Guards-and-Pipelines"><a href="#6-Interceptors-Guards-and-Pipelines" class="headerlink" title="6. Interceptors, Guards, and Pipelines"></a>6. <strong>Interceptors, Guards, and Pipelines</strong></h3><p>NestJS offers a range of interceptors, guards, and pipelines that help you handle cross-cutting concerns such as logging, authentication, and validation. These features contribute to cleaner and more maintainable code.</p>
+<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>To begin using NestJS, follow these steps:</p>
+<ol>
+<li><p><strong>Installation</strong>: Install the Nest CLI globally using npm or yarn.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @nestjs/cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Create a New Project</strong>: Generate a new NestJS project using the CLI.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nest new project-name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Generate Modules and Controllers</strong>: Use the CLI to generate modules, controllers, and other components.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nest generate module <span class="built_in">users</span></span><br><span class="line">nest generate controller <span class="built_in">users</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Run the Application</strong>: Start the NestJS application.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Building Blocks</strong>: Familiarize yourself with decorators, dependency injection, and other core concepts while building your application.</p>
+</li>
+</ol>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><ul>
+<li>Official Website: <a target="_blank" rel="noopener" href="https://nestjs.com/">https://nestjs.com</a></li>
+<li>Documentation: <a target="_blank" rel="noopener" href="https://docs.nestjs.com/">https://docs.nestjs.com</a></li>
+<li>GitHub Repository: <a target="_blank" rel="noopener" href="https://github.com/nestjs/nest">https://github.com/nestjs/nest</a></li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>NestJS is a versatile and powerful framework for building Node.js applications that are easy to scale, maintain, and test. Its modular architecture, dependency injection, decorators, and built-in features make it an excellent choice for developers who want to create robust server-side applications efficiently. Whether you’re building APIs, microservices, or web applications, NestJS provides a solid foundation to help you succeed.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -167,7 +456,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/05/TailWindCSS/" class="post-title-link" itemprop="url">Untitled</a>
+          <a href="/2023/08/05/TailWindCSS/" class="post-title-link" itemprop="url">Tailwind CSS</a>
         </h2>
 
         <div class="post-meta-container">
@@ -179,7 +468,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-08-05 19:06:35 / Modified: 19:06:42" itemprop="dateCreated datePublished" datetime="2023-08-05T19:06:35+02:00">2023-08-05</time>
+      <time title="Created: 2023-08-05 19:06:35 / Modified: 19:08:54" itemprop="dateCreated datePublished" datetime="2023-08-05T19:06:35+02:00">2023-08-05</time>
     </span>
 
   
@@ -192,8 +481,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Tailwind-CSS-A-Utility-First-CSS-Framework"><a href="#Tailwind-CSS-A-Utility-First-CSS-Framework" class="headerlink" title="Tailwind CSS: A Utility-First CSS Framework"></a>Tailwind CSS: A Utility-First CSS Framework</h1><p><img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.4b74f2d919b6a1fdd288.svg" alt="Tailwind CSS Logo"></p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Tailwind CSS is a popular utility-first CSS framework that aims to streamline and simplify the process of building modern, responsive, and efficient user interfaces. Unlike traditional CSS frameworks, which provide pre-designed components, Tailwind CSS focuses on providing a set of utility classes that you can use to build your own custom designs. This approach offers developers a high degree of flexibility and control over their styles while maintaining a consistent and scalable design system.</p>
+          <h1 id="Tailwind-CSS-A-Utility-First-CSS-Framework"><a href="#Tailwind-CSS-A-Utility-First-CSS-Framework" class="headerlink" title="Tailwind CSS: A Utility-First CSS Framework"></a>Tailwind CSS: A Utility-First CSS Framework</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Tailwind CSS is a popular utility-first CSS framework that aims to streamline and simplify the process of building modern, responsive, and efficient user interfaces. Unlike traditional CSS frameworks, which provide pre-designed components, Tailwind CSS focuses on providing a set of utility classes that you can use to build your own custom designs. This approach offers developers a high degree of flexibility and control over their styles while maintaining a consistent and scalable design system.</p>
 <h2 id="Key-Features"><a href="#Key-Features" class="headerlink" title="Key Features"></a>Key Features</h2><h3 id="1-Utility-First-Approach"><a href="#1-Utility-First-Approach" class="headerlink" title="1. Utility-First Approach"></a>1. <strong>Utility-First Approach</strong></h3><p>Tailwind CSS is built around the concept of utility classes, which are small, single-purpose classes that define specific styling properties. These classes can be combined to create complex layouts and designs without writing custom CSS. For example, you can apply classes like <code>text-center</code>, <code>bg-blue-500</code>, or <code>p-4</code> to style various elements on your webpage.</p>
 <h3 id="2-Responsive-Design"><a href="#2-Responsive-Design" class="headerlink" title="2. Responsive Design"></a>2. <strong>Responsive Design</strong></h3><p>Tailwind CSS provides responsive design utilities that allow you to create layouts that adapt to different screen sizes. You can use classes like <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code> to apply specific styles based on breakpoints, ensuring a consistent experience across devices.</p>
 <h3 id="3-Customization"><a href="#3-Customization" class="headerlink" title="3. Customization"></a>3. <strong>Customization</strong></h3><p>While Tailwind CSS comes with a default set of utility classes, you can easily customize it to match your project’s design requirements. You can configure colors, typography, spacing, breakpoints, and more in the configuration file.</p>
@@ -247,7 +535,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/05/11/1.%20Difference%20between%20Primary%20Key%20and%20Foreign%20key/">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/05/11/PrimaryKey/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -265,7 +553,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/05/11/1.%20Difference%20between%20Primary%20Key%20and%20Foreign%20key/" class="post-title-link" itemprop="url">Difference between Primary Key and Foreign key</a>
+          <a href="/2023/05/11/PrimaryKey/" class="post-title-link" itemprop="url">Difference between Primary Key and Foreign key</a>
         </h2>
 
         <div class="post-meta-container">
