@@ -149,7 +149,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/05/11/Blog_draft/1.%20Difference%20between%20Primary%20Key%20and%20Foreign%20key/">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/08/05/TailWindCSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -167,7 +167,105 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/05/11/Blog_draft/1.%20Difference%20between%20Primary%20Key%20and%20Foreign%20key/" class="post-title-link" itemprop="url">Difference between Primary Key and Foreign key</a>
+          <a href="/2023/08/05/TailWindCSS/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-08-05 19:06:35 / Modified: 19:06:42" itemprop="dateCreated datePublished" datetime="2023-08-05T19:06:35+02:00">2023-08-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Tailwind-CSS-A-Utility-First-CSS-Framework"><a href="#Tailwind-CSS-A-Utility-First-CSS-Framework" class="headerlink" title="Tailwind CSS: A Utility-First CSS Framework"></a>Tailwind CSS: A Utility-First CSS Framework</h1><p><img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.4b74f2d919b6a1fdd288.svg" alt="Tailwind CSS Logo"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Tailwind CSS is a popular utility-first CSS framework that aims to streamline and simplify the process of building modern, responsive, and efficient user interfaces. Unlike traditional CSS frameworks, which provide pre-designed components, Tailwind CSS focuses on providing a set of utility classes that you can use to build your own custom designs. This approach offers developers a high degree of flexibility and control over their styles while maintaining a consistent and scalable design system.</p>
+<h2 id="Key-Features"><a href="#Key-Features" class="headerlink" title="Key Features"></a>Key Features</h2><h3 id="1-Utility-First-Approach"><a href="#1-Utility-First-Approach" class="headerlink" title="1. Utility-First Approach"></a>1. <strong>Utility-First Approach</strong></h3><p>Tailwind CSS is built around the concept of utility classes, which are small, single-purpose classes that define specific styling properties. These classes can be combined to create complex layouts and designs without writing custom CSS. For example, you can apply classes like <code>text-center</code>, <code>bg-blue-500</code>, or <code>p-4</code> to style various elements on your webpage.</p>
+<h3 id="2-Responsive-Design"><a href="#2-Responsive-Design" class="headerlink" title="2. Responsive Design"></a>2. <strong>Responsive Design</strong></h3><p>Tailwind CSS provides responsive design utilities that allow you to create layouts that adapt to different screen sizes. You can use classes like <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code> to apply specific styles based on breakpoints, ensuring a consistent experience across devices.</p>
+<h3 id="3-Customization"><a href="#3-Customization" class="headerlink" title="3. Customization"></a>3. <strong>Customization</strong></h3><p>While Tailwind CSS comes with a default set of utility classes, you can easily customize it to match your project’s design requirements. You can configure colors, typography, spacing, breakpoints, and more in the configuration file.</p>
+<h3 id="4-Plugins-and-Extensions"><a href="#4-Plugins-and-Extensions" class="headerlink" title="4. Plugins and Extensions"></a>4. <strong>Plugins and Extensions</strong></h3><p>Tailwind CSS supports plugins and extensions that add additional utility classes or components to your toolkit. This allows you to extend the framework’s capabilities and integrate third-party libraries seamlessly.</p>
+<h3 id="5-Developer-Experience"><a href="#5-Developer-Experience" class="headerlink" title="5. Developer Experience"></a>5. <strong>Developer Experience</strong></h3><p>The framework offers an excellent developer experience with features like JIT (Just-In-Time) compilation, which optimizes your build process by generating only the CSS that is actually used in your project. This reduces the overall file size and improves performance.</p>
+<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>To start using Tailwind CSS in your project, follow these steps:</p>
+<ol>
+<li><p><strong>Installation</strong>: Install Tailwind CSS via npm or yarn.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install tailwindcss</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Configuration</strong>: Create a <code>tailwind.config.js</code> file to configure the framework settings, such as colors, spacing, breakpoints, etc.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&#x27;#FF5733&#x27;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&#x27;#3C82F6&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">variants</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Using Utility Classes</strong>: Start applying utility classes to your HTML markup.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-primary text-white p-4&quot;</span>&gt;</span></span><br><span class="line">  Welcome to Tailwind CSS!</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Build and Include CSS</strong>: Build your CSS using the Tailwind CLI and include it in your HTML file.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx tailwindcss build styles.css -o output.css</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;output.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><ul>
+<li>Official Website: <a target="_blank" rel="noopener" href="https://tailwindcss.com/">https://tailwindcss.com</a></li>
+<li>Documentation: <a target="_blank" rel="noopener" href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></li>
+<li>GitHub Repository: <a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss">https://github.com/tailwindlabs/tailwindcss</a></li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Tailwind CSS empowers developers to create modern, responsive, and stylish user interfaces through its utility-first approach and customizable nature. By leveraging its utility classes, you can streamline your design process, improve consistency, and enhance the overall efficiency of your web development projects. Whether you’re building a simple landing page or a complex web application, Tailwind CSS offers a robust set of tools to help you achieve your design goals.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://schwa1997.github.io/2023/05/11/1.%20Difference%20between%20Primary%20Key%20and%20Foreign%20key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chen HuiMin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Hello! 你好! Ciao! こんにちは!안녕하세요! Hej! สวัสดี!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/11/1.%20Difference%20between%20Primary%20Key%20and%20Foreign%20key/" class="post-title-link" itemprop="url">Difference between Primary Key and Foreign key</a>
         </h2>
 
         <div class="post-meta-container">
