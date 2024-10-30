@@ -3,12 +3,12 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Change/陈记',
+  tagline: 'I am a programmer, a game Changer. 陈是我的姓氏，这个是我的笔记本。',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'http://schwa1997.github.io/',
+  url: 'http://schwa1997.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -66,7 +66,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'CHANGE陈记',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -74,9 +74,9 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'notebooksSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Notebooks',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -137,5 +137,6 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 };
+
 
 export default config;
