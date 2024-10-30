@@ -3,3 +3,9 @@ fitness:
   label: Fitness
   permalink: /fitness
   description: Fitness tag description
+
+Time management:
+  label: Efficiency
+  permalink: /efficiency
+  description: Planning/Time Management
+
