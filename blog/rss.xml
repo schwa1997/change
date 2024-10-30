@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Change/陈记 Blog</title>
+        <link>http://schwa1997.github.io/blog</link>
+        <description>Change/陈记 Blog</description>
+        <lastBuildDate>Wed, 30 Oct 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Weekly Planner Template]]></title>
+            <link>http://schwa1997.github.io/blog/weekly-planner-template</link>
+            <guid>http://schwa1997.github.io/blog/weekly-planner-template</guid>
+            <pubDate>Wed, 30 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[📋 Weekly Overview Template]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-weekly-overview-template">📋 Weekly Overview Template<a href="http://schwa1997.github.io/blog/weekly-planner-template#-weekly-overview-template" class="hash-link" aria-label="Direct link to 📋 Weekly Overview Template" title="Direct link to 📋 Weekly Overview Template">​</a></h2>
+<table><thead><tr><th>🔍 Category</th><th>📝 Item</th><th>ℹ️ Details</th><th>✅ Progress</th></tr></thead><tbody><tr><td>🎉 Key Events</td><td>Event 1</td><td>Description</td><td>⏳ Pending</td></tr><tr><td></td><td>Event 2</td><td>Description</td><td>📅 Scheduled</td></tr><tr><td></td><td>Event 3</td><td>Description</td><td>🔜 Upcoming</td></tr><tr><td>🧘‍♀️ Health &amp; Wellness</td><td>Sleep Quality</td><td>Target: 7-8 hours/night</td><td>_/7 good nights</td></tr><tr><td></td><td>Exercise</td><td>Target: X sessions/week</td><td>▰▱▱▱ 0%</td></tr><tr><td>📚 Academic</td><td>Course 1</td><td>Assignments/Goals</td><td>🚫 Not started</td></tr><tr><td></td><td>Course 2</td><td>Assignments/Goals</td><td>🔄 In progress</td></tr><tr><td></td><td>Research</td><td>Weekly objectives</td><td>🧪 Testing</td></tr><tr><td>💻 Projects</td><td>Project 1</td><td>Milestone/Goal</td><td>🎨 Planning</td></tr><tr><td>⏰ Work Hours</td><td>Task 1</td><td>Description</td><td>▰▱▱▱▱▱ 0%</td></tr><tr><td></td><td>Task 2</td><td>Description</td><td>🧪 Testing</td></tr><tr><td></td><td>Task 3</td><td>Description</td><td>⏳ In progress</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-daily-schedule-template">📆 Daily Schedule Template<a href="http://schwa1997.github.io/blog/weekly-planner-template#-daily-schedule-template" class="hash-link" aria-label="Direct link to 📆 Daily Schedule Template" title="Direct link to 📆 Daily Schedule Template">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-weekday-template">🌅 Weekday Template<a href="http://schwa1997.github.io/blog/weekly-planner-template#-weekday-template" class="hash-link" aria-label="Direct link to 🌅 Weekday Template" title="Direct link to 🌅 Weekday Template">​</a></h3>
+<table><thead><tr><th>⏰ Time</th><th>📋 Activity</th><th>📊 Status</th></tr></thead><tbody><tr><td>7:30 AM</td><td>Wake up</td><td></td></tr><tr><td>8:30 AM</td><td>Commute</td><td></td></tr><tr><td>9:00-5:00 PM</td><td>Work/Study Tasks:<br>• Task 1<br>• Task 2<br>• Task 3</td><td></td></tr><tr><td>6:00 PM</td><td>Exercise/Personal Time</td><td></td></tr><tr><td>8:00 PM</td><td>Study/Project Work</td><td></td></tr><tr><td>11:00 PM</td><td>Bedtime</td><td></td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-daily-reflection-template">📝 Daily Reflection Template<a href="http://schwa1997.github.io/blog/weekly-planner-template#-daily-reflection-template" class="hash-link" aria-label="Direct link to 📝 Daily Reflection Template" title="Direct link to 📝 Daily Reflection Template">​</a></h3>
+<ul>
+<li>What went well today?</li>
+<li>What could be improved?</li>
+<li>Priority adjustments for tomorrow?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-free-day-template">🎉 Free Day Template<a href="http://schwa1997.github.io/blog/weekly-planner-template#-free-day-template" class="hash-link" aria-label="Direct link to 🎉 Free Day Template" title="Direct link to 🎉 Free Day Template">​</a></h3>
+<p>Flexible Schedule:</p>
+<ul>
+<li>Morning activities</li>
+<li>Afternoon plans</li>
+<li>Evening activities</li>
+<li>Special events/appointments</li>
+</ul>]]></content:encoded>
+            <category>Efficiency</category>
+        </item>
+        <item>
+            <title><![CDATA[Workout Talk]]></title>
+            <link>http://schwa1997.github.io/blog/workout-talk</link>
+            <guid>http://schwa1997.github.io/blog/workout-talk</guid>
+            <pubDate>Wed, 30 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[健身的本质]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="健身的本质">健身的本质<a href="http://schwa1997.github.io/blog/workout-talk#%E5%81%A5%E8%BA%AB%E7%9A%84%E6%9C%AC%E8%B4%A8" class="hash-link" aria-label="Direct link to 健身的本质" title="Direct link to 健身的本质">​</a></h2>
+<p>健身不仅仅是简单的体育运动，它是一种生活方式的选择。其本质可以归纳为以下几点：</p>
+<ol>
+<li>
+<p><strong>身体健康的基础</strong></p>
+<ul>
+<li>增强体质</li>
+<li>预防疾病</li>
+<li>改善身体机能</li>
+</ul>
+</li>
+<li>
+<p><strong>心理健康的保障</strong></p>
+<ul>
+<li>释放压力</li>
+<li>提升自信</li>
+<li>培养毅力</li>
+</ul>
+</li>
+<li>
+<p><strong>生活质量的提升</strong></p>
+<ul>
+<li>改善体态</li>
+<li>提高工作效率</li>
+<li>延缓衰老</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="健身分类">健身分类<a href="http://schwa1997.github.io/blog/workout-talk#%E5%81%A5%E8%BA%AB%E5%88%86%E7%B1%BB" class="hash-link" aria-label="Direct link to 健身分类" title="Direct link to 健身分类">​</a></h2>
+<p>现代健身方式多种多样，主要可分为以下几类：</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-有氧运动">1. 有氧运动<a href="http://schwa1997.github.io/blog/workout-talk#1-%E6%9C%89%E6%B0%A7%E8%BF%90%E5%8A%A8" class="hash-link" aria-label="Direct link to 1. 有氧运动" title="Direct link to 1. 有氧运动">​</a></h3>
+<ul>
+<li>跑步</li>
+<li>游泳</li>
+<li>骑行</li>
+<li>快走</li>
+<li>跳绳</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-力量训练">2. 力量训练<a href="http://schwa1997.github.io/blog/workout-talk#2-%E5%8A%9B%E9%87%8F%E8%AE%AD%E7%BB%83" class="hash-link" aria-label="Direct link to 2. 力量训练" title="Direct link to 2. 力量训练">​</a></h3>
+<ul>
+<li>自重训练</li>
+<li>器械训练</li>
+<li>自由重量训练</li>
+<li>弹力带训练</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-柔韧性训练">3. 柔韧性训练<a href="http://schwa1997.github.io/blog/workout-talk#3-%E6%9F%94%E9%9F%A7%E6%80%A7%E8%AE%AD%E7%BB%83" class="hash-link" aria-label="Direct link to 3. 柔韧性训练" title="Direct link to 3. 柔韧性训练">​</a></h3>
+<ul>
+<li>瑜伽</li>
+<li>普拉提</li>
+<li>拉伸</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="如何制定健身计划">如何制定健身计划<a href="http://schwa1997.github.io/blog/workout-talk#%E5%A6%82%E4%BD%95%E5%88%B6%E5%AE%9A%E5%81%A5%E8%BA%AB%E8%AE%A1%E5%88%92" class="hash-link" aria-label="Direct link to 如何制定健身计划" title="Direct link to 如何制定健身计划">​</a></h2>
+<p>制定一个科学的健身计划需要考虑以下要素：</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-明确目标">1. 明确目标<a href="http://schwa1997.github.io/blog/workout-talk#1-%E6%98%8E%E7%A1%AE%E7%9B%AE%E6%A0%87" class="hash-link" aria-label="Direct link to 1. 明确目标" title="Direct link to 1. 明确目标">​</a></h3>
+<ul>
+<li>减重塑形</li>
+<li>增肌增重</li>
+<li>提高体能</li>
+<li>改善体态</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-时间安排">2. 时间安排<a href="http://schwa1997.github.io/blog/workout-talk#2-%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92" class="hash-link" aria-label="Direct link to 2. 时间安排" title="Direct link to 2. 时间安排">​</a></h3>
+<ul>
+<li>每周训练频率</li>
+<li>单次训练时长</li>
+<li>作息时间调整</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-训练内容">3. 训练内容<a href="http://schwa1997.github.io/blog/workout-talk#3-%E8%AE%AD%E7%BB%83%E5%86%85%E5%AE%B9" class="hash-link" aria-label="Direct link to 3. 训练内容" title="Direct link to 3. 训练内容">​</a></h3>
+<ul>
+<li>动作选择</li>
+<li>组数和次数</li>
+<li>训练强度</li>
+<li>休息时间</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-注意事项">4. 注意事项<a href="http://schwa1997.github.io/blog/workout-talk#4-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="hash-link" aria-label="Direct link to 4. 注意事项" title="Direct link to 4. 注意事项">​</a></h3>
+<ul>
+<li>循序渐进</li>
+<li>保持记录</li>
+<li>适时调整</li>
+<li>营养搭配</li>
+<li>充足休息</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-长期坚持">5. 长期坚持<a href="http://schwa1997.github.io/blog/workout-talk#5-%E9%95%BF%E6%9C%9F%E5%9D%9A%E6%8C%81" class="hash-link" aria-label="Direct link to 5. 长期坚持" title="Direct link to 5. 长期坚持">​</a></h3>
+<ul>
+<li>建立习惯</li>
+<li>找到乐趣</li>
+<li>克服惰性</li>
+<li>合理规划</li>
+</ul>
+<p>记住，最好的健身计划是能够坚持执行的计划。根据个人情况制定合适的目标，循序渐进，保持耐心，终将收获理想的效果。</p>]]></content:encoded>
+            <category>Fitness</category>
+        </item>
+        <item>
+            <title><![CDATA[Diet and Workout]]></title>
+            <link>http://schwa1997.github.io/blog/diet-and-workout</link>
+            <guid>http://schwa1997.github.io/blog/diet-and-workout</guid>
+            <pubDate>Wed, 30 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[为什么要重视饮食和运动？]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="为什么要重视饮食和运动">为什么要重视饮食和运动？<a href="http://schwa1997.github.io/blog/diet-and-workout#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E8%A7%86%E9%A5%AE%E9%A3%9F%E5%92%8C%E8%BF%90%E5%8A%A8" class="hash-link" aria-label="Direct link to 为什么要重视饮食和运动？" title="Direct link to 为什么要重视饮食和运动？">​</a></h2>
+<p>保持健康的饮食习惯和规律的运动不仅能帮助我们保持理想的体重，还能提升生活质量，增强免疫力，让我们拥有更充沛的精力去面对日常工作和生活。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="科学饮食的基本原则">科学饮食的基本原则<a href="http://schwa1997.github.io/blog/diet-and-workout#%E7%A7%91%E5%AD%A6%E9%A5%AE%E9%A3%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99" class="hash-link" aria-label="Direct link to 科学饮食的基本原则" title="Direct link to 科学饮食的基本原则">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-营养均衡">1. 营养均衡<a href="http://schwa1997.github.io/blog/diet-and-workout#1-%E8%90%A5%E5%85%BB%E5%9D%87%E8%A1%A1" class="hash-link" aria-label="Direct link to 1. 营养均衡" title="Direct link to 1. 营养均衡">​</a></h3>
+<ul>
+<li>碳水化合物：提供能量，选择全谷物</li>
+<li>蛋白质：肌肉修复必需，推荐瘦肉、鱼类、蛋类</li>
+<li>健康脂肪：适量摄入坚果、橄榄油等</li>
+<li>维生素和矿物质：多吃新鲜蔬菜水果</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-饮食建议">2. 饮食建议<a href="http://schwa1997.github.io/blog/diet-and-workout#2-%E9%A5%AE%E9%A3%9F%E5%BB%BA%E8%AE%AE" class="hash-link" aria-label="Direct link to 2. 饮食建议" title="Direct link to 2. 饮食建议">​</a></h3>
+<ul>
+<li>控制总热量摄入</li>
+<li>少盐少糖</li>
+<li>规律进餐，不要跳过早餐</li>
+<li>充足饮水，每天至少2升</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="科学健身指南">科学健身指南<a href="http://schwa1997.github.io/blog/diet-and-workout#%E7%A7%91%E5%AD%A6%E5%81%A5%E8%BA%AB%E6%8C%87%E5%8D%97" class="hash-link" aria-label="Direct link to 科学健身指南" title="Direct link to 科学健身指南">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-运动计划">1. 运动计划<a href="http://schwa1997.github.io/blog/diet-and-workout#1-%E8%BF%90%E5%8A%A8%E8%AE%A1%E5%88%92" class="hash-link" aria-label="Direct link to 1. 运动计划" title="Direct link to 1. 运动计划">​</a></h3>
+<ul>
+<li>每周3-5次有氧运动</li>
+<li>每周2-3次力量训练</li>
+<li>注意适度，循序渐进</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="http://schwa1997.github.io/assets/images/banner-190d58c25ed55f66a5ffa6160027ca9c.jpg" width="774" height="360" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-常见运动方式">2. 常见运动方式<a href="http://schwa1997.github.io/blog/diet-and-workout#2-%E5%B8%B8%E8%A7%81%E8%BF%90%E5%8A%A8%E6%96%B9%E5%BC%8F" class="hash-link" aria-label="Direct link to 2. 常见运动方式" title="Direct link to 2. 常见运动方式">​</a></h3>
+<ul>
+<li>有氧运动：跑步、游泳、骑行</li>
+<li>力量训练：器械训练、自重训练</li>
+<li>柔韧性训练：瑜伽、拉伸</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="注意事项">注意事项<a href="http://schwa1997.github.io/blog/diet-and-workout#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="hash-link" aria-label="Direct link to 注意事项" title="Direct link to 注意事项">​</a></h2>
+<ol>
+<li>运动前要充分热身</li>
+<li>注意运动强度，循序渐进</li>
+<li>保持充足休息和睡眠</li>
+<li>运动后及时补充水分和营养</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="总结">总结<a href="http://schwa1997.github.io/blog/diet-and-workout#%E6%80%BB%E7%BB%93" class="hash-link" aria-label="Direct link to 总结" title="Direct link to 总结">​</a></h2>
+<p>健康的生活方式需要科学的饮食和适度的运动相结合。坚持规律运动和均衡饮食，才能达到理想的健康效果。记住，改变需要时间，保持耐心和毅力才是成功的关键。</p>]]></content:encoded>
+            <category>Fitness</category>
+        </item>
+    </channel>
+</rss>

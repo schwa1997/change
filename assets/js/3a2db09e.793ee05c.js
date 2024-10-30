@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"Efficiency","permalink":"/blog/tags/efficiency","description":"Planning/Time Management","count":1},{"label":"Fitness","permalink":"/blog/tags/fitness","description":"Fitness tag description","count":2}]}')}}]);

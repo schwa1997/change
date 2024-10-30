@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-unipd/Concurrent Programming/Lecture" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Lecture | Change/陈记</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://schwa1997.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://schwa1997.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://schwa1997.github.io/docs/unipd/Concurrent Programming/Lecture"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Lecture | Change/陈记"><meta data-rh="true" name="description" content="Lecture 1: Operating system review"><meta data-rh="true" property="og:description" content="Lecture 1: Operating system review"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="http://schwa1997.github.io/docs/unipd/Concurrent Programming/Lecture"><link data-rh="true" rel="alternate" href="http://schwa1997.github.io/docs/unipd/Concurrent Programming/Lecture" hreflang="en"><link data-rh="true" rel="alternate" href="http://schwa1997.github.io/docs/unipd/Concurrent Programming/Lecture" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Change/陈记 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Change/陈记 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.27b4a30b.css">
+<script src="/assets/js/runtime~main.a7725ee2.js" defer="defer"></script>
+<script src="/assets/js/main.88e72cd8.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">CHANGE陈记</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">Notebook</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/schwa1997/schwa1997.github.io" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/intro">Intro</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/web-development">Web Development</a><button aria-label="Expand sidebar category &#x27;Web Development&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/computer-engineering">Computer Engineering</a><button aria-label="Collapse sidebar category &#x27;Computer Engineering&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/unipd/Automata/introduction">Automata</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/unipd/Concurrent Programming/Lecture">Concurrent Programming</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/unipd/Concurrent Programming/Lecture">Lecture</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/unipd/Graph database/dataSelection">Graph database</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/unipd/Thesis/Intro">Thesis</a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tutorial---extras">Tutorial - Extras</a><button aria-label="Expand sidebar category &#x27;Tutorial - Extras&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/computer-engineering"><span itemprop="name">Computer Engineering</span></a><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Concurrent Programming</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Lecture</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Lecture</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="lecture-1-operating-system-review">Lecture 1: Operating system review<a href="#lecture-1-operating-system-review" class="hash-link" aria-label="Direct link to Lecture 1: Operating system review" title="Direct link to Lecture 1: Operating system review">​</a></h2>
+<ul>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="io-operations---communication-buses">I/O operations - <strong>Communication buses</strong><a href="#io-operations---communication-buses" class="hash-link" aria-label="Direct link to io-operations---communication-buses" title="Direct link to io-operations---communication-buses">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="communication-bus-between-input-and-output"><strong>Communication bus</strong> (between input and output)<a href="#communication-bus-between-input-and-output" class="hash-link" aria-label="Direct link to communication-bus-between-input-and-output" title="Direct link to communication-bus-between-input-and-output">​</a></h3>
+<ul>
+<li><strong>Data Lines</strong>: Carry data.</li>
+<li><strong>Address Lines</strong>: Indicate where data should go or come from.</li>
+<li><strong>Handshaking Lines</strong>: Manage and synchronize the data transfer process.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="two-types-and-one-combined-both">Two types and one combined both<a href="#two-types-and-one-combined-both" class="hash-link" aria-label="Direct link to Two types and one combined both" title="Direct link to Two types and one combined both">​</a></h3>
+<ul>
+<li><strong>Memory Bus</strong>: Connects CPU and memory.</li>
+<li><strong>I/O Bus</strong>: Connects CPU and I/O devices.</li>
+<li><strong>Memory-Mapped I/O (Memory Bus+I/O Bus)</strong>: Uses the memory address space to interact with I/O devices.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="register">Register<a href="#register" class="hash-link" aria-label="Direct link to Register" title="Direct link to Register">​</a></h3>
+<ul>
+<li>For memory bus, every device seen as ‘registers’ at given memory address</li>
+<li>Every register carries a certain function</li>
+<li>Types<!-- -->
+<ul>
+<li><strong>Status Registers</strong>: Provide information about the current state or condition of a device (e.g., flags for errors or operation status).</li>
+<li><strong>Command Registers</strong>: Used to issue commands or control instructions to devices (e.g., start/stop operations).</li>
+<li><strong>Configuration Registers</strong>: Allow the setting of operational parameters for devices (e.g., modes, speeds, addresses).</li>
+<li><strong>Data Registers</strong>: Hold the actual</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pcipci-e-bridges">PCI/PCI-e bridges<a href="#pcipci-e-bridges" class="hash-link" aria-label="Direct link to PCI/PCI-e bridges" title="Direct link to PCI/PCI-e bridges">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="peripheral-component-interconnect-pci-bus">Peripheral component interconnect PCI Bus<a href="#peripheral-component-interconnect-pci-bus" class="hash-link" aria-label="Direct link to Peripheral component interconnect PCI Bus" title="Direct link to Peripheral component interconnect PCI Bus">​</a></h3>
+<ul>
+<li>A common bus for I/O in computers is the Peripheral Component Interconnect (PCI) bus.</li>
+<li>I is a parallel bus. This means that the same bus lines are shared among the connected components</li>
+<li>At most 2 devices can be connected to the same PCI bus</li>
+<li>At system startup, devices connected shall be requested to provide the required address range(s)</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pci-express-pcie">PCI express (PCIe)<a href="#pci-express-pcie" class="hash-link" aria-label="Direct link to PCI express (PCIe)" title="Direct link to PCI express (PCIe)">​</a></h3>
+<ul>
+<li>PCI express (PCIe) represents an evolution of PCI using fast serial links in place of the shared parallel bus.<!-- -->
+<ul>
+<li>PCIe is further characterized by the number of lanseused for serial communication( ×1, ×2, ×4, ×8, ×12, ×16 and ×32)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bridges">Bridges<a href="#bridges" class="hash-link" aria-label="Direct link to Bridges" title="Direct link to Bridges">​</a></h3>
+<ul>
+<li>PCI and PCIe buses are then connected to the memory bus via bridges</li>
+<li>Every bridge recognizes a bus access in the assigned range and translates it in a new bus cycle on the connected bus</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="synchronizing-io">Synchronizing I/O<a href="#synchronizing-io" class="hash-link" aria-label="Direct link to Synchronizing I/O" title="Direct link to Synchronizing I/O">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="polling-traditional-way">Polling: traditional way<a href="#polling-traditional-way" class="hash-link" aria-label="Direct link to Polling: traditional way" title="Direct link to Polling: traditional way">​</a></h3>
+<ul>
+<li>
+<p>Use status register to know whether a device is ready</p>
+</li>
+<li>
+<p>But this method will lead to a waste of computer resource</p>
+</li>
+<li>
+<p><strong>Polling</strong> is a simple but inefficient method for synchronizing I/O operations because it involves the CPU continuously checking a status register.</p>
+</li>
+<li>
+<p>Modern systems employ</p>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="interrupts-dma-notification-mechanisms-in-memory-mapped-io-and-asynchronous-io-to-improve-efficiency-and-reduce-the-waste-of-cpu-resources"><strong>Interrupts</strong>, <strong>DMA</strong>, <strong>notification mechanisms</strong> in memory-mapped I/O, and <strong>asynchronous I/O</strong> to improve efficiency and reduce the waste of CPU resources<a href="#interrupts-dma-notification-mechanisms-in-memory-mapped-io-and-asynchronous-io-to-improve-efficiency-and-reduce-the-waste-of-cpu-resources" class="hash-link" aria-label="Direct link to interrupts-dma-notification-mechanisms-in-memory-mapped-io-and-asynchronous-io-to-improve-efficiency-and-reduce-the-waste-of-cpu-resources" title="Direct link to interrupts-dma-notification-mechanisms-in-memory-mapped-io-and-asynchronous-io-to-improve-efficiency-and-reduce-the-waste-of-cpu-resources">​</a></h3>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="interrupt-management">Interrupt management<a href="#interrupt-management" class="hash-link" aria-label="Direct link to Interrupt management" title="Direct link to Interrupt management">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="concept">Concept<a href="#concept" class="hash-link" aria-label="Direct link to Concept" title="Direct link to Concept">​</a></h3>
+<ul>
+<li>When a device needs to communicate an asynchronous event it raises one of the interrupt lines defined in the communication bus</li>
+<li>Interrupts are ordered by priority and a separate line is normally defined for each priority</li>
+<li>In order to specify which action to be taken, a number shall be transmitted along the bus via an Interrupt Acknowledge Cycle (IACK)</li>
+<li>This number shall be used as an offset in the Interrupt Vector Table in order to retrieve the address of the first machine instruction of the Interrupt Service Routine (ISR)</li>
+<li>Before executing the ISR it is however necessary to save the context of the program (possibly a ISR for a lower priority interrupt).</li>
+<li>The HW normally saves The Program Counter (PC) and the Status Register (SR) on the stack. The ISR shall then save the used CPU registers.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="steps-in-handling-an-interrupt">Steps in Handling an Interrupt<a href="#steps-in-handling-an-interrupt" class="hash-link" aria-label="Direct link to Steps in Handling an Interrupt" title="Direct link to Steps in Handling an Interrupt">​</a></h3>
+<ul>
+<li>Interrupt Occurs:<!-- -->
+<ul>
+<li>A hardware or software event triggers an interrupt signal, requesting the CPU&#x27;s attention.</li>
+</ul>
+</li>
+<li>Hardware Saves the Program Counter (PC) and Status Register (SR):<!-- -->
+<ul>
+<li>The hardware automatically saves the current Program Counter (PC) and Status Register (SR) values onto the stack. This ensures that the CPU can return to the original execution point after handling the interrupt.</li>
+</ul>
+</li>
+<li>Interrupt Acknowledge (IACK):<!-- -->
+<ul>
+<li>The CPU sends an Interrupt Acknowledge (IACK) signal. This signal indicates that the CPU has recognized the interrupt request.</li>
+<li>The IACK signal may transmit a unique interrupt number or identifier along the bus, which corresponds to the interrupting device.</li>
+</ul>
+</li>
+<li>Interrupt Vector Number (IVN):<!-- -->
+<ul>
+<li>The interrupting device may send an Interrupt Vector Number (IVN) along the bus. This number identifies the specific interrupt that occurred.</li>
+<li>The IVN is used to locate the Interrupt Service Routine (ISR) associated with the interrupt.</li>
+</ul>
+</li>
+<li>Interrupt Service Routine (ISR) Execution:<!-- -->
+<ul>
+<li>The CPU uses the Interrupt Vector Number (IVN) to find the appropriate entry in the Interrupt Vector Table.</li>
+<li>The ISR, located at the address provided by the vector table, is executed. The ISR will typically save the current CPU register contents, execute the interrupt-handling code, and then restore the CPU registers.</li>
+</ul>
+</li>
+<li>Restoration and Return:<!-- -->
+<ul>
+<li>After the ISR completes, the saved CPU registers, including the PC and SR, are restored from the stack.</li>
+<li>The CPU resumes execution from where it was interrupted.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="required-sw-actions-for-properly-handling-interrupts">Required SW actions for properly handling Interrupts<a href="#required-sw-actions-for-properly-handling-interrupts" class="hash-link" aria-label="Direct link to Required SW actions for properly handling Interrupts" title="Direct link to Required SW actions for properly handling Interrupts">​</a></h3>
+<ul>
+<li>Concept:<!-- -->
+<ul>
+<li>The SW device driver: a code for managing the device, and the code is accessible to users, but plugged into the OS</li>
+<li>Vector table update:  during the device installation, normally a system boot: inserting the Interrupt Service Routine address and communicate tto the device the ISR number to be returned when an Interrupt Acknowledge Cycle is issued during interrupt.</li>
+<li>No other activity should be executed when the ISR is executed</li>
+<li>Interrupts are heavily used by the OS itself in order to be able to take control of the computer regardless the operation carried out by user code (such as an infinite loop)</li>
+<li>In normal operation, on average, hundreds or even thousands of interrupts per second occur</li>
+</ul>
+</li>
+<li>Software Device Driver<!-- -->
+<ul>
+<li>Definition: A software device driver is a code that manages the communication between the operating system (OS) and a hardware device. It provides an interface that allows users or applications to interact with the hardware device, but the driver itself is integrated or &quot;plugged into&quot; the OS.</li>
+<li>Functionality: The device driver abstracts the hardware details and handles the specifics of hardware communication, making it easier for the OS and applications to interact with the device without needing to know its intricate details.</li>
+</ul>
+</li>
+<li>Vector Table Update<!-- -->
+<ul>
+<li>Purpose: The Interrupt Vector Table (IVT) is a data structure that holds the addresses of Interrupt Service Routines (ISRs) corresponding to various interrupt signals.</li>
+</ul>
+</li>
+<li>Process During Device Installation:<!-- -->
+<ul>
+<li>When a new device is installed, typically during system boot, the vector table is updated.</li>
+<li>The address of the ISR, which is a specific routine to handle the device&#x27;s interrupts, is inserted into the vector table.</li>
+<li>The device is then informed of the ISR number (or vector number) that it should return when an Interrupt Acknowledge (IACK) Cycle is issued by the CPU during an interrupt event.</li>
+</ul>
+</li>
+<li>Interrupt Service Routine (ISR) Execution<!-- -->
+<ul>
+<li>Critical Nature<!-- -->:Once<!-- --> an interrupt occurs, and the corresponding ISR is executed, no other activities should be carried out until the ISR completes.</li>
+<li>ISRs must be efficient and quick, as they need to handle the interrupt and allow the system to return to its normal operation as soon as possible.</li>
+</ul>
+</li>
+<li>Operating System&#x27;s Use of Interrupts<!-- -->
+<ul>
+<li>OS Control<!-- -->:Interrupts<!-- --> are heavily utilized by the OS to maintain control over the computer system, regardless of what operations the user code is performing.</li>
+<li>Even if user code enters an infinite loop or engages in other blocking operations, the OS can use interrupts to regain control and ensure the system remains responsive.</li>
+<li>Frequency of Interrupts:<!-- -->
+<ul>
+<li>In typical operation, the system experiences hundreds or even thousands of interrupts per second. These interrupts are crucial for tasks like timekeeping, I/O operations, and ensuring that high-priority tasks are handled promptly.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="are-interrupts-an-efficient-way-of-transfering-data">Are interrupts an efficient way of transfering data?<a href="#are-interrupts-an-efficient-way-of-transfering-data" class="hash-link" aria-label="Direct link to Are interrupts an efficient way of transfering data?" title="Direct link to Are interrupts an efficient way of transfering data?">​</a></h3>
+<ul>
+<li>Conclusion: Interrupt-driven data transfer is not the best solution for high-throughput devices.</li>
+<li>Reason:<!-- -->
+<ul>
+<li>For low-frequency tasks like mouse clicks, interrupt-driven data transfer is efficient, using only 0.0012% of the processor&#x27;s load.</li>
+<li>However, for high-throughput tasks like hard disk data transfer, interrupts occupy too much processor time, consuming up to 10% of the processor&#x27;s capacity.</li>
+</ul>
+</li>
+<li>Instead: Direct Memory Access (DMA) should be used for high-throughput devices to minimize processor involvement and improve efficiency.</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="direct-memory-access-dma">Direct memory access-DMA<a href="#direct-memory-access-dma" class="hash-link" aria-label="Direct link to Direct memory access-DMA" title="Direct link to Direct memory access-DMA">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="device-controlled-data-transfer">Device-Controlled Data Transfer:<a href="#device-controlled-data-transfer" class="hash-link" aria-label="Direct link to Device-Controlled Data Transfer:" title="Direct link to Device-Controlled Data Transfer:">​</a></h3>
+<ul>
+<li>In DMA, the device is responsible for transferring data to or from memory, bypassing the need for the CPU to manage each data transfer directly.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bus-ownership">Bus Ownership:<a href="#bus-ownership" class="hash-link" aria-label="Direct link to Bus Ownership:" title="Direct link to Bus Ownership:">​</a></h3>
+<ul>
+<li>For the device to transfer data autonomously, it must take control of the system bus, temporarily becoming the bus owner.</li>
+<li>A bus ownership transfer cycle must be initiated before data transfer can occur.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuration">Configuration:<a href="#configuration" class="hash-link" aria-label="Direct link to Configuration:" title="Direct link to Configuration:">​</a></h3>
+<ul>
+<li>Before initiating the data transfer, the device driver must set up the starting address of the data in memory and the number of data items to be transferred. This is done using the device&#x27;s Memory Address Register (MAR) and Word Count (WC) register.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-transfer-process">Data Transfer Process:<a href="#data-transfer-process" class="hash-link" aria-label="Direct link to Data Transfer Process:" title="Direct link to Data Transfer Process:">​</a></h3>
+<ul>
+<li>When a data block is ready for transfer, the device takes bus ownership and begins the data transfer process.</li>
+<li>During this process, the bus ownership may switch back and forth between the processor and the device as needed.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processor-independence">Processor Independence:<a href="#processor-independence" class="hash-link" aria-label="Direct link to Processor Independence:" title="Direct link to Processor Independence:">​</a></h3>
+<ul>
+<li>While the DMA operation is in progress, the processor can continue executing other tasks independently.</li>
+<li>The only minor interference may occur if both the processor and the device request bus ownership simultaneously.</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="completion-notification">Completion Notification:<a href="#completion-notification" class="hash-link" aria-label="Direct link to Completion Notification:" title="Direct link to Completion Notification:">​</a></h3>
+<ul>
+<li>Once the DMA transfer is complete, the device sends an interrupt to inform the CPU, allowing it to proceed with any further necessary actions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="user-mode-and-kernel-mode">User mode and kernel mode<a href="#user-mode-and-kernel-mode" class="hash-link" aria-label="Direct link to User mode and kernel mode" title="Direct link to User mode and kernel mode">​</a></h2>
+<ul>
+<li>In modern operating systems, there are two distinct modes of operation: User Mode and Kernel Mode. These modes help ensure system stability and security by restricting direct access to critical system resources and operations.</li>
+<li>Key Concepts:<!-- -->
+<ul>
+<li>Restricted I/O Operations:<!-- -->
+<ul>
+<li>Users are generally not permitted to perform Input/Output (I/O) operations directly. Instead, the operating system (OS) manages these operations to maintain control and security.</li>
+</ul>
+</li>
+<li>Device Layer Abstraction:<!-- -->
+<ul>
+<li>Devices are integrated into the OS through a device layer abstraction, a set of rules that the device code must follow to be incorporated into the OS. For example, in Linux, devices are added using commands like insmod.</li>
+</ul>
+</li>
+<li>Operating Modes:<!-- -->
+<ul>
+<li>Kernel Mode: The OS operates in a privileged mode where it has full access to all hardware and can execute any CPU instruction.</li>
+<li>User Mode: User programs run in a restricted mode with limited access to system resources, ensuring that they cannot interfere with critical system operations.</li>
+</ul>
+</li>
+<li>Switching Between Modes:<!-- -->
+<ul>
+<li>The CPU operates in Kernel Mode only when an interrupt occurs.</li>
+<li>To switch from User Mode to Kernel Mode under program control, a special instruction known as a Software Interrupt is used. This instruction functions similarly to a hardware interrupt but does not require an Interrupt Acknowledge (IACK) cycle.</li>
+</ul>
+</li>
+<li>Software Interrupts:<!-- -->
+<ul>
+<li>The software interrupt instruction includes the vector number associated with the interrupt, which is passed as an argument. This allows the OS to handle the request appropriately.</li>
+<li>This mechanism is crucial for organizing OS code, with non-privileged code available as libraries for user programs, and privileged code handled through a set of Interrupt Service Routines (ISRs) associated with specific software interrupt numbers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Examples:<!-- -->
+<ul>
+<li><strong>User Mode Applications</strong>: Web browsers, text editors, games, and other user-facing software.</li>
+<li><strong>Kernel Mode Components</strong>: The Windows kernel, hardware drivers, and system-level services like the file system and memory manager.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-history-of-a-printf-call">The history of a printf() call<a href="#the-history-of-a-printf-call" class="hash-link" aria-label="Direct link to The history of a printf() call" title="Direct link to The history of a printf() call">​</a></h2>
+<ul>
+<li>C  run time library</li>
+<li>Calls the system to operate</li>
+<li>User mode → kernel mode issuing a software interrupt (the only way to switch from user mode to  kernel mode is to issue an interrupt)</li>
+<li>ISR is activated in response to the software interrupt</li>
+<li>Prepare the required data structure, the ISR will interact with the output device.</li>
+<li>The activated driver code will write appropriate values in the device registers to start transferring the string to the video device. In the meanwhile, the calling process is put in wait state.</li>
+<li>A sequence of interrupts will be likely generated by the device to handle the transfer of the bytes of the string to be printed on the screen.</li>
+<li>When the whole string has been printed on the screen, the calling process will be resumed by the operating system and printf() will return.</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="virtual-memory">Virtual memory<a href="#virtual-memory" class="hash-link" aria-label="Direct link to Virtual memory" title="Direct link to Virtual memory">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-virtual-memory">What is virtual memory<a href="#what-is-virtual-memory" class="hash-link" aria-label="Direct link to What is virtual memory" title="Direct link to What is virtual memory">​</a></h3>
+<ul>
+<li>Virtual memory, supported by most general-purpose operating systems, is a mechanism by which the memory addresses used by the program do not correspond to the address the CPU uses to access the RAM memory in the same instructions.</li>
+<li>Virtual memory allows a computer system to use more memory than is physically available by using a combination of hardware and software. This is accomplished by mapping virtual addresses (used by programs) to physical addresses (used by the hardware).</li>
+<li>Key Components<!-- -->
+<ul>
+<li>Virtual Address (Logical Address): This is the address used by the program to access memory. It does not directly correspond to physical memory.</li>
+<li>Physical Address<!-- -->:This<!-- --> is the actual address in the physical RAM where the data is stored.</li>
+<li>Memory Management Unit (MMU)<!-- -->:This<!-- --> hardware component handles the translation of virtual addresses to physical addresses.</li>
+<li>Page Table<!-- -->:A<!-- --> data structure used by the MMU to keep track of the mapping between virtual addresses and physical addresses.</li>
+</ul>
+</li>
+<li>Address Translation Process<!-- -->
+<ul>
+<li>Virtual Address Breakdown: The virtual address is divided into two parts:<!-- -->
+<ul>
+<li>Page Table Index: The most significant 𝑁−𝐾 bits of the virtual address.</li>
+<li>Offset: The least significant 𝐾 bits of the virtual address.</li>
+</ul>
+</li>
+<li>Page Table Lookup:<!-- -->
+<ul>
+<li>The MMU uses the Page Table Index to look up an entry in the page table. Each entry in the page table is 𝐿 bits long and typically contains the physical address of the corresponding page in RAM.</li>
+</ul>
+</li>
+<li>Offset Handling:<!-- -->
+<ul>
+<li>The offset is combined with the physical page address obtained from the page table entry to determine the exact location in physical memory.</li>
+</ul>
+</li>
+<li>**Example：**Let’s assume we have a virtual address of 32 bits, where KKK is 12 bits, and N−KN - KN−K (the Page Table Index) is therefore 20 bits.<!-- -->
+<ul>
+<li>Page Table Index: This 20-bit part is used to index into the Page Table.</li>
+<li>Offset: This 12-bit part is used to find the specific location within the page.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reasons-for-virtual-memory">Reasons for virtual memory<a href="#reasons-for-virtual-memory" class="hash-link" aria-label="Direct link to Reasons for virtual memory" title="Direct link to Reasons for virtual memory">​</a></h3>
+<ul>
+<li>When two identical programs run in separate processes on the same computer without an address translation mechanism, they could interfere with each other&#x27;s memory locations.</li>
+<li>Virtual memory solves this by using memory translation based on the Page Table, ensuring that each process has its own isolated memory space.</li>
+<li>The operating system manages this by keeping track of memory mapping and allocation, and it updates the Page Table during every context switch to maintain proper memory isolation between processes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="shared-memory-management">Shared memory management<a href="#shared-memory-management" class="hash-link" aria-label="Direct link to Shared memory management" title="Direct link to Shared memory management">​</a></h2>
+<ul>
+<li>The address translation mechanism can be used also to let separate processes share a section of memory</li>
+<li>Memory sharing is always orchestrated by the OS under request from the involved actors.</li>
+<li>Shared memory represents a possible Interprocess Communication (IPC) mechanism but it is in general not enough to ensure a correct communication</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="memory-swapping">Memory swapping<a href="#memory-swapping" class="hash-link" aria-label="Direct link to Memory swapping" title="Direct link to Memory swapping">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="memory-management-overview">Memory Management Overview<a href="#memory-management-overview" class="hash-link" aria-label="Direct link to Memory Management Overview" title="Direct link to Memory Management Overview">​</a></h3>
+<ul>
+<li>Page Table Entry (PTE) Details:<!-- -->
+<ul>
+<li>Protection Bits: Each PTE can include protection bits that specify whether the page is accessible in User mode or only in Kernel mode.</li>
+<li>Page Fault Handling: If a page is accessed inappropriately or is not present in memory, the MMU (Memory Management Unit) triggers a Page Fault Exception. This exception signals that the page needs to be loaded into memory.</li>
+</ul>
+</li>
+<li>Handling Virtual Address Spaces Larger than Physical Memory:<!-- -->
+<ul>
+<li>Resident vs. Non-Resident Pages:<!-- -->
+<ul>
+<li>Resident Pages: If a page is present in memory, the PTE contains the physical page number.</li>
+<li>Non-Resident Pages: If a page is not in memory, the PTE includes the disk address where the page is stored.</li>
+</ul>
+</li>
+<li>Page Fault Exception Handling:<!-- -->
+<ul>
+<li>Process Suspension: When a page fault occurs, the current process is suspended.</li>
+<li>Page Retrieval: A free page is selected from memory.</li>
+<li>I/O Operation: A DMA (Direct Memory Access) operation is initiated to read the page from disk and write it into the free memory page.</li>
+<li>PTE Update: The PTE is updated with the new configuration, including the physical page number.</li>
+<li>Process Resumption: The process is made ready to continue its execution.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Swapping Actions:<!-- -->
+<ul>
+<li>Memory Threshold: When the number of free memory pages drops below a specified threshold, the OS initiates a swapping action.</li>
+<li>Swapping Process: Pages from memory are written to disk to free up space. This involves selecting pages to move to disk and updating their PTEs accordingly.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="detailed-process-flow">Detailed Process Flow<a href="#detailed-process-flow" class="hash-link" aria-label="Direct link to Detailed Process Flow" title="Direct link to Detailed Process Flow">​</a></h3>
+<ul>
+<li>Page Fault Occurrence: When a page fault is triggered, the MMU indicates that the required page is not in memory.</li>
+<li>Handling the Fault:<!-- -->
+<ul>
+<li>Suspend Process: The OS pauses the process that caused the fault.</li>
+<li>Select Free Page: The OS identifies a free page in memory or triggers swapping if no free pages are available.</li>
+<li>Initiate I/O Operation: The OS uses DMA to read the page from disk and write it into memory.</li>
+<li>Update PTE: The PTE is updated to reflect the page&#x27;s new location in memory.</li>
+<li>Resume Process: The OS resumes the process, allowing it to continue execution with the now-loaded page.</li>
+</ul>
+</li>
+<li>Swapping Strategy:<!-- -->
+<ul>
+<li>When memory is low, the OS selects pages from memory to swap out to disk.</li>
+<li>This process involves updating PTEs for pages moved to disk and ensuring that memory resources are managed efficiently.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="caching">Caching<a href="#caching" class="hash-link" aria-label="Direct link to Caching" title="Direct link to Caching">​</a></h2>
+<ul>
+<li>RAM access is costly in respect to internal register access<!-- -->
+<ul>
+<li>To save the cost, the frequently used memory are stored in a local fast memory called cache<!-- -->
+<ul>
+<li>Cache lines</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="locality-in-memory-access">Locality in memory access<a href="#locality-in-memory-access" class="hash-link" aria-label="Direct link to Locality in memory access" title="Direct link to Locality in memory access">​</a></h2>
+<ul>
+<li>Both swapping and caching take advantage from locality in memory access<!-- -->
+<ul>
+<li>When a given address is used, it is likely that the next access will be at an address close to the previous one</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="translation-lookaside-buffer-tlb">Translation Lookaside Buffer (TLB)<a href="#translation-lookaside-buffer-tlb" class="hash-link" aria-label="Direct link to Translation Lookaside Buffer (TLB)" title="Direct link to Translation Lookaside Buffer (TLB)">​</a></h2>
+<ul>
+<li>The Translation Lookaside Buffer (TLB) is a cache that stores recent translations of virtual memory to physical memory addresses. It is part of the memory management unit (MMU) in a computer&#x27;s CPU. The primary purpose of a TLB is to speed up virtual-to-physical address translation. When a virtual address is referenced by a program, the TLB is checked first to see if the translation is already cached. If it is not found (a TLB miss), the page table must be accessed, which is more time-consuming.</li>
+</ul>
+</li>
+</ul>
+<p>Key Points:</p>
+<p>A TLB hit results in faster memory access.
+A TLB miss requires a page table lookup, which slows down memory access.
+Effective use of TLB can significantly improve the performance of programs, particularly those with frequent memory access patterns.</p>
+<ul>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pipelining">Pipelining<a href="#pipelining" class="hash-link" aria-label="Direct link to Pipelining" title="Direct link to Pipelining">​</a></h2>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pipeline-hazards">Pipeline Hazards<a href="#pipeline-hazards" class="hash-link" aria-label="Direct link to Pipeline Hazards" title="Direct link to Pipeline Hazards">​</a></h2>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="data-hazard-prevention-technique">Data Hazard prevention technique<a href="#data-hazard-prevention-technique" class="hash-link" aria-label="Direct link to Data Hazard prevention technique" title="Direct link to Data Hazard prevention technique">​</a></h2>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="branch-hazard-prevention-branch-prediction">Branch Hazard prevention: branch prediction<a href="#branch-hazard-prevention-branch-prediction" class="hash-link" aria-label="Direct link to Branch Hazard prevention: branch prediction" title="Direct link to Branch Hazard prevention: branch prediction">​</a></h2>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="code-optimization-techniques">Code Optimization techniques<a href="#code-optimization-techniques" class="hash-link" aria-label="Direct link to Code Optimization techniques" title="Direct link to Code Optimization techniques">​</a></h2>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="can-the-programmer-help-the-compiler-optimizer-in-some-way">Can the programmer help the compiler optimizer in some way?<a href="#can-the-programmer-help-the-compiler-optimizer-in-some-way" class="hash-link" aria-label="Direct link to Can the programmer help the compiler optimizer in some way?" title="Direct link to Can the programmer help the compiler optimizer in some way?">​</a></h2>
+</li>
+</ul>
+<h1>Lecture 2: <strong>Processes, Threads and Scheduling</strong></h1>
+<ul>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="process">Process<a href="#process" class="hash-link" aria-label="Direct link to Process" title="Direct link to Process">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="definition">Definition<a href="#definition" class="hash-link" aria-label="Direct link to Definition" title="Direct link to Definition">​</a></h3>
+<ol>
+<li>Allow concurrent execution of multiple programs on a single processor</li>
+</ol>
+</li>
+<li>
+<p>Process Context</p>
+<ol>
+<li>Processor State:<!-- -->
+<ol>
+<li>Processor Registers: These include general-purpose registers, instruction registers, and special-purpose registers like the Program Counter (PC) and Stack Pointer.</li>
+<li>Program Counter (PC): The PC holds the address of the next instruction to be executed. It ensures the process can resume execution from the correct location after a context switch.</li>
+</ol>
+</li>
+<li>Memory Contents:<!-- -->
+<ol>
+<li>Stack: Contains local variables, function parameters, return addresses, and control flow data. Each process has its own stack.</li>
+<li>Heap: Dynamic memory used by the process during runtime for tasks like allocating memory for objects or arrays.</li>
+<li>Code Segment: Contains the executable code of the process.</li>
+<li>Data Segment: Contains global variables and static variables.</li>
+</ol>
+</li>
+<li>Global Variables:<!-- -->
+<ol>
+<li>These are variables that are accessible throughout the program and maintain their state across function calls.</li>
+</ol>
+</li>
+<li>Resource State:<!-- -->
+<ol>
+<li>Open Files: Information about files the process has opened.</li>
+<li>Network Connections: Information about network sockets or other communication channels the process is using.</li>
+<li>Devices: Information about any hardware devices the process is interacting with.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pcb-process-control-block">PCB: Process Control Block<a href="#pcb-process-control-block" class="hash-link" aria-label="Direct link to PCB: Process Control Block" title="Direct link to PCB: Process Control Block">​</a></h3>
+<ol>
+<li>Function:<!-- -->
+<ol>
+<li>Registers and OS resources are saved in a data structures owned by the OS called the Process Control Block (PCB)</li>
+</ol>
+</li>
+<li>What to save (The <strong>Process Context</strong> is stored within the <strong>PCB</strong>)<!-- -->
+<ol>
+<li>It would be however not possible to copy the content of the memory used by the process, and memory contents are indeed left where</li>
+<li>It is therefore necessary that physical memory location are independent from memory location as seen by the process (virtual addresses)</li>
+<li>In this case the Page Table entries (possibly referring to swapped pages) used by the process are saved in the PBC</li>
+</ol>
+</li>
+<li>Page table entries:<!-- -->
+<ol>
+<li>The Page Table is a data structure used by the operating system&#x27;s memory management unit (MMU) to map virtual addresses to physical addresses.</li>
+<li><strong>Page Table</strong> is part of the <strong>Process Context</strong> in the sense that the <strong>PTBR</strong> (a pointer to the page table) is stored in the process context.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Memory protection: virtual memory</p>
+<ol>
+<li>The use of virtual memory ensures protection against wrong memory access in process code</li>
+<li>Without virtual memory, user programs may harm other processes- memory or even worse OS data structures</li>
+<li>Using Virtual memory, the process is given a memory area (the pages mapped in the corresponding PTEs) and any access within this area is legal (including program bugs)</li>
+<li>If the process accesses a location whose address is not mapped, an exception (interrupt-like) is generated by the MMU HW, OS regains control and normally the process is aborted</li>
+<li>In any case, OS and other process memory integrity is preserved</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="process-states">Process states<a href="#process-states" class="hash-link" aria-label="Direct link to Process states" title="Direct link to Process states">​</a></h3>
+<ol>
+<li>Created</li>
+<li>Ready</li>
+<li>Running (the scheduler will assign a processor to this task and the state is changed to running)<!-- -->
+<ol>
+<li>If it needs to wait for an event, it transitions to Blocked.</li>
+<li>If it completes execution, it transitions to Terminated.</li>
+<li>If it yields or preemption, it goes to Ready state</li>
+</ol>
+</li>
+<li>Blocked<!-- -->
+<ol>
+<li>Once the event occurs, the process transitions back to the <strong>Ready</strong> state.</li>
+</ol>
+</li>
+<li>Terminated</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="threads-within-a-single-process">Threads (within a single process)<a href="#threads-within-a-single-process" class="hash-link" aria-label="Direct link to Threads (within a single process)" title="Direct link to Threads (within a single process)">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="definition-1">Definition<a href="#definition-1" class="hash-link" aria-label="Direct link to Definition" title="Direct link to Definition">​</a></h3>
+<ol>
+<li>Using threads within a single process provides a convenient way to manage related concurrent activities while sharing system resources efficiently. Threads make it easier to implement inter-thread communication and coordination, leveraging shared memory to simplify the interaction between different parts of the application.</li>
+<li><strong>Concurrent Activities</strong>: In many applications, multiple tasks or activities need to run simultaneously. For example, a web browser might need to handle user input, fetch data from the network, and render web pages concurrently.</li>
+<li><strong>Challenges with Separate Processes</strong>: Implementing these concurrent activities as separate processes can be challenging because they need to share resources like memory structures and open files. This separation requires complex mechanisms for inter-process communication (IPC) and synchronization</li>
+<li><strong>Threads as a Solution</strong>: To address these challenges, threads are used within a single process. Threads are sometimes referred to as &quot;lightweight processes&quot; because they allow multiple flows of control within one process.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shared Resources</strong>: Threads within the same process share the same address space, including memory, file descriptors, and other resources. This makes communication between threads straightforward and efficient since they can directly access shared variables and data structures.</p>
+</li>
+<li>
+<p><strong>Shared Address Space</strong>: Since all threads within a process share the same address space, they can read and write to the same memory locations. This feature simplifies communication and coordination between threads compared to separate processes that would require more complex IPC mechanisms.</p>
+</li>
+<li>
+<p><strong>Efficiency</strong>: Threads are more efficient than processes in terms of context switching and resource usage because they share the same resources and memory, reducing the overhead associated with creating and managing separate processes.</p>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="thread-context">Thread Context<a href="#thread-context" class="hash-link" aria-label="Direct link to Thread Context" title="Direct link to Thread Context">​</a></h3>
+<ol>
+<li><strong>Shared Resources</strong>: Threads within a process share the same address space, including global variables, the program code, and open files.<!-- -->
+<ol>
+<li>Page table</li>
+<li>Open files</li>
+</ol>
+</li>
+<li><strong>Thread-Specific Resources</strong>: Each thread has its own set of processor registers, including the Program Counter, and its own stack for managing local variables and function calls.<!-- -->
+<ol>
+<li>Processor Registers<!-- -->:Each<!-- --> thread maintains its own set of processor registers, including the Program Counter (PC), which keeps track of the next instruction to execute. The context of execution (i.e., the state of the CPU when the thread is not running) is saved and restored during context switches.</li>
+<li>Local Program Variables<!-- -->:Threads<!-- --> have their own stack space where local variables and function call information are stored. Each thread has its own stack, which is used to manage function calls, local variables, and return addresses.</li>
+<li>Stack: Each thread has its own stack (thread stack) for managing its function calls and local variables. This stack is private to the thread and is not shared with other threads.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>![][image1]</p>
+<ol start="3">
+<li>
+<p><strong>Efficiency</strong>: This sharing of resources allows threads to communicate and coordinate more efficiently but also requires careful management to avoid conflicts, especially when dealing with shared global variables.</p>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-thread-memory-model">The Thread Memory Model<a href="#the-thread-memory-model" class="hash-link" aria-label="Direct link to The Thread Memory Model" title="Direct link to The Thread Memory Model">​</a></h3>
+<ol>
+<li>Thread Memory Model Breakdown<!-- -->
+<ol>
+<li>Local Variables:<!-- -->
+<ol>
+<li>Stack Allocation: Local variables in C routines are allocated on each thread&#x27;s private stack. Each thread has its own stack space, meaning that:<!-- -->
+<ol>
+<li>Isolation: Local variables are isolated to the thread that created them. Each thread has a separate instance of these variables, so changes made by one thread do not affect the local variables of another thread.</li>
+<li>Concurrency: Multiple threads can execute the same function concurrently, each with its own set of local variables, without interference.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Global and Static Variables:<!-- -->
+<ol>
+<li>Shared Memory: Variables declared outside of functions (global variables) or as static within functions or files are shared among all threads within the same process.<!-- -->
+<ol>
+<li>Common Access: All threads can read from and write to these variables. This allows threads to share data easily.</li>
+<li>Potential Issues: Since these variables are accessible by all threads, concurrent access can lead to issues such as data races if proper synchronization is not enforced.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Challenges and Considerations<!-- -->
+<ol>
+<li>
+<p>Synchronization:</p>
+<ol>
+<li>Importance: Just having shared memory is not sufficient to ensure that threads operate correctly and avoid issues like race conditions. Proper synchronization is crucial for managing concurrent access to shared resources.</li>
+<li>Mechanisms:<!-- -->
+<ol>
+<li>Mutexes (Locks): Ensure that only one thread can access a critical section or modify shared data at a time. This prevents data races and maintains data integrity.</li>
+<li>Semaphores: Used to manage access to a pool of resources or coordinate between threads. Semaphores can signal when resources become available or control access to shared data.</li>
+<li>Condition Variables: Allow threads to wait for certain conditions to be met before proceeding. They are used in conjunction with mutexes to implement more complex synchronization patterns.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Race Conditions:</p>
+<ol>
+<li>Definition: Occur when multiple threads access and modify shared data concurrently, leading to unpredictable results. For example, two threads incrementing a global counter simultaneously might result in lost updates if not synchronized properly.</li>
+<li>Prevention: Use synchronization mechanisms to ensure that only one thread at a time can modify the shared data.</li>
+</ol>
+</li>
+<li>
+<p>Deadlocks and Livelocks:</p>
+<ol>
+<li>Deadlocks: Situations where threads are waiting indefinitely for resources held by each other. Proper design and avoidance strategies, such as ordering resources and using timeout mechanisms, are essential.</li>
+</ol>
+</li>
+<li>
+<p>Livelocks: Threads continually change states in response to each other without making progress. This can be avoided through careful design of thread interactions and resource acquisition.</p>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary-race-condition-mutex-semaphore-deadlocks">Summary: race condition, mutex, semaphore, deadlocks<a href="#summary-race-condition-mutex-semaphore-deadlocks" class="hash-link" aria-label="Direct link to Summary: race condition, mutex, semaphore, deadlocks" title="Direct link to Summary: race condition, mutex, semaphore, deadlocks">​</a></h3>
+<ol>
+<li><strong>Race condition</strong> 是由于多个线程同时访问共享资源导致的程序运行结果不确定性。</li>
+<li><strong>Mutex</strong> 是一把锁，一次只能有一个线程持有，用于保护共享资源。</li>
+<li><strong>Semaphore</strong> 是一个计数器，用于控制多个资源的访问。</li>
+<li>Deadlocks <strong>死锁</strong>：进程处于阻塞状态，无法继续执行。</li>
+<li>Livelocks<strong>活锁</strong>：进程处于活跃状态，但无法取得进展。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-scheduler">The scheduler<a href="#the-scheduler" class="hash-link" aria-label="Direct link to The scheduler" title="Direct link to The scheduler">​</a></h2>
+<ul>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="definition-2">Definition<a href="#definition-2" class="hash-link" aria-label="Direct link to Definition" title="Direct link to Definition">​</a></h3>
+<ol>
+<li>The scheduler is a crucial component of an operating system that determines which task (process or thread) will be executed next. It prioritizes tasks based on their importance and selects the highest-priority ready task to run.</li>
+<li>The scheduler&#x27;s actions are triggered by events such as interrupts (e.g., I/O completion, timer expiration) or system calls (e.g., I/O requests). When an event occurs, the scheduler is called to reevaluate the task priorities and select the new task to run.</li>
+<li>A key interrupt source is the timer interrupt, which is typically generated at a rate of 60 Hz. This interrupt is used to update dynamic task priorities and time slices, ensuring that tasks are not starved and that high-priority tasks are given adequate execution time.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scheduler-data-structures">Scheduler data structures<a href="#scheduler-data-structures" class="hash-link" aria-label="Direct link to Scheduler data structures" title="Direct link to Scheduler data structures">​</a></h3>
+<ul>
+<li>The scheduler organizes the ready tasks in queues based on their priority</li>
+<li>Every task that is not declared in FIFO task is assigned with a time slice to ensure the fairness</li>
+<li>interrupt → schedule_tick , also decrease the time slice of the running task</li>
+<li>Time is up → expired queue</li>
+</ul>
+</li>
+<li>
+<p>Task priority</p>
+<ul>
+<li>In Linux 140 priority levels are defined (lower number -&gt; higher priority)</li>
+<li>Priorities 0 to 100 are fixed the others are dynamic</li>
+</ul>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fixed-vs-dynamic-task-priorities">Fixed vs Dynamic task priorities<a href="#fixed-vs-dynamic-task-priorities" class="hash-link" aria-label="Direct link to Fixed vs Dynamic task priorities" title="Direct link to Fixed vs Dynamic task priorities">​</a></h3>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h1>Lecture 3: modals of parallel processing</h1>
+<ol>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="task-interaction">Task interaction<a href="#task-interaction" class="hash-link" aria-label="Direct link to Task interaction" title="Direct link to Task interaction">​</a></h2>
+<ol>
+<li>Processes in parallel systems must collaborate and interact with each other to achieve their goals. This involves both <strong>communication</strong> (exchanging information) and <strong>synchronization</strong> (coordinating actions).</li>
+<li><strong>Shared memory</strong> can be used for communication, but it&#x27;s essential to ensure that processes access shared data in a controlled manner to avoid <strong>race conditions</strong>. Race conditions occur when the outcome of a program depends on the order in which instructions are executed.</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="race-condition"><strong>Race condition:</strong><a href="#race-condition" class="hash-link" aria-label="Direct link to race-condition" title="Direct link to race-condition">​</a></h2>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="definition-3">Definition:<a href="#definition-3" class="hash-link" aria-label="Direct link to Definition:" title="Direct link to Definition:">​</a></h3>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-situation-where-the-outcome-of-a-program-depends-on-the-order-in-which-instructions-are-executed">A situation where the outcome of a program depends on the order in which instructions are executed.<a href="#a-situation-where-the-outcome-of-a-program-depends-on-the-order-in-which-instructions-are-executed" class="hash-link" aria-label="Direct link to A situation where the outcome of a program depends on the order in which instructions are executed." title="Direct link to A situation where the outcome of a program depends on the order in which instructions are executed.">​</a></h3>
+</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="example">Example:<a href="#example" class="hash-link" aria-label="Direct link to Example:" title="Direct link to Example:">​</a></h3>
+<ol>
+<li><strong>Two CPUs:</strong> Both CPU 1 and CPU 2 want to increment the value of a variable <code>k</code>.</li>
+<li><strong>Load:</strong> CPU 1 reads the current value of <code>k</code> (0) into its register.</li>
+<li><strong>Increment:</strong> CPU 1 increments the value in its register to 1.</li>
+<li><strong>Load:</strong> CPU 2 reads the current value of <code>k</code> (still 0) into its register.</li>
+<li><strong>Increment:</strong> CPU 2 increments the value in its register to 1.</li>
+<li><strong>Store:</strong> CPU 2 writes the new value (1) back to <code>k</code>.</li>
+<li><strong>Store:</strong> CPU 1 also writes its value (1) back to <code>k</code>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Result:</strong> The final value of <code>k</code> is unpredictable. It could be 1 or 2, depending on the order in which the two CPUs complete their operations. This is a race condition.</p>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mutual-exclusion"><strong>Mutual exclusion</strong><a href="#mutual-exclusion" class="hash-link" aria-label="Direct link to mutual-exclusion" title="Direct link to mutual-exclusion">​</a></h2>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="definition-4">Definition<a href="#definition-4" class="hash-link" aria-label="Direct link to Definition" title="Direct link to Definition">​</a></h3>
+<ol>
+<li>is a mechanism used to ensure that only one process can access a shared resource at a time. This prevents race conditions and ensures the integrity of data.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="steps-involved-in-mutual-exclusion">Steps involved in mutual exclusion:<a href="#steps-involved-in-mutual-exclusion" class="hash-link" aria-label="Direct link to Steps involved in mutual exclusion:" title="Direct link to Steps involved in mutual exclusion:">​</a></h3>
+<ol>
+<li>Acquire lock: A process acquires a lock associated with the shared resource. If the lock is already held, the process waits until it becomes available.</li>
+<li>Critical section: The process can now access and modify the shared resource.</li>
+<li>Release lock: The process releases the lock, allowing other processes to acquire it and access the shared resource.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="conditions-for-a-good-mutual-exclusion-mechanism">Conditions for a good mutual exclusion mechanism:<a href="#conditions-for-a-good-mutual-exclusion-mechanism" class="hash-link" aria-label="Direct link to Conditions for a good mutual exclusion mechanism:" title="Direct link to Conditions for a good mutual exclusion mechanism:">​</a></h3>
+<ol>
+<li>Mutual exclusion: It should prevent simultaneous access to the shared resource by multiple processes.</li>
+<li>Progress: No process should be indefinitely prevented from entering its critical section.</li>
+<li>Bounded waiting: There should be a limit on the number of times other processes can enter their critical sections before a waiting process is allowed to enter.</li>
+<li>Independence: The mechanism should not depend on any assumptions about the speed or number of processes.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardware-solution">Hardware solution<a href="#hardware-solution" class="hash-link" aria-label="Direct link to Hardware solution" title="Direct link to Hardware solution">​</a></h3>
+<ol>
+<li>Test-and-Set: An atomic operation that reads a memory location, sets it to 1, and returns the original value.</li>
+<li>Compare-and-Swap: An atomic operation that compares a memory location&#x27;s value to a given value and, if they match, updates the location with a new value.</li>
+<li>Load-Linked/Store-Conditional: A pair of instructions that provide a mechanism for conditional updates to memory locations.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="software-solution">Software solution<a href="#software-solution" class="hash-link" aria-label="Direct link to Software solution" title="Direct link to Software solution">​</a></h2>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="petersons-algorithm-a-classic-algorithm-that-uses-two-flags-and-a-turn-variable-to-ensure-mutual-exclusion"><strong>Peterson&#x27;s Algorithm:</strong> A classic algorithm that uses two flags and a turn variable to ensure mutual exclusion.<a href="#petersons-algorithm-a-classic-algorithm-that-uses-two-flags-and-a-turn-variable-to-ensure-mutual-exclusion" class="hash-link" aria-label="Direct link to petersons-algorithm-a-classic-algorithm-that-uses-two-flags-and-a-turn-variable-to-ensure-mutual-exclusion" title="Direct link to petersons-algorithm-a-classic-algorithm-that-uses-two-flags-and-a-turn-variable-to-ensure-mutual-exclusion">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="semaphores-semaphores-are-integer-variables-that-are-used-to-control-access-to-shared-resources-they-have-two-operations">Semaphores: Semaphores are integer variables that are used to control access to shared resources. They have two operations:<a href="#semaphores-semaphores-are-integer-variables-that-are-used-to-control-access-to-shared-resources-they-have-two-operations" class="hash-link" aria-label="Direct link to Semaphores: Semaphores are integer variables that are used to control access to shared resources. They have two operations:" title="Direct link to Semaphores: Semaphores are integer variables that are used to control access to shared resources. They have two operations:">​</a></h3>
+<ol>
+<li><strong>Wait (P):</strong> Decrements the semaphore&#x27;s value and blocks the process if the value becomes negative.</li>
+<li><strong>Signal (V):</strong> Increments the semaphore&#x27;s value and wakes up a blocked process if the value becomes positive.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="monitors-and-condition-synchronization">Monitors and Condition Synchronization:<a href="#monitors-and-condition-synchronization" class="hash-link" aria-label="Direct link to Monitors and Condition Synchronization:" title="Direct link to Monitors and Condition Synchronization:">​</a></h3>
+<p>Monitors are language constructs that provide a higher-level abstraction for synchronization. They encapsulate shared data and provide procedures for accessing and modifying it. Monitors use condition variables to allow processes to wait for specific conditions to be met.</p>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="message-passing-communication">Message Passing Communication<a href="#message-passing-communication" class="hash-link" aria-label="Direct link to Message Passing Communication" title="Direct link to Message Passing Communication">​</a></h3>
+<p>Message passing involves processes communicating by sending and receiving messages. It can be synchronous (waiting for a response) or asynchronous (sending a message without waiting for a response).</p>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary:<a href="#summary" class="hash-link" aria-label="Direct link to Summary:" title="Direct link to Summary:">​</a></h2>
+<ol>
+<li><strong>Process Cooperation:</strong> In parallel systems, processes must collaborate to achieve a common goal.</li>
+<li><strong>Communication and Synchronization:</strong> Processes need to exchange information and coordinate their actions to avoid race conditions.</li>
+<li><strong>Race Conditions:</strong> These occur when the outcome of a program depends on the order in which instructions are executed, leading to unpredictable results.</li>
+<li><strong>Mutual Exclusion:</strong> To prevent race conditions, mutual exclusion mechanisms are used to ensure that only one process can access a shared resource at a time.</li>
+<li><strong>Hardware Solutions:</strong> Test-and-Set, Compare-and-Swap, and Load-Linked/Store-Conditional are hardware-level mechanisms for mutual exclusion.</li>
+<li><strong>Software Solutions:</strong> Peterson&#x27;s Algorithm, semaphores, monitors, and message passing are software-based approaches for implementing mutual exclusion and synchronization.</li>
+</ol>
+</li>
+</ol>
+<h1>Lecture 4: <strong>deadlocks</strong></h1>
+<ol>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deadlocks"><strong>deadlocks</strong><a href="#deadlocks" class="hash-link" aria-label="Direct link to deadlocks" title="Direct link to deadlocks">​</a></h2>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="definition-a-situation-where-a-set-of-processes-are-waiting-for-each-other-to-release-resources-causing-none-of-them-to-make-progress">Definition: A situation where a set of processes are waiting for each other to release resources, causing none of them to make progress.<a href="#definition-a-situation-where-a-set-of-processes-are-waiting-for-each-other-to-release-resources-causing-none-of-them-to-make-progress" class="hash-link" aria-label="Direct link to Definition: A situation where a set of processes are waiting for each other to release resources, causing none of them to make progress." title="Direct link to Definition: A situation where a set of processes are waiting for each other to release resources, causing none of them to make progress.">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="conditions-for-deadlock">Conditions for deadlock:<a href="#conditions-for-deadlock" class="hash-link" aria-label="Direct link to Conditions for deadlock:" title="Direct link to Conditions for deadlock:">​</a></h3>
+<ol>
+<li><strong>Mutual exclusion</strong>: Resources can be used by only one process at a time.</li>
+<li><strong>Hold and wait</strong>: Processes hold at least one resource while waiting for others.</li>
+<li><strong>Nonpreemption</strong>: Resources cannot be taken away from a process without its consent.</li>
+<li><strong>Circular wait</strong>: There is a circular chain of processes waiting for resources held by each other.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="consequences-of-deadlock">Consequences of deadlock:<a href="#consequences-of-deadlock" class="hash-link" aria-label="Direct link to Consequences of deadlock:" title="Direct link to Consequences of deadlock:">​</a></h3>
+<ol>
+<li>Processes involved in the deadlock will never make progress.</li>
+<li>Resources allocated to these processes will be unavailable to other processes.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deadlock-prevention">Deadlock Prevention:<a href="#deadlock-prevention" class="hash-link" aria-label="Direct link to Deadlock Prevention:" title="Direct link to Deadlock Prevention:">​</a></h2>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mutual-exclusion-allow-multiple-processes-to-use-a-resource-concurrently-if-possible">Mutual Exclusion: Allow multiple processes to use a resource concurrently (if possible).<a href="#mutual-exclusion-allow-multiple-processes-to-use-a-resource-concurrently-if-possible" class="hash-link" aria-label="Direct link to Mutual Exclusion: Allow multiple processes to use a resource concurrently (if possible)." title="Direct link to Mutual Exclusion: Allow multiple processes to use a resource concurrently (if possible).">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hold-and-wait">Hold and Wait:<a href="#hold-and-wait" class="hash-link" aria-label="Direct link to Hold and Wait:" title="Direct link to Hold and Wait:">​</a></h3>
+<ol>
+<li>Prevent waiting: Require processes to request all resources at the beginning.</li>
+<li>Prevent holding: Force processes to release all resources before requesting new ones.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="non-preemption-implement-a-mechanism-to-take-away-resources-from-processes">Non Preemption: Implement a mechanism to take away resources from processes.<a href="#non-preemption-implement-a-mechanism-to-take-away-resources-from-processes" class="hash-link" aria-label="Direct link to Non Preemption: Implement a mechanism to take away resources from processes." title="Direct link to Non Preemption: Implement a mechanism to take away resources from processes.">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="circular-wait-assign-an-order-to-resources-and-require-processes-to-request-them-in-that-order">Circular Wait: Assign an order to resources and require processes to request them in that order.<a href="#circular-wait-assign-an-order-to-resources-and-require-processes-to-request-them-in-that-order" class="hash-link" aria-label="Direct link to Circular Wait: Assign an order to resources and require processes to request them in that order." title="Direct link to Circular Wait: Assign an order to resources and require processes to request them in that order.">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="challenges">Challenges:<a href="#challenges" class="hash-link" aria-label="Direct link to Challenges:" title="Direct link to Challenges:">​</a></h3>
+<ol>
+<li>Overheads: Deadlock prevention can introduce overhead and reduce flexibility.</li>
+<li>Resource constraints: Some techniques may limit resource utilization or require specific resource characteristics.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="trade-off">Trade-off<a href="#trade-off" class="hash-link" aria-label="Direct link to Trade-off" title="Direct link to Trade-off">​</a></h2>
+<ol>
+<li>Deadlock Avoidance: Algorithms that take action during system execution to prevent deadlocks.</li>
+<li>Trade-offs:<!-- -->
+<ol>
+<li>Flexibility: More flexible for programmers compared to prevention.</li>
+<li>Overhead: Requires additional runtime checks and potential delays.</li>
+</ol>
+</li>
+<li>How it works:<!-- -->
+<ol>
+<li>Safety check: Evaluates each resource allocation request to determine if it could lead to a deadlock.</li>
+<li>Postpone: If a request is unsafe, it is postponed.</li>
+<li>Re-evaluate: The request is reconsidered later to see if it has become safe.</li>
+</ol>
+</li>
+<li>Requires:<!-- -->
+<ol>
+<li>Preliminary information: Knowledge about process behavior and resource needs.</li>
+</ol>
+</li>
+<li>Example:<!-- -->
+<ol>
+<li>Banker&#x27;s algorithm: Checks if granting resources would lead to a safe state where all processes can complete.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bankers-algorithm"><strong>Banker’s algorithm</strong><a href="#bankers-algorithm" class="hash-link" aria-label="Direct link to bankers-algorithm" title="Direct link to bankers-algorithm">​</a></h2>
+<ol>
+<li>
+<p>The Banker&#x27;s algorithm is a deadlock avoidance algorithm used in operating systems to determine whether a resource allocation request is safe or unsafe. It simulates the allocation of resources to processes to check if the system will remain in a safe state.</p>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-it-works">How it works:<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works:" title="Direct link to How it works:">​</a></h3>
+<ol>
+<li>Initialize:<!-- -->
+<ol>
+<li>Available: A vector indicating the number of available resources of each type.</li>
+<li>Max: A matrix indicating the maximum number of resources of each type that a process can request.</li>
+<li>Allocation: A matrix indicating the number of resources of each type currently allocated to each process.</li>
+<li>Need: A matrix indicating the remaining resources needed by each process (calculated as Max - Allocation).</li>
+</ol>
+</li>
+<li>Check Safety:<!-- -->
+<ol>
+<li>Find a safe sequence: A sequence of processes is considered safe if all processes can complete their execution without causing a deadlock.</li>
+<li>Iterate through processes: For each process:<!-- -->
+<ol>
+<li>If the process&#x27;s Need is less than or equal to Available, the process is considered safe.</li>
+<li>Allocate the requested resources to the process.</li>
+<li>Update Available, Max, and Need matrices accordingly.</li>
+<li>Repeat until all processes have been checked.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Grant or Deny Request:<!-- -->
+<ol>
+<li>If a safe sequence is found, the request is granted, and the system remains in a safe state.</li>
+<li>If no safe sequence is found, the request is denied, and the system remains in a safe state.</li>
+</ol>
+</li>
+<li>Key Concepts:<!-- -->
+<ol>
+<li>Safe state: A state where there exists a sequence of processes that can complete their execution without causing a deadlock.</li>
+<li>Unsafe state: A state where there is no safe sequence, and a deadlock may occur.</li>
+<li>Need matrix: Represents the remaining resources required by each process.</li>
+</ol>
+</li>
+<li>Advantages:<!-- -->
+<ol>
+<li>Prevents deadlocks by ensuring the system remains in a safe state.</li>
+<li>Can be implemented efficiently.</li>
+</ol>
+</li>
+<li>Disadvantages:<!-- -->
+<ol>
+<li>Requires prior knowledge of the maximum resource needs of processes.</li>
+<li>May be computationally expensive for large systems.</li>
+<li>May restrict resource utilization if a process needs to release resources to avoid a deadlock.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="starvation">Starvation<a href="#starvation" class="hash-link" aria-label="Direct link to Starvation" title="Direct link to Starvation">​</a></h2>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="starvation-a-situation-where-a-process-is-unable-to-access-a-shared-resource-indefinitely">Starvation: A situation where a process is unable to access a shared resource indefinitely.<a href="#starvation-a-situation-where-a-process-is-unable-to-access-a-shared-resource-indefinitely" class="hash-link" aria-label="Direct link to Starvation: A situation where a process is unable to access a shared resource indefinitely." title="Direct link to Starvation: A situation where a process is unable to access a shared resource indefinitely.">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="relationship-to-deadlock">Relationship to Deadlock:<a href="#relationship-to-deadlock" class="hash-link" aria-label="Direct link to Relationship to Deadlock:" title="Direct link to Relationship to Deadlock:">​</a></h3>
+<ol>
+<li>Starvation is a broader concept than deadlock. Deadlock is a specific type of starvation where a set of processes are waiting for each other to release resources.</li>
+<li>Starvation can occur even without a deadlock.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="causes-of-starvation">Causes of Starvation:<a href="#causes-of-starvation" class="hash-link" aria-label="Direct link to Causes of Starvation:" title="Direct link to Causes of Starvation:">​</a></h3>
+<ol>
+<li>Resource allocation policies: How resources are allocated can influence whether a process experiences starvation.</li>
+<li>Scheduling algorithms: The scheduling algorithm may favor certain processes over others, leading to starvation.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prevention">Prevention:<a href="#prevention" class="hash-link" aria-label="Direct link to Prevention:" title="Direct link to Prevention:">​</a></h3>
+<ol>
+<li>Fairness mechanisms: Algorithms can be designed to ensure that all processes have a fair chance to access resources.</li>
+<li>Priority adjustments: Low-priority processes can be given temporary priority boosts to prevent starvation.</li>
+<li>Resource allocation strategies: Careful consideration of resource allocation policies can help avoid starvation.</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="examples-algorithm">Example<!-- -->:Peterson<!-- -->&#x27;s algorithm<a href="#examples-algorithm" class="hash-link" aria-label="Direct link to examples-algorithm" title="Direct link to examples-algorithm">​</a></h3>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="this-mutual-exclusion-algorithm-ensures-that-both-processes-have-an-equal-chance-to-enter-the-critical-section-preventing-starvationindefinite-wait-indefinite-postponement-starvation">This mutual exclusion algorithm ensures that both processes have an equal chance to enter the critical section, preventing starvation.Indefinite wait, indefinite postponement, starvation<a href="#this-mutual-exclusion-algorithm-ensures-that-both-processes-have-an-equal-chance-to-enter-the-critical-section-preventing-starvationindefinite-wait-indefinite-postponement-starvation" class="hash-link" aria-label="Direct link to This mutual exclusion algorithm ensures that both processes have an equal chance to enter the critical section, preventing starvation.Indefinite wait, indefinite postponement, starvation" title="Direct link to This mutual exclusion algorithm ensures that both processes have an equal chance to enter the critical section, preventing starvation.Indefinite wait, indefinite postponement, starvation">​</a></h3>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1>Lecture 5: real-time systems: process model and cyclic execution</h1>
+<ol>
+<li>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-system-definition">Real-time system definition:<a href="#real-time-system-definition" class="hash-link" aria-label="Direct link to Real-time system definition:" title="Direct link to Real-time system definition:">​</a></h2>
+<ol>
+<li>in any concurrent program, the exact order in which processes execute is not completely specified</li>
+<li>The interprocess communication and synchronization primitives are used to enforce a set of constraints that limit the possible interleavings in order to ensure</li>
+<li>Nevertheless, the program will still exhibit a significant amount of nondeterminism because its process may interleave in different ways without violating any of those constraints</li>
+<li>The concurrent program output  will of course be the same in all cases, but its timings may still vary considerably from one execution to another</li>
+<li>If one of the processes in a concurrent program has a tight deadline on its completion time, only some of the interleavings that are acceptable from the concurrent programming perspective will also be adequate from the real-time execution point of view</li>
+<li>As a consequence, a real-time system must further restrict the nondeterminism found in a concurrent system because some interleavings that are acceptable with respect to the results of the computation may be unacceptable for what concerns timing</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-operating-system">Real time operating system<a href="#real-time-operating-system" class="hash-link" aria-label="Direct link to Real time operating system" title="Direct link to Real time operating system">​</a></h3>
+<ol>
+<li>Most general-purpose scheduling algorithms emphasize aspects such as<!-- -->
+<ol>
+<li>Fairness</li>
+<li>Efficiency</li>
+<li>Throughput</li>
+</ol>
+</li>
+<li>The main goal of scheduling model is to ensure that a concurrent program does not only produce the expected output in all cases but is also correct with respect to timings. In order to do this, a scheduling model must comprise two main elements:<!-- -->
+<ol>
+<li>A scheduling algorithm</li>
+<li>Analytics tool to analyze the worst-case behavior in timings</li>
+</ol>
+</li>
+<li>The assumptions of the basic model<!-- -->
+<ol>
+<li>Its difficult to predict the worst-case timing behaviors</li>
+<li>a simplified process model that imposes some restrictions on the structure of real-time concurrent programs to be considered for analysis, which is the basic process model,<!-- -->
+<ol>
+<li>The concurrent model has a fixed number of processes, and the number is known in advance</li>
+<li>Processes are periodic, with known periods. Moreover, process periods do not change with time. For this reason, processes can be seen as an infinite sequence of instances. Processes instances become ready for execution at regular time intervals at the beginning of each period</li>
+<li>Processes are completely independent of each other</li>
+<li>Timing constraints are expressed by means of deadlines.</li>
+<li>All processes have a fixed worst-case execution time that can be computed offline</li>
+<li>All system’s overheads, for example, context switch times, are negligible</li>
+</ol>
+</li>
+<li>Limitation of the basic model<!-- -->
+<ol>
+<li>It means that there are no synchronization constraints among processes at all, so no process must even wait for another<!-- -->
+<ol>
+<li>This rules out, for instance, mutual exclusion and synchronization semaphores</li>
+</ol>
+</li>
+<li>The deadline of a process is not always related to its period, and is often shorter than it</li>
+<li>Some processes are sporadic rather than periodic. In other words, they are executed “on demand” when an external event, for example an alarm, occurs.</li>
+<li>For some applications and hardware architectures, scheduling and context switch times may not be negligible.</li>
+<li>The behavior of some nondeterministic hardware components, for example, caches, must sometimes be taken into account, and this makes it difficult to determine a reasonably tight upper bound on the process execution time.</li>
+</ol>
+</li>
+<li>The cyclic execution<!-- -->
+<ol>
+<li>The basic idea is to lay out offline a completely static schedule such that its repeated execution causes all tasks to run at their correct rate and finish within its deadline</li>
+</ol>
+</li>
+<li>The choice of minor and major cycle time<!-- -->
+<ol>
+<li>All task periods must be an integer multiple of the minor cycle period. Otherwise, it would be impossible to execute them at the proper rate</li>
+<li>On the other hand, it is also desirable to keep the minor cycle length as large as possible. This is useful not only to reduce synchronization overheads but also make it easier to accommodate tasks with a large execution time</li>
+<li>To satisfy both constraints the minor cycle length is set to be equal to the Greatest Common Divisor of the periods of the tasks to be scheduled</li>
+<li>The cyclic execution repeats the same schedule over and over at each major cycle, therefore, the major</li>
+<li>A sensible choice is to let the major cycle length of the Least Common Multiple of the task periods. Sometimes it is also called hyperperiod of the task set</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1>Lecture 6: Task based scheduling</h1>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fixed-and-variable-priorities-in-real-time-scheduling">Fixed and variable priorities in real time scheduling<a href="#fixed-and-variable-priorities-in-real-time-scheduling" class="hash-link" aria-label="Direct link to Fixed and variable priorities in real time scheduling" title="Direct link to Fixed and variable priorities in real time scheduling">​</a></h3>
+<ol>
+<li>Variable priority assigned to asked is usually performed in non-real time systems in order to make the system more fluid<!-- -->
+<ol>
+<li>Based on the concept that a task that is going to use the processor for the shortest time should take it first</li>
+<li>This maximize the number of tasks executed per unit of time</li>
+</ol>
+</li>
+<li>Fixed priorities assignments favorises important tasks that must be executed first</li>
+<li>In linux and windows tasks above a given priority are not subject to dynamic priority management</li>
+<li>Dynamic priorities are also used in real-time systems<!-- -->
+<ol>
+<li>On the one side, they are more complicated to implement</li>
+<li>On the other side, the processor utilization is better exploited</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="critical-instant">Critical instant<a href="#critical-instant" class="hash-link" aria-label="Direct link to Critical instant" title="Direct link to Critical instant">​</a></h3>
+<ol>
+<li>The critical instant, that is the worst situation that may occur when a set of periodic tasks given periods and computation times are scheduled</li>
+<li>Task jobs can in fact be released at arbitrary instants within their period, and the time between period occurrence and job release is called the phase of the task</li>
+<li>We shall see that the worst situation will occur when all the jobs are initially released at the same time</li>
+<li>Proving that system under consideration is schedulable in such a bad situation means proving that it will be schedulable for every task phase</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="critical-instant-theorem">Critical instant theorem<a href="#critical-instant-theorem" class="hash-link" aria-label="Direct link to Critical instant theorem" title="Direct link to Critical instant theorem">​</a></h3>
+<ol>
+<li>The relative deadline of a task is equal to its period, that is, Di = Ti∀i.</li>
+<li>Hence, for each task instance, the absolute deadline is the time of its next release, that is, di,j = ri,j+1.</li>
+<li>Overflow t if the tasks misses the deadline</li>
+<li>A scheduling algorithm is feasible for a given task if they are scheduled so that no overflows ever occur</li>
+<li>A critical instant for a task is an instant at which the release of the task will produce the largest response time</li>
+<li>A critical time zone for a task is the interval between a critical instant and the end of the task response</li>
+</ol>
+</li>
+<li>
+<p>Critical instant Theorem: a critical instant for any task occurs whenever it is released simultaneously with the release of all high-priority task</p>
+<ol>
+<li>It is a worst-case scenario where the task is released simultaneously with high-priority task</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rate-monotonic-priority-assignment">Rate Monotonic priority assignment<a href="#rate-monotonic-priority-assignment" class="hash-link" aria-label="Direct link to Rate Monotonic priority assignment" title="Direct link to Rate Monotonic priority assignment">​</a></h3>
+<ol>
+<li>Rate monotonic is a policy for fixed-priority assignment in periodic tasks, which assigns a priority that is inversely proportional to the task period: the shorter the task period, the higher the priority</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="optimality-for-rm">Optimality for RM<a href="#optimality-for-rm" class="hash-link" aria-label="Direct link to Optimality for RM" title="Direct link to Optimality for RM">​</a></h3>
+<ol>
+<li>RM is the optimal priority assignment policy, i.e. every system that is schedulable using fixed priorities is schedulable using RM policy</li>
+<li>In other words, if a system is not schedulable under RM policy, then it will remain not schedulable under any other fixed priority assignment</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="earliest-deadline-first">Earliest Deadline First<a href="#earliest-deadline-first" class="hash-link" aria-label="Direct link to Earliest Deadline First" title="Direct link to Earliest Deadline First">​</a></h3>
+<ol>
+<li>This algorithm selects the task with closest deadline</li>
+</ol>
+</li>
+</ol>
+<h1>Lecture 7: schedulability analysis based on utilization and response time analysis</h1>
+<ol>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="schedulability-analysis">Schedulability analysis<a href="#schedulability-analysis" class="hash-link" aria-label="Direct link to Schedulability analysis" title="Direct link to Schedulability analysis">​</a></h3>
+<ol>
+<li>Fixed priority, the RM is optimal</li>
+<li>and variable priority assignment, the optimality of EDF</li>
+</ol>
+</li>
+<li>
+<p>Before deciding the algorithm, to understand whether the program is scheduable</p>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="least-upperbound-ulub">Least UpperBound (ULUB)<a href="#least-upperbound-ulub" class="hash-link" aria-label="Direct link to Least UpperBound (ULUB)" title="Direct link to Least UpperBound (ULUB)">​</a></h3>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="edf-and-schedulability">EDF and schedulability<a href="#edf-and-schedulability" class="hash-link" aria-label="Direct link to EDF and schedulability" title="Direct link to EDF and schedulability">​</a></h3>
+<ol>
+<li>Theorem: A set of N periodic tasks is schedulable with the Earliest Deadline First algorithm if and only its Processor Utilization is not greater than 1</li>
+</ol>
+</li>
+</ol>
+<h1>Lecture 8: real-time linux</h1>
+<ol>
+<li>
+<p>Preemptible kernel</p>
+<ol>
+<li>This means that a kernel operation had to finish before giving the chance for another task to resume, before calling schedule()</li>
+<li>Interrupts of course occur, including those the may make a high priority task newly ready, but the call to schedule() is deferred until the termination of the pending kernel operation</li>
+</ol>
+</li>
+<li>
+<p>Kernel threads</p>
+<ol>
+<li>When invoked via soft interrupt (the only way to move programmatically to kernel mode) kernel code is running in interrupt context</li>
+<li>As such a kernel section cannot be preempted, only suspended by a higher priority interrupt</li>
+<li>Therefore it is necessary to let some kernel operations be carried out by <strong>kernel thread</strong></li>
+<li>Kernel threads do not live within the context of any process, but they share the same kernel virtual address</li>
+<li>In this way, using the same scheduler mechanism it is possible to suspend a kernel thread when another thread/process with higher priority becomes ready, and eventually resume it</li>
+<li>Kernel threads are also important in reducing the amount of code executed at interrupt level in drivers, moving actions that are not essential (such as writing an immediate answer into the device registers) to a kernel thread and therefore reducing again the dead time in system responsiveness<!-- -->
+<ol>
+<li>An interrupt routine can be interrupted only by a higher priority HW interrupt</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="protecting-critical-sections-in-kernel-threads">Protecting critical sections in kernel threads<a href="#protecting-critical-sections-in-kernel-threads" class="hash-link" aria-label="Direct link to Protecting critical sections in kernel threads" title="Direct link to Protecting critical sections in kernel threads">​</a></h3>
+<ol>
+<li>It <strong>cannot</strong> rely on the scheduler mechanism because critical sections may be required also by interrupt routines and therefore a lower level mechanism is required</li>
+<li>On a single processor system, an immediate way to ensure mutual exclusion is to disable HW interrupts when the critical section is accessed</li>
+<li>For multiprocessor system, this is no more enough, as the critical section can be accessed by code running on a different processor</li>
+<li>In this case, <strong>spinlocks</strong> are used, based on shared memory, looping until the critical section is accessible<!-- -->
+<ol>
+<li>As interrupts are disabled, only a separate processor can be competing for the critical section</li>
+</ol>
+</li>
+<li>Spinlocks require some sort of atomic Test&amp;set HW mechanism, that is provided by most, if not all, platforms</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="preempt_rt-patch">PREEMPT_RT patch<a href="#preempt_rt-patch" class="hash-link" aria-label="Direct link to PREEMPT_RT patch" title="Direct link to PREEMPT_RT patch">​</a></h3>
+<ol>
+<li>In pre-emptible kernel, system latency is mainly due to<!-- -->
+<ol>
+<li>Critical sections in the kernel code that are protected by spinlocks, preemption is in fact disabled as long as a single spinlock is active</li>
+<li>Interrupt service routines ISR running outside any task context, and therefore potentially introducing delays in the system reaction to events because the scheduler cannot be invoked until no pending interrupts are present</li>
+</ol>
+</li>
+<li>The PREEMPT RT linux patch represents one step further towards hard real time Linux performance.  PREEMPT RT provides the following features:<!-- -->
+<ol>
+<li>Preemptible critical sections</li>
+<li>Priority inheritance for in-kernel spinlocks and semaphores</li>
+<li>Preemptible interrupt handlers</li>
+</ol>
+</li>
+<li>Real-time performance of the Linux MRG are now very close to those of specialized real-time system such as vxWorks (that has been used in the NASA Mars missions)</li>
+</ol>
+</li>
+<li>
+<p>Pre-emptible critical sections</p>
+<ol>
+<li>In preempt rt, a new locking mechanism is made available. It is no more implemented as the cyclic atomic test and set but is internally implemented by a semaphore called <strong>re-semaphore</strong>.<!-- -->
+<ol>
+<li>This semaphore is implemented in a very efficient way if the underlying architecture supports atomic compare and exchange</li>
+<li>Otherwise, an internal spinlock mechanism is used. Therefore, the task entering a critical section can now be interrupted</li>
+</ol>
+</li>
+<li>The integrity of the critical section is still ensured since, if a new task tries to acquire same lock, it will be put on wait<!-- -->
+<ol>
+<li>Spinlocks are still required for ISR because they are outside the kernel thread context</li>
+</ol>
+</li>
+<li>The impact of this difficult, semaphore-based mechanism is not trivial since it may lead to deadlocks using spinlocks<!-- -->
+<ol>
+<li>In fact, in this case the task owning a spinlock is put on wait, there would be no chance for other tasks to gain processor usage</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="priority-inheritance-for-in-kernel-spinlocks-and-semaphores">Priority inheritance for in kernel spinlocks and semaphores<a href="#priority-inheritance-for-in-kernel-spinlocks-and-semaphores" class="hash-link" aria-label="Direct link to Priority inheritance for in kernel spinlocks and semaphores" title="Direct link to Priority inheritance for in kernel spinlocks and semaphores">​</a></h3>
+<ol>
+<li>Priority inversion may lead to potentially unbounded delays in task response even when task priorities are accurately planned</li>
+<li>Observe that for spinlocks priority inversion cannot occur because the task taking ownership disables interrupts and therefore implicitly becomes the highest priority task in the system (interrupts disabled -&gt; the task cannnot be preempted by the higher priority tasks</li>
+<li>For rt-semophores PREEMPT-RT implements priority inheritance<!-- -->
+<ol>
+<li>The kernel knows the priority of the threads owning semaphore and of the requesting thread and in case can therefore increment the priority of the current owner, lowering it at its original value when the semaphore is released.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pre-emptible-interrupt-handlers">Pre-emptible interrupt handlers<a href="#pre-emptible-interrupt-handlers" class="hash-link" aria-label="Direct link to Pre-emptible interrupt handlers" title="Direct link to Pre-emptible interrupt handlers">​</a></h3>
+<ol>
+<li>Well-written device driver avoid defining lengthy ISR code<!-- -->
+<ol>
+<li>Rather, the ISR code should be made as short as possible, delegating the rest of the work to kernel threads</li>
+</ol>
+</li>
+<li>Preempt RT takes one step further and forces almost all interrupts handlers to run in task context unless marked SA NODELAY to cause it to run in interrupt context<!-- -->
+<ol>
+<li>By default, only a very limited set of interrupts is marked as SA NODELAY</li>
+<li>Among them, only the timer interrupt is normally used</li>
+</ol>
+</li>
+<li>In this way, it is possible to define the priority associated with every interrupt source in order to guarantee a faster response to important events<!-- -->
+<ol>
+<li>This would not have been possible if ISR were handled at interrupt level, even when using Interrupt Priority levels (normally limited to 8</li>
+</ol>
+</li>
+<li>Summary<!-- -->
+<ol>
+<li>
+<p>How to improve the real-time kernel, esp with the PREEEMPT-RT</p>
+</li>
+<li>
+<p>Pre-emptible Kernel</p>
+<ol>
+<li><strong>内核操作的限制</strong>：在可抢占内核中，内核操作必须完成后，才能调用调度器（schedule()）切换任务。然而，这可能导致系统延迟，因为调度器的调用会被延迟，直到当前的内核操作结束</li>
+</ol>
+</li>
+<li>
+<p>Kernel Threads</p>
+<ol>
+<li><strong>中断上下文</strong>：内核代码运行在中断上下文中，这种上下文下的代码不能被抢占，只能被更高 优先级的中断挂起。为了解决这个问题，内核线程被用来处理那些不能在中断上下文中完成的任务。</li>
+<li><strong>内核线程的特点</strong>：内核线程不依赖于任何用户进程，但它们共享内核虚拟地址。这样，调度器可以像调度其他线程或进程一样调度内核线程，改善系统的响应能力。</li>
+<li><strong>减少中断级代码</strong>：内核线程可以减少在中断级别执行的代码量，将非核心操作（例如写入设备寄存器的立即响应）转移到内核线程中，从而提高系统的响应速度。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-保护内核线程中的关键部分"><strong>3. 保护内核线程中的关键部分</strong><a href="#3-保护内核线程中的关键部分" class="hash-link" aria-label="Direct link to 3-保护内核线程中的关键部分" title="Direct link to 3-保护内核线程中的关键部分">​</a></h3>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>单处理器系统</strong>：在单处理器系统中，可以通过禁用硬件中断来确保互斥访问关键部分。</p>
+</li>
+<li>
+<p><strong>多处理器系统</strong>：在多处理器系统中，仅禁用硬件中断不够，需要使用自旋锁（spinlocks），它们基于共享内存工作，直到关键部分变得可访问。自旋锁通常依赖原子Test&amp;Set硬件机制来工作。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-preempt_rt补丁的功能"><strong>4. PREEMPT_RT补丁的功能</strong><a href="#4-preempt_rt补丁的功能" class="hash-link" aria-label="Direct link to 4-preempt_rt补丁的功能" title="Direct link to 4-preempt_rt补丁的功能">​</a></h3>
+</li>
+<li>
+<p><strong>可抢占的关键部分</strong>：PREEMPT_RT补丁引入了一种新的锁机制（re-semaphore），使得关键部分可以被抢占，尽管这可能导致死锁等复杂问题。</p>
+</li>
+<li>
+<p><strong>优先级继承</strong>：补丁实现了优先级继承  机制，这可以避免优先级反转问题，即低优先级任务持有锁时，高优先级任务被阻塞的情况。内核可以提升低优先级任务的优先级到高优先级任务的级别，直到锁被释放。</p>
+</li>
+<li>
+<p><strong>可抢占的中断处理程序</strong>：PREEMPT_RT补丁使大多数中断处理程序在任务上下文中运行，而不是在中断上下文中，除非特别标记为<code>SA_NODELAY</code>。这种方式允许为每个中断源定义优先级，以确保对重要事件的快速响应。默认情况下，只有少数中断被标记为<code>SA_NODELAY</code>，例如计时器中断。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="总结"><strong>总结</strong><a href="#总结" class="hash-link" aria-label="Direct link to 总结" title="Direct link to 总结">​</a></h3>
+<p>这节讲座介绍了在实时Linux中如何通过PREEMPT_RT补丁改善内核的实时性能。补丁通过引入可抢占的关键部分、优先级继承机制和可抢占的中断处理程序，减少了系统延迟，提高了对关键事件的响应速度。这些改进使得Linux的实时性能接近专门的实时操作系统，如VxWorks。</p>
+</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/unipd/Automata/introduction"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">introduction</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/unipd/Graph database/dataSelection"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FLYDATA - Domain and data selection</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#lecture-1-operating-system-review" class="table-of-contents__link toc-highlight">Lecture 1: Operating system review</a></li><li><a href="#io-operations---communication-buses" class="table-of-contents__link toc-highlight">I/O operations - <strong>Communication buses</strong></a><ul><li><a href="#communication-bus-between-input-and-output" class="table-of-contents__link toc-highlight"><strong>Communication bus</strong> (between input and output)</a></li><li><a href="#two-types-and-one-combined-both" class="table-of-contents__link toc-highlight">Two types and one combined both</a></li><li><a href="#register" class="table-of-contents__link toc-highlight">Register</a></li></ul></li><li><a href="#pcipci-e-bridges" class="table-of-contents__link toc-highlight">PCI/PCI-e bridges</a><ul><li><a href="#peripheral-component-interconnect-pci-bus" class="table-of-contents__link toc-highlight">Peripheral component interconnect PCI Bus</a></li><li><a href="#pci-express-pcie" class="table-of-contents__link toc-highlight">PCI express (PCIe)</a></li><li><a href="#bridges" class="table-of-contents__link toc-highlight">Bridges</a></li></ul></li><li><a href="#synchronizing-io" class="table-of-contents__link toc-highlight">Synchronizing I/O</a><ul><li><a href="#polling-traditional-way" class="table-of-contents__link toc-highlight">Polling: traditional way</a></li><li><a href="#interrupts-dma-notification-mechanisms-in-memory-mapped-io-and-asynchronous-io-to-improve-efficiency-and-reduce-the-waste-of-cpu-resources" class="table-of-contents__link toc-highlight"><strong>Interrupts</strong>, <strong>DMA</strong>, <strong>notification mechanisms</strong> in memory-mapped I/O, and <strong>asynchronous I/O</strong> to improve efficiency and reduce the waste of CPU resources</a></li></ul></li><li><a href="#interrupt-management" class="table-of-contents__link toc-highlight">Interrupt management</a><ul><li><a href="#concept" class="table-of-contents__link toc-highlight">Concept</a></li><li><a href="#steps-in-handling-an-interrupt" class="table-of-contents__link toc-highlight">Steps in Handling an Interrupt</a></li><li><a href="#required-sw-actions-for-properly-handling-interrupts" class="table-of-contents__link toc-highlight">Required SW actions for properly handling Interrupts</a></li><li><a href="#are-interrupts-an-efficient-way-of-transfering-data" class="table-of-contents__link toc-highlight">Are interrupts an efficient way of transfering data?</a></li></ul></li><li><a href="#direct-memory-access-dma" class="table-of-contents__link toc-highlight">Direct memory access-DMA</a><ul><li><a href="#device-controlled-data-transfer" class="table-of-contents__link toc-highlight">Device-Controlled Data Transfer:</a></li><li><a href="#bus-ownership" class="table-of-contents__link toc-highlight">Bus Ownership:</a></li><li><a href="#configuration" class="table-of-contents__link toc-highlight">Configuration:</a></li><li><a href="#data-transfer-process" class="table-of-contents__link toc-highlight">Data Transfer Process:</a></li><li><a href="#processor-independence" class="table-of-contents__link toc-highlight">Processor Independence:</a></li><li><a href="#completion-notification" class="table-of-contents__link toc-highlight">Completion Notification:</a></li></ul></li><li><a href="#user-mode-and-kernel-mode" class="table-of-contents__link toc-highlight">User mode and kernel mode</a></li><li><a href="#the-history-of-a-printf-call" class="table-of-contents__link toc-highlight">The history of a printf() call</a></li><li><a href="#virtual-memory" class="table-of-contents__link toc-highlight">Virtual memory</a><ul><li><a href="#what-is-virtual-memory" class="table-of-contents__link toc-highlight">What is virtual memory</a></li><li><a href="#reasons-for-virtual-memory" class="table-of-contents__link toc-highlight">Reasons for virtual memory</a></li></ul></li><li><a href="#shared-memory-management" class="table-of-contents__link toc-highlight">Shared memory management</a></li><li><a href="#memory-swapping" class="table-of-contents__link toc-highlight">Memory swapping</a><ul><li><a href="#memory-management-overview" class="table-of-contents__link toc-highlight">Memory Management Overview</a></li><li><a href="#detailed-process-flow" class="table-of-contents__link toc-highlight">Detailed Process Flow</a></li></ul></li><li><a href="#caching" class="table-of-contents__link toc-highlight">Caching</a></li><li><a href="#locality-in-memory-access" class="table-of-contents__link toc-highlight">Locality in memory access</a></li><li><a href="#translation-lookaside-buffer-tlb" class="table-of-contents__link toc-highlight">Translation Lookaside Buffer (TLB)</a></li><li><a href="#pipelining" class="table-of-contents__link toc-highlight">Pipelining</a></li><li><a href="#pipeline-hazards" class="table-of-contents__link toc-highlight">Pipeline Hazards</a></li><li><a href="#data-hazard-prevention-technique" class="table-of-contents__link toc-highlight">Data Hazard prevention technique</a></li><li><a href="#branch-hazard-prevention-branch-prediction" class="table-of-contents__link toc-highlight">Branch Hazard prevention: branch prediction</a></li><li><a href="#code-optimization-techniques" class="table-of-contents__link toc-highlight">Code Optimization techniques</a></li><li><a href="#can-the-programmer-help-the-compiler-optimizer-in-some-way" class="table-of-contents__link toc-highlight">Can the programmer help the compiler optimizer in some way?</a></li><li><a href="#process" class="table-of-contents__link toc-highlight">Process</a><ul><li><a href="#definition" class="table-of-contents__link toc-highlight">Definition</a></li><li><a href="#pcb-process-control-block" class="table-of-contents__link toc-highlight">PCB: Process Control Block</a></li><li><a href="#process-states" class="table-of-contents__link toc-highlight">Process states</a></li></ul></li><li><a href="#threads-within-a-single-process" class="table-of-contents__link toc-highlight">Threads (within a single process)</a><ul><li><a href="#definition-1" class="table-of-contents__link toc-highlight">Definition</a></li><li><a href="#thread-context" class="table-of-contents__link toc-highlight">Thread Context</a></li><li><a href="#the-thread-memory-model" class="table-of-contents__link toc-highlight">The Thread Memory Model</a></li><li><a href="#summary-race-condition-mutex-semaphore-deadlocks" class="table-of-contents__link toc-highlight">Summary: race condition, mutex, semaphore, deadlocks</a></li></ul></li><li><a href="#the-scheduler" class="table-of-contents__link toc-highlight">The scheduler</a><ul><li><a href="#definition-2" class="table-of-contents__link toc-highlight">Definition</a></li><li><a href="#scheduler-data-structures" class="table-of-contents__link toc-highlight">Scheduler data structures</a></li><li><a href="#fixed-vs-dynamic-task-priorities" class="table-of-contents__link toc-highlight">Fixed vs Dynamic task priorities</a></li></ul></li><li><a href="#task-interaction" class="table-of-contents__link toc-highlight">Task interaction</a></li><li><a href="#race-condition" class="table-of-contents__link toc-highlight"><strong>Race condition:</strong></a><ul><li><a href="#definition-3" class="table-of-contents__link toc-highlight">Definition:</a></li><li><a href="#a-situation-where-the-outcome-of-a-program-depends-on-the-order-in-which-instructions-are-executed" class="table-of-contents__link toc-highlight">A situation where the outcome of a program depends on the order in which instructions are executed.</a></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example:</a></li></ul></li><li><a href="#mutual-exclusion" class="table-of-contents__link toc-highlight"><strong>Mutual exclusion</strong></a><ul><li><a href="#definition-4" class="table-of-contents__link toc-highlight">Definition</a></li><li><a href="#steps-involved-in-mutual-exclusion" class="table-of-contents__link toc-highlight">Steps involved in mutual exclusion:</a></li><li><a href="#conditions-for-a-good-mutual-exclusion-mechanism" class="table-of-contents__link toc-highlight">Conditions for a good mutual exclusion mechanism:</a></li><li><a href="#hardware-solution" class="table-of-contents__link toc-highlight">Hardware solution</a></li></ul></li><li><a href="#software-solution" class="table-of-contents__link toc-highlight">Software solution</a><ul><li><a href="#petersons-algorithm-a-classic-algorithm-that-uses-two-flags-and-a-turn-variable-to-ensure-mutual-exclusion" class="table-of-contents__link toc-highlight"><strong>Peterson&#39;s Algorithm:</strong> A classic algorithm that uses two flags and a turn variable to ensure mutual exclusion.</a></li><li><a href="#semaphores-semaphores-are-integer-variables-that-are-used-to-control-access-to-shared-resources-they-have-two-operations" class="table-of-contents__link toc-highlight">Semaphores: Semaphores are integer variables that are used to control access to shared resources. They have two operations:</a></li><li><a href="#monitors-and-condition-synchronization" class="table-of-contents__link toc-highlight">Monitors and Condition Synchronization:</a></li><li><a href="#message-passing-communication" class="table-of-contents__link toc-highlight">Message Passing Communication</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary:</a></li><li><a href="#deadlocks" class="table-of-contents__link toc-highlight"><strong>deadlocks</strong></a><ul><li><a href="#definition-a-situation-where-a-set-of-processes-are-waiting-for-each-other-to-release-resources-causing-none-of-them-to-make-progress" class="table-of-contents__link toc-highlight">Definition: A situation where a set of processes are waiting for each other to release resources, causing none of them to make progress.</a></li><li><a href="#conditions-for-deadlock" class="table-of-contents__link toc-highlight">Conditions for deadlock:</a></li><li><a href="#consequences-of-deadlock" class="table-of-contents__link toc-highlight">Consequences of deadlock:</a></li></ul></li><li><a href="#deadlock-prevention" class="table-of-contents__link toc-highlight">Deadlock Prevention:</a><ul><li><a href="#mutual-exclusion-allow-multiple-processes-to-use-a-resource-concurrently-if-possible" class="table-of-contents__link toc-highlight">Mutual Exclusion: Allow multiple processes to use a resource concurrently (if possible).</a></li><li><a href="#hold-and-wait" class="table-of-contents__link toc-highlight">Hold and Wait:</a></li><li><a href="#non-preemption-implement-a-mechanism-to-take-away-resources-from-processes" class="table-of-contents__link toc-highlight">Non Preemption: Implement a mechanism to take away resources from processes.</a></li><li><a href="#circular-wait-assign-an-order-to-resources-and-require-processes-to-request-them-in-that-order" class="table-of-contents__link toc-highlight">Circular Wait: Assign an order to resources and require processes to request them in that order.</a></li><li><a href="#challenges" class="table-of-contents__link toc-highlight">Challenges:</a></li></ul></li><li><a href="#trade-off" class="table-of-contents__link toc-highlight">Trade-off</a></li><li><a href="#bankers-algorithm" class="table-of-contents__link toc-highlight"><strong>Banker’s algorithm</strong></a><ul><li><a href="#how-it-works" class="table-of-contents__link toc-highlight">How it works:</a></li></ul></li><li><a href="#starvation" class="table-of-contents__link toc-highlight">Starvation</a><ul><li><a href="#starvation-a-situation-where-a-process-is-unable-to-access-a-shared-resource-indefinitely" class="table-of-contents__link toc-highlight">Starvation: A situation where a process is unable to access a shared resource indefinitely.</a></li><li><a href="#relationship-to-deadlock" class="table-of-contents__link toc-highlight">Relationship to Deadlock:</a></li><li><a href="#causes-of-starvation" class="table-of-contents__link toc-highlight">Causes of Starvation:</a></li><li><a href="#prevention" class="table-of-contents__link toc-highlight">Prevention:</a></li><li><a href="#examples-algorithm" class="table-of-contents__link toc-highlight">Example&#39;s algorithm</a></li><li><a href="#this-mutual-exclusion-algorithm-ensures-that-both-processes-have-an-equal-chance-to-enter-the-critical-section-preventing-starvationindefinite-wait-indefinite-postponement-starvation" class="table-of-contents__link toc-highlight">This mutual exclusion algorithm ensures that both processes have an equal chance to enter the critical section, preventing starvation.Indefinite wait, indefinite postponement, starvation</a></li></ul></li><li><a href="#real-time-system-definition" class="table-of-contents__link toc-highlight">Real-time system definition:</a><ul><li><a href="#real-time-operating-system" class="table-of-contents__link toc-highlight">Real time operating system</a></li><li><a href="#fixed-and-variable-priorities-in-real-time-scheduling" class="table-of-contents__link toc-highlight">Fixed and variable priorities in real time scheduling</a></li><li><a href="#critical-instant" class="table-of-contents__link toc-highlight">Critical instant</a></li><li><a href="#critical-instant-theorem" class="table-of-contents__link toc-highlight">Critical instant theorem</a></li><li><a href="#rate-monotonic-priority-assignment" class="table-of-contents__link toc-highlight">Rate Monotonic priority assignment</a></li><li><a href="#optimality-for-rm" class="table-of-contents__link toc-highlight">Optimality for RM</a></li><li><a href="#earliest-deadline-first" class="table-of-contents__link toc-highlight">Earliest Deadline First</a></li><li><a href="#schedulability-analysis" class="table-of-contents__link toc-highlight">Schedulability analysis</a></li><li><a href="#least-upperbound-ulub" class="table-of-contents__link toc-highlight">Least UpperBound (ULUB)</a></li><li><a href="#edf-and-schedulability" class="table-of-contents__link toc-highlight">EDF and schedulability</a></li><li><a href="#protecting-critical-sections-in-kernel-threads" class="table-of-contents__link toc-highlight">Protecting critical sections in kernel threads</a></li><li><a href="#preempt_rt-patch" class="table-of-contents__link toc-highlight">PREEMPT_RT patch</a></li><li><a href="#priority-inheritance-for-in-kernel-spinlocks-and-semaphores" class="table-of-contents__link toc-highlight">Priority inheritance for in kernel spinlocks and semaphores</a></li><li><a href="#pre-emptible-interrupt-handlers" class="table-of-contents__link toc-highlight">Pre-emptible interrupt handlers</a></li><li><a href="#3-保护内核线程中的关键部分" class="table-of-contents__link toc-highlight"><strong>3. 保护内核线程中的关键部分</strong></a></li><li><a href="#4-preempt_rt补丁的功能" class="table-of-contents__link toc-highlight"><strong>4. PREEMPT_RT补丁的功能</strong></a></li><li><a href="#总结" class="table-of-contents__link toc-highlight"><strong>总结</strong></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Tutorial</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://twitter.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
