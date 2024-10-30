@@ -27,6 +27,7 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   max-width: 1200px;
+  padding: 0 1rem;
 }
 .bannerContent {
   margin: 1rem 1rem;
@@ -38,6 +39,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 1200px;
+  padding: 0 1rem;
 }
 
 .section {
@@ -55,4 +57,20 @@
 }
 .paragraph {
   margin: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .sectionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bannerContent,
+  .sectionContent {
+    margin: 0.5rem;
+    max-width: 100%;
+  }
+
+  .section {
+    padding: 0.75rem;
+  }
 }
