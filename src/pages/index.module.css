@@ -21,3 +21,38 @@
   align-items: center;
   justify-content: center;
 }
+.bannerGrid {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+}
+.bannerContent {
+  margin: 1rem 1rem;
+  max-width: 1000px;
+}
+.sectionGrid {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+}
+
+.section {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.sectionContent {
+  margin: 1rem 1rem;
+  max-width: 500px;
+}
+.sectionContent p {
+  text-align: left;
+}
+.paragraph {
+  margin: 1rem 0;
+}
