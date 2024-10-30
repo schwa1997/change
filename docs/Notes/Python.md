@@ -1,3 +1,9 @@
+---
+sidebar_position: 5
+title: Python
+---
+*Python fundamentals, Data Science, Data Engineering*
+
 ## Index
 | Section | Link | Key Points |
 |---------|------|--------|

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 6
 title: React
 ---
-# React
+*React fundamentals, Components, State Management*
 ## Index
 
 | Topic | React | Angular |

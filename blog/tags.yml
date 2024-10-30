@@ -1,11 +1,25 @@
 
-fitness:
-  label: Fitness
-  permalink: /fitness
-  description: Fitness tag description
+Health:
+  label: Health
+  permalink: /health
+  description: Health tag description
+
+Workout:
+  label: Workout
+  permalink: /workout
+  description: Workout tag description
+
+Diet:
+  label: Diet
+  permalink: /diet
+  description: Diet tag description
 
 Time management:
-  label: Efficiency
+  label: Time Management
   permalink: /efficiency
   description: Planning/Time Management
 
+Feminism:
+  label: Feminism
+  permalink: /feminism
+  description: Feminism tag description

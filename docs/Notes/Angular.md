@@ -1,4 +1,10 @@
-# Angular Mastery Roadmap
+---
+sidebar_position: 1
+title: Angular
+---
+
+*Front-end Angular framework*
+
 ## Index
 | Section | Link | Key Points |
 |---------|------|------------|

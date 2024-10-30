@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+title: CSS
+---
+*CSS fundamentals and components, Tailwind CSS*
+
 ## Index
 | Section | Link | Key Points |
 |---------|------|--------|
