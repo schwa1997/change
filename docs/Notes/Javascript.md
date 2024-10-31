@@ -13,6 +13,7 @@ title: Javascript
 |  Numbers and Operators | [Numbers and Operators](#numbers-and-operators) | `strToNum` `parseInt` `parseFloat`|
 |  Strings | [Strings](#strings) | `.toLowerCase()` `${name}`|
 |  Arrays⭐ | [Arrays](#arrays) | `map()` `filter()` `reduce()`|
+|  Building Blocks | [Building Blocks](#building-blocks) | `conditions` `loops` `switch` `?:`|
 |  Objects | [Objects](#objects) | |
 |  Asynchronous JavaScript | [Asynchronous JavaScript](#asynchronous-javascript) |  |
 |  TypeScript | [TypeScript](#typescript) |  |
@@ -264,7 +265,7 @@ function processText(text) {
     return words.join(" ");
 }
 
-// 4. 如果需要多次替换，一次性完成而不是逐步替换
+// 4. 如果需要多次替换，一次性���成而不是逐步替换
 const text = "Hello World";
 // 不好的做法 ❌
 let newText = text.replace("Hello", "Hi");
@@ -558,6 +559,433 @@ const summary = transactions.reduce((result, t) => {
 
 
 [🔝 Back to Top](#index)
+
+## Building Blocks
+### Conditionals
+#### 1. Conditional Statements
+##### if...else
+```javascript
+// Basic if
+if (condition) {
+    // code
+}
+
+// if...else
+if (condition) {
+    // code when true
+} else {
+    // code when false
+}
+
+// if...else if...else
+if (condition1) {
+    // code for condition1
+} else if (condition2) {
+    // code for condition2
+} else {
+    // default code
+}
+```
+
+##### Ternary Operator
+```javascript
+// condition ? valueIfTrue : valueIfFalse
+const status = age >= 18 ? 'adult' : 'minor';
+```
+
+##### switch
+```javascript
+switch (expression) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // default code
+        break;
+}
+```
+
+#### 2. Logical Operators
+```javascript
+// AND (&&) - returns first falsy value or last truthy value
+const result1 = true && 'Hello' && 1;  // 1
+const result2 = true && false && 'Hello';  // false
+
+// OR (||) - returns first truthy value or last falsy value
+const result3 = false || 0 || 'Hello';  // 'Hello'
+const result4 = false || 0 || '';  // ''
+
+// NOT (!) - inverts boolean value
+const result5 = !true;  // false
+
+// Nullish coalescing (??) - returns right side only if left is null/undefined
+const result6 = null ?? 'default';  // 'default'
+const result7 = 0 ?? 'default';     // 0
+```
+
+#### 3. Short-Circuit Evaluation
+```javascript
+// Common patterns
+const user = {
+    name: 'John'
+};
+
+// Safe property access
+const userCity = user && user.address && user.address.city;
+
+// Default values
+const greeting = user.customGreeting || 'Hello';
+
+// Conditional execution
+user.isAdmin && showAdminPanel();
+```
+
+#### Best Practices
+1. Use early returns to reduce nesting
+```javascript
+// ❌ Deeply nested
+function processUser(user) {
+    if (user) {
+        if (user.isActive) {
+            if (user.hasPermission) {
+                // process user
+            }
+        }
+    }
+}
+
+// ✅ Early returns
+function processUser(user) {
+    if (!user) return;
+    if (!user.isActive) return;
+    if (!user.hasPermission) return;
+    // process user
+}
+```
+
+2. Prefer ternary for simple conditions
+```javascript
+// ❌ Verbose if...else
+let status;
+if (age >= 18) {
+    status = 'adult';
+} else {
+    status = 'minor';
+}
+
+// ✅ Concise ternary
+const status = age >= 18 ? 'adult' : 'minor';
+```
+
+3. Use switch for multiple conditions with the same variable
+```javascript
+// ❌ Multiple if...else
+if (role === 'admin') {
+    // admin logic
+} else if (role === 'manager') {
+    // manager logic
+} else if (role === 'user') {
+    // user logic
+}
+
+// ✅ Switch statement
+switch (role) {
+    case 'admin':
+        // admin logic
+        break;
+    case 'manager':
+        // manager logic
+        break;
+    case 'user':
+        // user logic
+        break;
+    default:
+        // default logic
+}
+```
+
+[🔝 Back to Top](#index)
+### Looping code
+#### 1. For Loops
+```javascript
+// Standard for loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // 0, 1, 2, 3, 4
+}
+
+// for...of - iterating over array elements
+const fruits = ['apple', 'banana', 'orange'];
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+
+// for...in - iterating over object properties
+const user = { name: 'John', age: 30 };
+for (const key in user) {
+    console.log(`${key}: ${user[key]}`);
+}
+```
+
+#### 2. Collection Methods
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// map() - transform each element
+const doubled = numbers.map(num => num * 2);  // [2, 4, 6, 8, 10]
+
+// filter() - select elements that match condition
+const evens = numbers.filter(num => num % 2 === 0);  // [2, 4]
+
+// forEach() - execute function for each element
+numbers.forEach(num => console.log(num));
+
+// some() - check if any element matches condition
+const hasEven = numbers.some(num => num % 2 === 0);  // true
+
+// every() - check if all elements match condition
+const allPositive = numbers.every(num => num > 0);  // true
+```
+
+#### 3. While Loops
+```javascript
+// while loop - executes while condition is true
+let count = 0;
+while (count < 3) {
+    console.log(count);
+    count++;
+}
+
+// do...while - executes at least once
+let num = 0;
+do {
+    console.log(num);
+    num++;
+} while (num < 3);
+
+// break and continue
+let i = 0;
+while (true) {
+    if (i >= 3) break;  // exit loop
+    if (i === 1) {
+        i++;
+        continue;  // skip to next iteration
+    }
+    console.log(i);
+    i++;
+}
+```
+
+#### Best Practices
+1. Choose the right loop for the task
+```javascript
+// ❌ Using for loop for array operations
+const numbers = [1, 2, 3, 4, 5];
+const doubled = [];
+for (let i = 0; i < numbers.length; i++) {
+    doubled.push(numbers[i] * 2);
+}
+
+// ✅ Using array methods
+const doubled = numbers.map(num => num * 2);
+```
+
+2. Avoid modifying loop variables inside the loop
+```javascript
+// ❌ Modifying loop variable
+for (let i = 0; i < 3; i++) {
+    if (someCondition) {
+        i--;  // Dangerous!
+    }
+}
+
+// ✅ Use while loop for variable conditions
+let i = 0;
+while (i < 3) {
+    if (someCondition) {
+        continue;
+    }
+    i++;
+}
+```
+
+3. Use appropriate array methods instead of loops when possible
+```javascript
+const users = [
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 30 }
+];
+
+// ❌ Using loops
+const names = [];
+for (const user of users) {
+    if (user.age > 25) {
+        names.push(user.name);
+    }
+}
+
+// ✅ Using chain of array methods
+const names = users
+    .filter(user => user.age > 25)
+    .map(user => user.name);
+```
+
+[🔝 Back to Top](#index)
+
+
+### Functions — reusable blocks of code
+#### 1. Function Declarations
+```javascript
+// Basic function declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function with default parameters
+function multiply(a, b = 1) {
+    return a * b;
+}
+
+// Rest parameters
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+// Method in an object
+const calculator = {
+    add(a, b) {  // Shorthand method syntax
+        return a + b;
+    },
+    subtract: function(a, b) {  // Traditional method syntax
+        return a - b;
+    }
+};
+```
+
+#### 2. Function Expressions & Arrow Functions
+```javascript
+// Function expression
+const greet = function(name) {
+    return `Hello, ${name}!`;
+};
+
+// Arrow function - concise syntax
+const multiply = (a, b) => a * b;
+
+// Arrow function with block
+const processUser = user => {
+    if (!user.name) return false;
+    console.log(user.name);
+    return true;
+};
+
+// IIFE (Immediately Invoked Function Expression)
+(function() {
+    console.log('Executed immediately');
+})();
+
+// Common use cases for arrow functions
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);
+const filtered = numbers.filter(n => n > 1);
+```
+
+#### 3. Function Scope and Closures
+```javascript
+// Lexical scope
+function outer() {
+    const message = 'Hello';
+    
+    function inner() {
+        console.log(message);  // Can access outer variables
+    }
+    
+    return inner;
+}
+
+// Closure example
+function createCounter() {
+    let count = 0;
+    return {
+        increment() { return ++count; },
+        decrement() { return --count; },
+        getCount() { return count; }
+    };
+}
+
+const counter = createCounter();
+counter.increment();  // 1
+counter.increment();  // 2
+counter.decrement();  // 1
+```
+
+#### Best Practices
+1. Use arrow functions for callbacks and methods that don't need `this`
+```javascript
+// ❌ Traditional callback
+element.addEventListener('click', function(e) {
+    console.log(e.target);
+});
+
+// ✅ Arrow function callback
+element.addEventListener('click', e => {
+    console.log(e.target);
+});
+```
+
+2. Use default parameters instead of conditionals
+```javascript
+// ❌ Checking parameters manually
+function greet(name) {
+    name = name || 'Guest';
+    return `Hello, ${name}!`;
+}
+
+// ✅ Using default parameters
+function greet(name = 'Guest') {
+    return `Hello, ${name}!`;
+}
+```
+
+3. Use early returns for cleaner code
+```javascript
+// ❌ Nested conditionals
+function processUser(user) {
+    if (user) {
+        if (user.isActive) {
+            return user.name;
+        }
+    }
+    return null;
+}
+
+// ✅ Early returns
+function processUser(user) {
+    if (!user) return null;
+    if (!user.isActive) return null;
+    return user.name;
+}
+```
+
+4. Use pure functions when possible
+```javascript
+// ❌ Impure function (side effects)
+let total = 0;
+function addToTotal(value) {
+    total += value;
+    return total;
+}
+
+// ✅ Pure function
+function add(a, b) {
+    return a + b;
+}
+```
+
+[🔝 Back to Top](#index)
+
 ## Objects
 [🔝 Back to Top](#index)
 ## Asynchronous JavaScript
