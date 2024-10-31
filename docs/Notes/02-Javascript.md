@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Javascript
 ---
 *JavaScript fundamentals, TypeScript, Frameworks*
@@ -31,7 +31,7 @@ title: Javascript
 - Adds type safety and better tooling
 - Considered best practice for large applications
 
-### Popular Frameworks
+### Applications
 #### Front-end
 - React - Components with unified HTML/CSS/TS files
 - Vue - Similar component structure to React
@@ -45,7 +45,7 @@ title: Javascript
 [🔝 Back to Top](#index)
 
 ## Variables
-### WHAT
+### `const` `let` `var`
 - `const` (recommended default)
   - Block-scoped, immutable reference
   - Can modify properties of objects but not reassign
@@ -55,11 +55,11 @@ title: Javascript
 - `var` (avoid)
   - Function-scoped, hoisted
   - Legacy keyword, not recommended
-### HOW?
+### Use `const` 
 1. Use `const` by default
 2. Use `let` only when reassignment is needed
 3. Avoid `var`
-### WHY?
+
 ```javascript
 const greeting = "Hello World";
 console.log(greeting);
@@ -92,7 +92,7 @@ user = {};  // error! cannot reassign so make sure the const is safe
 
 [🔝 Back to Top](#index)
 ## Numbers and Operators
-### WHAT
+### Definition
 - All numbers in JavaScript are 64-bit floating-point (IEEE 754)
 - Special values: `Infinity`, `-Infinity`, `NaN`
 - `BigInt` for integers larger than 2^53
@@ -103,7 +103,7 @@ user = {};  // error! cannot reassign so make sure the const is safe
   - Comparison: `==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`
   - Logical: `&&`, `||`, `!`, `??` (nullish coalescing)
 
-### HOW?
+### Examples
 ```javascript
 // Number basics, when you give the value, i
 const integer = 42; //Despite different ways of writing numbers, they are all stored as the same type (number) internally, except for BigInt
@@ -132,7 +132,7 @@ Number.isNaN(NaN);                // true
 [🔝 Back to Top](#index)
 
 ## Strings
-### WHAT
+### Definition
 - Immutable sequences of characters
 - Can use single (`'`) or double (`"`) quotes, or backticks (`` ` ``) for template literals
 - Unicode support with UTF-16 encoding
@@ -147,7 +147,7 @@ Number.isNaN(NaN);                // true
   - `.includes()`, `.startsWith()`, `.endsWith()`
   - `.padStart()`, `.padEnd()`
 
-### HOW?
+### Application
 ```javascript
 // String creation
 const single = 'Hello';
@@ -186,18 +186,8 @@ const special = 'Line 1\nLine 2\tTabbed';  // Newline and tab
 const path = 'C:\\Program Files';          // Escaped backslash
 ```
 
-### WHY?
-- Strings are fundamental for:
-  - Text processing
-  - User input/output
-  - Data formatting
-  - URL manipulation
-  - HTML/JSON handling
-- Immutability ensures predictable behavior
-- Template literals make string interpolation clean and readable
-- Rich set of methods simplifies common text operations
+### Best Practices
 
-### BEST PRACTICES
 1. Use template literals for string interpolation instead of concatenation
 
 ```javascript
@@ -343,7 +333,7 @@ for (let item of items) {
     - Use `Array.from()` for precise emoji handling
     - Use `.normalize()` for handling special characters like accents
     - Use Unicode flags in regular expressions (`/u`)
-    - example
+    5. Use `includes()` instead of `indexOf() !== -1` for existence checks
 
 ```javascript
 // 1. 中文字符是比较"简单"的 Unicode 字符
@@ -365,14 +355,10 @@ console.log(Array.from(mixed));     // ["你", "好", "👋", "世", "界"]
 console.log("你".charCodeAt(0));    // 20320 (在 Unicode 的 CJK 统一表意文字范围内)
 ```
 
-
-
-5. Use `includes()` instead of `indexOf() !== -1` for existence checks
-
 [🔝 Back to Top](#index)
 
 ## Arrays
-### WHAT
+### Definition
 - Ordered, zero-indexed collections of any type of values
 - Dynamic length and heterogeneous content
 - Key methods:
@@ -383,7 +369,7 @@ console.log("你".charCodeAt(0));    // 20320 (在 Unicode 的 CJK 统一表意�
   - Creating: `slice()`, `concat()`, `from()`, `Array.of()`
   - Other: `join()`, `flat()`, `flatMap()`
 
-### HOW?
+### Examples
 ```javascript
 // Creating arrays
 const arr1 = [1, 2, 3];
@@ -422,7 +408,7 @@ const flattened = [1, [2, 3], [4]].flat();     // [1, 2, 3, 4]
 
 [🔝 Back to Top](#index)
 
-### BEST PRACTICES
+### Best Practices
 1. Use modern array methods instead of loops
 
 ```javascript
@@ -459,8 +445,6 @@ const numbers = [1, 2, 3];
 Math.max(...numbers);
 ```
 
-[🔝 Back to Top](#index)
-
 3. Use destructuring for array operations
 
 ```javascript
@@ -480,8 +464,6 @@ function getCoords() {
 const [lat, lng] = getCoords();
 ```
 
-[🔝 Back to Top](#index)
-
 
 4. Consider immutability when working with arrays
 
@@ -497,7 +479,7 @@ const added = [...numbers, 4];
 const reversed = [...numbers].reverse();
 ```
 
-5. Use reduce for complex array transformations
+#### 5. Use reduce for complex array transformations
 
 ```javascript
 // 1. Grouping objects by property
@@ -554,8 +536,6 @@ const summary = transactions.reduce((result, t) => {
 }, { total: 0 });
 // Result: { total: -125, debit: 175, credit: 50 }
 ```
-
-
 
 
 [🔝 Back to Top](#index)

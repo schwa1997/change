@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 title: CSS
 ---
 *CSS fundamentals and components, Tailwind CSS*
