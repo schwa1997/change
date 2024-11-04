@@ -2,7 +2,7 @@
 slug: 科学饮食
 title: 2024年碳基生物怎么吃？
 authors: [schwa1997]
-tags: [fitness]
+tags: [Health,Diet]
 ---
 
 ## 引言
