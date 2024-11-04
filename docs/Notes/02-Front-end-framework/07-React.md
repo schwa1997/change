@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 2
 title: React
 ---
 *React fundamentals, Components, State Management*

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 99
+sidebar_position: 4
 title: Python
 ---
 *Python fundamentals, Data Science, Data Engineering*
