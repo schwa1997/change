@@ -2,13 +2,13 @@
 slug: from-burnout-to-breakthrough
 title: From Burnout to Breakthrough
 authors: [schwa1997]
-tags: [Health,TimeManagement]
+tags: [Health,时间管理]
 ---
 
 # From Burnout to Breakthrough: A P-Type's Journey Through October's Flames
 
 ## 1. The Journey to Burnout
-As part of my quest for better organization, I recently began implementing [weekly planning](/blog/2024-10-30-planner). Initially, this structured approach felt promising. However, as someone with a more spontaneous nature (a P-type personality in MBTI terms), I found myself struggling with rigid schedules. When I inevitably deviated from these plans, I compensated by throwing myself even more intensely into work.
+As part of my quest for better organization, I recently began implementing [weekly planning](/blog/2024-10-30-planner.md). Initially, this structured approach felt promising. However, as someone with a more spontaneous nature (a P-type personality in MBTI terms), I found myself struggling with rigid schedules. When I inevitably deviated from these plans, I compensated by throwing myself even more intensely into work.
 
 ![Burnout Cycle](./burnout.png)
 
