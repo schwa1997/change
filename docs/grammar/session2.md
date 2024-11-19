@@ -52,10 +52,6 @@ title: 写作-1-主题句，支撑句，论据
    - Air quality index readings regularly reach "hazardous" levels
    ```
 
-
-
-
-
 ## 3. 段落连贯性与过渡
 
 ### 保持段落连贯性的方法
