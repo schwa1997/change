@@ -60,7 +60,7 @@ const config: Config = {
           // blogPostComponent: '@theme/BlogPostPage',
           blogTagsListComponent: '@theme/BlogTagsListPage',
           blogTagsPostsComponent: '@theme/BlogTagsPostsPage',
-          remarkPlugins: [require('./my-remark-plugin')],
+          // remarkPlugins: [require('./my-remark-plugin')],
           rehypePlugins: [],
           beforeDefaultRemarkPlugins: [],
           beforeDefaultRehypePlugins: [],
