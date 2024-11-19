@@ -1,8 +1,8 @@
 ---
 slug: resume
-title: Huimin Chen
+title: Resume-HuiminChen
 ---
-  
+## Huimin Chen
 Full-Stack Developer 👨‍💻  
 📍 Europe, Flexible to mobility | 📧hermioneschwa@gmail.com | 📞 +39 3455255560 | [LinkedIn](https://www.linkedin.com/in/chenhuimin/) | [GitHub](https://github.com/schwa1997)  | [Portfolio](https://portfolio-website-lilac-nu-18.vercel.app/) | [Blogs](https://change-ten.vercel.app/)
 
