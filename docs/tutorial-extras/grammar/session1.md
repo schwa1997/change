@@ -102,6 +102,39 @@ title: 语法-1-句子结构，从句
 2. I don't know where she lives. (作宾语) 
 3. The truth is that he failed the exam. (作表语)
 
+
+例子：使纸质书特别的是它们可触摸的感觉。
+
+———使纸质书特别的——— is their tangible feeling.
+
+- What (主语）makes（动词） physical books special (表语) is their tangible feeling.
+
+- 两个完整的句子：
+- Physical books have better preservation value. 
+-This is widely acknowledged.
+
+正确答案：
+（That physical books have better preservation value ）is widely acknowledged.
+That 是后面is widely acknowledged的先行词，是主语
+
+That 引导的从句作主语，is widely acknowledged 作谓语
+
+练习：
+E-books are convenient for travel. 
+
+Everyone knows （this fact 事实）.
+= Everyone knows （E-books are convenient for travel.）
+
+=Everyone knows （THAT+句子）
+that 可以省略 ，  Everyone knows （E-books are convenient for travel）。
+Everything knows (SOMETHING/THAT+ 句子)
+
+Everyone knows E-books are convenient for travel.
+Everyone knows that E-books are convenient for travel.
+
+
+
+
 ### 状语从句 (Adverb Clause)
 状语从句用来修饰主句的谓语动词，说明时间、地点、原因、目的、结果等。
 

@@ -64,6 +64,61 @@ title: 写作-2-大纲，论证文
 
 中国和加拿大在核心价值观上存在显著差异，这体现在家庭价值观和个人价值观两个主要方面。
 
+```
+简单表达：
+
+when it comes to 
+
+```
+
+
+```
+知识点：  
+
+```
+
+## 修改练习
+
+China, an eastern nation with a long history and rich cultural tradition which has significantly different than Canada. Regardless of family values and personal values. Personally, I would argue that the core values are different in China and Canada. 
+
+修改之后：
+China, an eastern nation with a long history and rich cultural tradition, 
+differs significantly from Canada in terms of family values and personal values.I would argue that these two countries 
+have fundamentally different core values.
+
+修改意见：
+这篇作文旨在。。。
+intends to discuss/analyze/argue
+
+-This essay intends to discuss the significant differences in family values and personal values between China and Canada.
+
+## 修改之后
+China, an eastern nation with a long history and rich cultural tradition, 
+differs significantly from Canada in terms of family values and personal values. This essay intends to discuss the significant differences in these two aspects between China and Canada.
+
+- in terms of 
+- 句子完整，have 后面加名词
+
+1. china have different values from canada in two aspects.
+```
+
+
+have 后面加名词 values/advantages
+when it comes to two aspects of family value and personal value, the core vulues have sigginifically difference from china and canada,
+
+修改have + difference 名词
+
+1. china and canada have sigginifically different 
+ways of thinkings/choices in two aspects.
+
+2. when it comes to two aspects of family value and personal value, 
+China and Canada have significant difference in these two aspects.
+
+HAVE + 名词 
+
+
+
+```
 #### 论据一：中国的家庭价值观
 
 1. 孝道文化
@@ -169,10 +224,143 @@ title: 写作-2-大纲，论证文
 
 
 
+
+1. 中国的家庭价值观
+   - 强调孝道
+     * 子女赡养老人的责任
+     * 多代同堂的居住方式
+     * 家庭共同决策模式
+   
+   - 集体家庭利益
+     * 为家庭牺牲个人目标
+     * 重视家族声誉
+     * 注重扩展家庭关系
+
+2. 加拿大的家庭价值观
+   - 家庭中的个人独立性
+     * 早期独立于父母
+     * 个人决策为主
+     * 核心家庭为重点
+   
+   - 平衡家庭与个人生活
+     * 专业养老服务
+     * 分开居住安排
+     * 尊重个人生活方式
+
+1. 中国的个人价值观
+   - 集体和谐
+     * 群体成功高于个人成就
+     * 重视社会认同
+     * 注重面子文化
+   
+   - 等级关系
+     * 尊重权威
+     * 年龄基础的社会结构
+     * 社会角色责任
+
+2. 加拿大的个人价值观
+   - 个人权利与自由
+     * 个人隐私
+     * 自我表达
+     * 个人成就
+   
+   - 平等关系
+     * 扁平化社会等级
+     * 直接沟通方式
+     * 尊重个人边界
+
+
+
+
+
+
 ## 实操：reading ebooks is better than psychic books.
 
 #### 主论点（Thesis Statement）
 电子书比纸质书更适合现代阅读需求，这体现在便携性和功能性两个主要方面。
+
+----------------------------------------
+第一段：
+#### 论点：
+
+考虑到收藏价值和阅读体验，我认为纸质书比电子书更好。
+
+#### 论点一：纸质书比电子书更有收藏价值
+
+1. have more collection value than e-books
+
+```
+- 词性的问题，collection value 收藏价值 而不是collective value
+- 实体收藏的持久性 Durability/Duration of physical book
+- 想一些比较fancy的母语表达，然后往英文的方向靠
+- 2. 简单表达升级：Physical books have greater collection value than e-books；
+- 3. 加一个状语从句/短语：(可以背诵的模板，这次一定要用一个这个)
+- 3.1 when it comes to collection value, 
+physical books have greater collection value than e-books;
+- 3.2 In terms of collection value, 
+physical books have greater collection value than e-books;
+- 语法：
+when it comes to...., 状语从句，
+In terms of....,介词短语
+
+```
+1. 实体收藏的持久性
+   - 纸质书可以保存数百年
+   - 不受技术更新的影响（电子书不好，这点直接体现了和电子书的对比）
+   - 具有独特的历史价值
+
+```
+（在你的写作里面体现对立观点：
+1. 你的不好，我的好
+2. 虽然你的还可以，但是我的更好）
+```
+
+
+2. 艺术价值的体现
+   - 装帧设计的美感
+   - 纸张质地的触感
+   - 限量版收藏价值
+
+3. 对立观点的反驳
+   - 虽然电子书储存方便，但容易因技术淘汰而丢失
+   - 数字产品缺乏实体收藏的情感价值
+
+#### 论点二：纸质书比电子书提供更好的阅读体验
+```
+
+？significantly 副词
+
+实操：
+when it comes to...., 状语从句，
+In terms of....,介词短语
+
+when it comes to experience of reading, psycial books have siginifically greater （values/advantages） than e-books.
+
+问题：
+1. when it comes to 后面加名词
+2.  have 后面加名词 （values/advantages） 
+a is greater than b
+3. 
+
+
+```
+1. 传统阅读的自然感
+   - 纸质触感更亲切
+   - 翻页声带来阅读仪式感
+   - 不会产生电子产品的视觉疲劳
+
+2. 专注度的提升
+   - 无电子干扰和通知打断
+   - 更容易沉浸在阅读中
+   - 有助于深度思考和记忆
+
+3. 对立观点的反驳
+   - 尽管电子书有搜索等功能，但可能分散注意力
+   - 传统阅读体验更有利于长期记忆和理解
+
+
+----------------------------------------
+
 
 #### 论据一：电子书的便携性优于纸质书的传统优势
 1. 储存容量的优越性

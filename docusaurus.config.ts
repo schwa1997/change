@@ -16,7 +16,6 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'schwa1997', // Usually your GitHub org/user name.
   projectName: 'schwa1997.github.io', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   presets: [
@@ -24,7 +23,11 @@ const config: Config = {
       'classic',
       {
         docs: {
+          
           sidebarPath: './sidebars.ts',
+          sidebarCollapsed: true,
+          // Add this to enable the collapsible sidebar
+          sidebarCollapsible: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -53,6 +56,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     // Replace with your project's social card
     image: 'img/ai.jpg',
     navbar: {

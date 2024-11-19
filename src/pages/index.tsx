@@ -12,18 +12,19 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />"
     >
       <main>
-
         <div className="container">
         <div className={styles.bannerGrid}>
           <section className={styles.section}>
             <div className={styles.bannerContent}>
               <Heading as="h2">❓ 陈记CHANGE</Heading>
               <p className={styles.paragraph}>
-                "陈" (Chen) is my family name, representing my identity and heritage. Some people call me Chen.
+                "陈" (Chen) is my family name, representing my identity and heritage.
               </p>
               <p className={styles.paragraph}>
-                "记" (Ji) means record, notes and memories. Together "陈记" shares a similar pronunciation with "CHANGE",
-                symbolizing my journey of growth and progress.
+                "记" (Ji) means record, notes and memories in Chinese.
+              </p>
+              <p className={styles.paragraph}>
+                 Together "陈记" shares a similar pronunciation with "CHANGE".
               </p>
               <p className={styles.paragraph}>
                 "陈记"也有成绩的谐音，寓意取得更好的成绩。
@@ -31,7 +32,6 @@ export default function Home(): JSX.Element {
             </div>
           </section>
         </div>
-
           <div className={styles.sectionGrid}>
             <section className={styles.section}>
               <div className={styles.sectionContent}>
@@ -48,7 +48,6 @@ export default function Home(): JSX.Element {
                 </Link>
               </div>
             </section>
-
             <section className={styles.section}>
               <div className={styles.sectionContent}>
                 <Heading as="h2">✍️ My Blog</Heading>
