@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: 写作第二课：写句子
+sidebar_position: 3
+title: 写作-1-主题句，支撑句，论据
 ---
 
 ## 1. 主题句与中心思想
@@ -51,6 +51,10 @@ title: 写作第二课：写句子
    - Hospital admissions for respiratory issues increased by 25%
    - Air quality index readings regularly reach "hazardous" levels
    ```
+
+
+
+
 
 ## 3. 段落连贯性与过渡
 
@@ -124,3 +128,8 @@ title: 写作第二课：写句子
    - 确保每个句子都支持主题
 
 通过这个例子，我们可以看到如何运用前面学习的写作技巧来改进文章质量。
+
+
+
+
+
