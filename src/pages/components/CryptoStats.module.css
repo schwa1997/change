@@ -24,3 +24,39 @@
     font-weight: bold;
     color: var(--ifm-color-primary-darkest);
   }
+
+.tradeTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tableHeader {
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
+
+.tableHeader th {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.tableHeader th.rightAlign {
+  text-align: right;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--ifm-color-primary-lighter);
+}
+
+.tableRow:nth-child(even) {
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.tableCell {
+  padding: 0.5rem;
+}
+
+.rightAlign {
+  text-align: right;
+}
+  

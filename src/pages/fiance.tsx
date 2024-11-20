@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import CryptoStats from './components/CryptoStats';
 
 export default function Home(): JSX.Element {
-  const [edit, setEdit] = useState(false);
   const chartOptions = {
     chart: {
       type: 'bar'
@@ -90,8 +89,11 @@ export default function Home(): JSX.Element {
       data: [190.75, 38.15]
     }, {
       name: 'ETH',
-      data: [46.54, 7.01]
-    }]
+      data: [36.46, 7.29]
+    }, {
+        name: 'BTC',
+        data: [10.08, 6.72]
+      }]
   };
 
   return (
@@ -108,16 +110,15 @@ export default function Home(): JSX.Element {
             Track and visualize my cryptocurrency trading performance
             and investment journey.
           </p>
-          <CryptoStats />
+          
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}
           />
+          <CryptoStats />
         </div>
       </div>
-      <div>
-        <button onClick={() => setEdit(!edit)}>{edit ? 'Close' : 'Edit'}</button>
-      </div>
+      
     </Layout>
   );
 }
