@@ -1,0 +1,8 @@
+{
+  "label": "理财",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Alphbetic order of notes."
+  }
+}

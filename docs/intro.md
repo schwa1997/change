@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: Introduction
+title: Notebook
 ---
 
 ## 关于我

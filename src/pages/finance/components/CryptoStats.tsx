@@ -73,7 +73,21 @@ const CryptoStats: React.FC = () => {
         .reduce((sum, trade) => sum + (trade.returnRate || 0), 0) /
       trades.filter((trade) => trade.returnRate).length;
 
-    return { totalProfit, averageReturn };
+    const totalInvestment = trades
+      .filter((trade) => trade.type === "Buy")
+      .reduce((sum, trade) => sum + trade.amount, 0);
+
+    const totalValue = trades
+      .filter((trade) => trade.type === "Sell")
+      .reduce((sum, trade) => sum + trade.amount, 0);
+    const dayCount = trades.reduce((sum, trade) => sum + (trade.days || 0), 0);
+    return {
+      totalProfit,
+      averageReturn,
+      totalInvestment,
+      totalValue,
+      dayCount,
+    };
   };
 
   const stats = calculateStats();
@@ -82,6 +96,14 @@ const CryptoStats: React.FC = () => {
     <>
       <div className={styles.statsContainer}>
         <div className={styles.statCard}>
+          <h3>Total Investment</h3>
+          <p className={styles.value}>€{stats.totalInvestment.toFixed(2)}</p>
+        </div>
+        <div className={styles.statCard}>
+          <h3>Total Value</h3>
+          <p className={styles.value}>€{stats.totalValue.toFixed(2)}</p>
+        </div>
+        <div className={styles.statCard}>
           <h3>Total Profit</h3>
           <p className={styles.value}>€{stats.totalProfit.toFixed(2)}</p>
         </div>
@@ -89,8 +111,12 @@ const CryptoStats: React.FC = () => {
           <h3>Avg. Return Rate</h3>
           <p className={styles.value}>{stats.averageReturn.toFixed(2)}%</p>
         </div>
+        <div className={styles.statCard}>
+          <h3>Days Held</h3>
+          <p className={styles.value}>{stats.dayCount}</p>
+        </div>
       </div>
-      <div className={styles.statCard}>
+      <div>
         <h3>Trade History</h3>
         <table className={styles.tradeTable}>
           <thead>
@@ -98,32 +124,50 @@ const CryptoStats: React.FC = () => {
               <th className={styles.tableCell}>Date</th>
               <th className={styles.tableCell}>Asset</th>
               <th className={styles.tableCell}>Type</th>
-              <th className={`${styles.tableCell} ${styles.rightAlign}`}>Amount</th>
-              <th className={`${styles.tableCell} ${styles.rightAlign}`}>Return Rate</th>
-              <th className={`${styles.tableCell} ${styles.rightAlign}`}>Return</th>
-              <th className={`${styles.tableCell} ${styles.rightAlign}`}>Days</th>
+              <th className={`${styles.tableCell} ${styles.rightAlign}`}>
+                Amount
+              </th>
+              <th className={`${styles.tableCell} ${styles.rightAlign}`}>
+                Return Rate
+              </th>
+              <th className={`${styles.tableCell} ${styles.rightAlign}`}>
+                Return
+              </th>
+              <th className={`${styles.tableCell} ${styles.rightAlign}`}>
+                Days
+              </th>
             </tr>
           </thead>
           <tbody>
-            {trades.map((trade, index) => (
-              <tr key={index} className={styles.tableRow}>
-                <td className={styles.tableCell}>{trade.date}</td>
-                <td className={styles.tableCell}>{trade.asset}</td>
-                <td className={styles.tableCell}>{trade.type}</td>
-                <td className={`${styles.tableCell} ${styles.rightAlign}`}>
-                  €{trade.amount.toFixed(2)}
-                </td>
-                <td className={`${styles.tableCell} ${styles.rightAlign}`}>
-                  {trade.returnRate ? `${trade.returnRate.toFixed(2)}%` : "-"}
-                </td>
-                <td className={`${styles.tableCell} ${styles.rightAlign}`}>
-                  {trade.return ? `€${trade.return.toFixed(2)}` : "-"}
-                </td>
-                <td className={`${styles.tableCell} ${styles.rightAlign}`}>
-                  {trade.days || "-"}
-                </td>
-              </tr>
-            ))}
+            {trades
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime()
+              )
+              .map((trade, index) => (
+                <tr
+                  key={index}
+                  className={`${styles.tableRow} ${
+                    trade.type === "Sell" ? styles.sellRow : ""
+                  }`}
+                >
+                  <td className={styles.tableCell}>{trade.date}</td>
+                  <td className={styles.tableCell}>{trade.asset}</td>
+                  <td className={styles.tableCell}>{trade.type}</td>
+                  <td className={`${styles.tableCell} ${styles.rightAlign}`}>
+                    €{trade.amount.toFixed(2)}
+                  </td>
+                  <td className={`${styles.tableCell} ${styles.rightAlign}`}>
+                    {trade.returnRate ? `${trade.returnRate.toFixed(2)}%` : "-"}
+                  </td>
+                  <td className={`${styles.tableCell} ${styles.rightAlign}`}>
+                    {trade.return ? `€${trade.return.toFixed(2)}` : "-"}
+                  </td>
+                  <td className={`${styles.tableCell} ${styles.rightAlign}`}>
+                    {trade.days || "-"}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

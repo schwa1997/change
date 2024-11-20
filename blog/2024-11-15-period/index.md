@@ -75,3 +75,4 @@ While we cannot directly control hormone levels, we can take several steps to ma
 - Practice gentle exercise when needed
 
 Remember that every person's experience with menstruation is unique, and it's important to find management strategies that work best for you.
+

@@ -4,7 +4,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import CryptoStats from './components/CryptoStats';
 
-export default function Home(): JSX.Element {
+export default function FiancePage(): JSX.Element {
   const chartOptions = {
     chart: {
       type: 'bar'
@@ -97,7 +97,7 @@ export default function Home(): JSX.Element {
   };
 
   return (
-    <Layout title="Hello" description="Hello React Page">
+    <Layout title="Finance" description="Hello React Page">
       <div
         style={{
           padding: '20px',
@@ -115,7 +115,7 @@ export default function Home(): JSX.Element {
             highcharts={Highcharts}
             options={chartOptions}
           />
-          <CryptoStats />
+          <CryptoStats/>
         </div>
       </div>
       

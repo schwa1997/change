@@ -23,7 +23,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          
+          // docsTitle: 'Notebook',
           sidebarPath: './sidebars.ts',
           sidebarCollapsed: true,
           // Add this to enable the collapsible sidebar
@@ -32,6 +32,10 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
+        pages: {
+          include: ['**/*.{ts,tsx}'],
+          exclude: ['**/_*.{ts,tsx}'],
         },
         blog: {
           showReadingTime: true,
@@ -45,7 +49,7 @@ const config: Config = {
           blogListComponent: '@theme/BlogListPage',
           blogPostComponent: '@theme/BlogPostPage',
           editLocalizedFiles: false,
-          blogTitle: 'Blog title',
+          blogTitle: 'Blog',
           blogDescription: 'Blog',
           routeBasePath: 'blog',
           include: ['**/*.{md,mdx}'],
@@ -119,6 +123,7 @@ const config: Config = {
           label: 'Notebook',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/finance', label: 'Finance', position: 'left'},
         {
           href: 'https://github.com/schwa1997/schwa1997.github.io',
           label: 'GitHub',

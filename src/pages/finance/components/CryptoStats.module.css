@@ -1,28 +1,29 @@
 .statsContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
   }
   
   .statCard {
-    flex: 1;
     padding: 1rem;
     border-radius: 8px;
-    background-color: var(--ifm-color-primary-lightest);
+    background-color: #f5f5f5;
     text-align: center;
   }
   
   .statCard h3 {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--ifm-color-primary-darker);
+    color: #333;
   }
   
   .value {
     margin: 0.5rem 0 0;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--ifm-color-primary-darkest);
+    color: #000;
   }
 
 .tradeTable {
@@ -32,7 +33,7 @@
 }
 
 .tableHeader {
-  border-bottom: 2px solid var(--ifm-color-primary);
+  border-bottom: 2px solid #333;
 }
 
 .tableHeader th {
@@ -45,13 +46,11 @@
 }
 
 .tableRow {
-  border-bottom: 1px solid var(--ifm-color-primary-lighter);
+  border-bottom: 1px solid #ddd;
 }
-
-.tableRow:nth-child(even) {
-  background-color: var(--ifm-color-primary-lightest);
+.sellRow {
+  background-color: #63a570;
 }
-
 .tableCell {
   padding: 0.5rem;
 }
@@ -59,4 +58,3 @@
 .rightAlign {
   text-align: right;
 }
-  
