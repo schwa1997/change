@@ -19,7 +19,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# only local can see
-/src/pages/finance
-/docs/tutorial-extras/finance
-

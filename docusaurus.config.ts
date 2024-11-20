@@ -123,7 +123,6 @@ const config: Config = {
           label: 'Notebook',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/finance', label: 'Finance', position: 'left'},
         {
           href: 'https://github.com/schwa1997/schwa1997.github.io',
           label: 'GitHub',
