@@ -60,6 +60,18 @@ export default function Home(): JSX.Element {
                 </Link>
               </div>
             </section>
+            <section className={styles.section}>
+              <div className={styles.sectionContent}>
+                <Heading as="h2">✍️ My Blog</Heading>
+                <p>
+                  Personal reflections, project updates, and technical articles that document
+                  my learning journey and discoveries in software development.
+                </p>
+                <Link className="button button--primary button--lg" to="/fiance">
+                  My records
+                </Link>
+              </div>
+            </section>
           </div>
         </div>
       </main>

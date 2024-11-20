@@ -1,0 +1,26 @@
+.statsContainer {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .statCard {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--ifm-color-primary-lightest);
+    text-align: center;
+  }
+  
+  .statCard h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--ifm-color-primary-darker);
+  }
+  
+  .value {
+    margin: 0.5rem 0 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--ifm-color-primary-darkest);
+  }
