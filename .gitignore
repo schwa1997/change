@@ -20,8 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # only local can see
-/docs/fiance
-
 /src/pages/finance
 /docs/tutorial-extras/finance
 
