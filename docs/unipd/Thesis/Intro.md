@@ -6,7 +6,7 @@ title: Abstract
 
 ## Title
 
-A Comprehensive Study on Vowel Recognition using Convolutional Neural Networks for Individuals with Speech Disorders in the Italian Language
+**A Preliminary Study on Vowel Recognition using Convolutional Neural Networks for Individuals with Speech Disorders in the Italian Language**
 
 ## Abstract
 
