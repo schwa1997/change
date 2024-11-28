@@ -1,18 +1,7 @@
-1. use the CNN for classfication 
-2. convert the voice to the spectrogram image 
-3. the paper adapts the algorithm of Classfication of Fruits 
-4. split the data into training data and validation data *how to find the dataset of italian vowels? 
-i will ask the girl for help and i will also look for database online 
-5. to improve the recognication accuracy 
-6. 
+# A Comprehensive Study on Vowel Recognition using Convolutional Neural Networks for Individuals with Speech Disorders in the Italian Language
 
+## Abstract
 
-# thesis
-| Date | Progress | Details |
-|----------|---------|----------|
-| 2024-10-28 | NOT GOOD but on track | generated some audio file, but the valiation accuracy is low |
+Abstract: This study addresses the issue of speech and listening impairments, highlighting the potential for improvement through targeted training. The University of Padua's Computer Engineering Lab is developing an online service, Sunrise, to help individuals refine their pronunciation skills. The platform provides a user-friendly interface for identifying vowel pitch and volume through audio analysis. As artificial intelligence continues to gain attention and improve various industries, this thesis aims to investigate the feasibility of integrating AI into this training service Sunrise. By incorporating AI training into vowel recognition, this thesis seeks to contribute to speech rehabilitation, offering a direct approach to learning and evaluating speech. This research explores vowel recognition in Italian using Convolutional Neural Networks (CNNs) and introduces a new dataset covering five vowels (/a/, /e/, /i/, /o/, and /u/) for future applications. The results demonstrate the effectiveness of this system in recognizing vowel types, potentially enhancing outcomes for individuals with speech disorders. 
 
-## librosa
-• use this library to generate audio files
-i need to generate some good results for my thesis!!! 
-so i can start writing my thesis!!! 
+Keywords: CNN, Italian language, speech training, speech disorders, vowel recognition
