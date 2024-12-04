@@ -28,3 +28,13 @@ MediaReview:
   label: MediaReview
   permalink: /media-review
   description: Review tag description
+
+Minimalism:
+  label: Minimalism
+  permalink: /minimalism
+  description: Minimalism tag description
+
+Life:
+  label: Life
+  permalink: /life
+  description: Life tag description
