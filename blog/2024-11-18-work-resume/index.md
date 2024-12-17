@@ -1,6 +1,8 @@
 ---
 slug: resume
 title: Resume-HuiminChen
+authors: [schwa1997]
+tags: [Work,Career]
 ---
 ## Huimin Chen
 Full-Stack Developer 👨‍💻  

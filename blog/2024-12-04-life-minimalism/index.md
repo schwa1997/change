@@ -2,7 +2,7 @@
 slug: 简单就好
 title: 多少之间的平衡
 authors: [schwa1997]
-tags: [Minimalism,Life]
+tags: [Life,Minimalism]
 ---
 
 ## 极简主义生活指南：如何优雅地断舍离

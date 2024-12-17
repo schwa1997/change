@@ -2,7 +2,7 @@
 slug: radicalFeminism
 title: 我的激进女权主义之路
 authors: [schwa1997]
-tags: [Feminism, MediaReview]
+tags: [Life,Feminism]
 ---
 
 ## 从"反孝"到激进女权：我的觉醒之路

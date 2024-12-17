@@ -2,7 +2,7 @@
 slug: period
 title: Period has no period...
 authors: [schwa1997]
-tags: [Health]
+tags: [Health,PhysicalWellness]
 ---
 
 ## Understanding Menstruation

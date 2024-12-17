@@ -2,7 +2,7 @@
 slug: workout-talk
 title: Workout Talk
 authors: [schwa1997]
-tags: [Workout,Health]
+tags: [Health,Workout]
 ---
 
 ## 健身的本质

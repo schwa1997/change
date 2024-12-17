@@ -1,6 +1,6 @@
 {
-  "label": "Study",
-  "position": 5,
+  "label": "Article",
+  "position": 1,
   "link": {
     "type": "generated-index"
   }

@@ -1,45 +1,53 @@
-
+# Health: how to be more healthy mentally and physically
 Health:
   label: Health
   permalink: /health
   description: Health tag description
-
 Workout:
   label: Workout
   permalink: /workout
   description: Workout tag description
-
 Diet:
   label: Diet
   permalink: /diet
   description: Diet tag description
+MentalHealth:
+  label: MentalHealth
+  permalink: /mental-health
+  description: MentalHealth tag description
+PhysicalWellness:
+  label: PhysicalWellness
+  permalink: /physical-wellness
+  description: PhysicalWellness tag description
 
+# Work: how to work better and make more money
+Work:
+  label: Work
+  permalink: /work
+  description: Work tag description
+Career:
+  label: Career
+  permalink: /career
+  description: Career tag description
 TimeManagement:
   label: Time Management
   permalink: /time-management
   description: Planning/Time Management
 
-Feminism:
-  label: Feminism
-  permalink: /feminism
-  description: Feminism tag description
-
-MediaReview:
-  label: MediaReview
-  permalink: /media-review
-  description: Review tag description
-
-Minimalism:
-  label: Minimalism
-  permalink: /minimalism
-  description: Minimalism tag description
-
+# Life: how to build a happier life, from both deep level and surface level
 Life:
   label: Life
   permalink: /life
   description: Life tag description
-
-Career:
-  label: Career
-  permalink: /career
-  description: Career tag description
+Feminism:
+  label: Feminism
+  permalink: /feminism
+  description: Feminism tag description
+Minimalism:
+  label: Minimalism
+  permalink: /minimalism
+  description: Minimalism tag description
+MediaReview:
+  label: MediaReview
+  permalink: /media-review
+  description: Review tag description

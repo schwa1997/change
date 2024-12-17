@@ -2,7 +2,7 @@
 slug: huaeryushaonian
 title: 大E人被花少5治愈了！🌟
 authors: [schwa1997]
-tags: [MediaReview]
+tags: [Life,MediaReview]
 ---
 
 ## 花少丝路游学记，七星相映暖人心 ✨

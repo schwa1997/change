@@ -2,7 +2,7 @@
 slug: watch-review
 title: 我最近binge watch了两部剧
 authors: [schwa1997]
-tags: [MediaReview]
+tags: [Life,MediaReview]
 ---
 
 ## 《First Love 2022》- 当爱情出现在人类的臆想中

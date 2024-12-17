@@ -2,7 +2,7 @@
 slug: chufa
 title: 王安我棍哥！沈腾他超爱！
 authors: [schwa1997]
-tags: [MediaReview]
+tags: [Life,MediaReview]
 ---
 
 ## 王安我棍哥！沈腾他超爱！
