@@ -38,3 +38,8 @@ Life:
   label: Life
   permalink: /life
   description: Life tag description
+
+Career:
+  label: Career
+  permalink: /career
+  description: Career tag description
