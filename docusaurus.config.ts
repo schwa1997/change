@@ -8,8 +8,8 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   url: 'http://schwa1997.github.io',
   baseUrl: '/',
-  organizationName: 'schwa1997', // Usually your GitHub org/user name.
-  projectName: 'schwa1997.github.io', // Usually your repo name.
+  organizationName: 'schwa1997',
+  projectName: 'https://github.com/schwa1997/change',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   presets: [
@@ -29,12 +29,12 @@ const config: Config = {
           showReadingTime: true,
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All Blog Posts',
-          postsPerPage: 10,
+          postsPerPage: 1,
           blogListComponent: '@theme/BlogListPage',
           blogPostComponent: '@theme/BlogPostPage',
           editLocalizedFiles: false,
           blogTitle: 'Blog',
-          blogDescription: 'Blog',
+          blogDescription: 'Blog description',
           routeBasePath: 'blog',
           include: ['**/*.{md,mdx}'],
           exclude: [
@@ -106,6 +106,5 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 };
-
 
 export default config;
