@@ -66,7 +66,7 @@ export default function Home(): JSX.Element {
                 <p>
                  You need a password to access this section.
                 </p>
-                <Link className="button button--primary button--lg" to="/verify">
+                <Link className="button button--primary button--lg" to="/private/verify">
                   Private
                 </Link>
               </div>

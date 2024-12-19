@@ -1,20 +1,17 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import BlogPost from "../../components/blogComponent";
 
 export default function RudingBlog() {
   return (
-    <Layout title="入定初体验" description="My meditation experience">
+    <BlogPost title="入定初体验" description="My meditation experience">
       <div style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
         <h2>入定初体验</h2>
-
         <p>昨天2024年12月17日，我尝试了入定。</p>
-
         <h3>第一次体验</h3>
-
         <p>
           我刚开始脑子想的是我童年去过一次的一个地方，但是场景是佛陀和树，还有河流。我就试图去代入自己是那个佛陀，去成为那个佛陀。我尝试把自己放在那个场景中。
         </p>
-
         <p>
           但是几分钟之后，那些焦虑和迷茫，和对世界的一些怨气，包括整个系统对我的压迫，人际交往之间的一些失望，和家庭的一些没法做到的和解，和学业的压力，对于未知的不确定，这些东西都化作一些场，扫描着我的身体。我的身体在被一个场控制着。
         </p>
@@ -104,6 +101,6 @@ export default function RudingBlog() {
 
         <p>感恩佛的点化，感恩我自己身上的佛缘，感恩我自己本就是个佛的化身。</p>
       </div>
-    </Layout>
+    </BlogPost>
   );
 }

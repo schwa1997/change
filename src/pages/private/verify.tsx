@@ -53,7 +53,14 @@ export default function Verify() {
               </Link>
             </p>
             <p>
-              <Link to="/buddhism/practice/ruding">Check buddism practice</Link>
+              <Link to="/buddhism/practice/2024-12-18">
+                Check buddism practice 2024-12-18
+              </Link>
+            </p>
+            <p>
+              <Link to="/buddhism/practice/2024-12-17">
+                Check buddism practice 2024-12-17
+              </Link>
             </p>
           </div>
         )}
