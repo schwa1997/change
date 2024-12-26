@@ -3,7 +3,7 @@ sidebar_position: 1
 title: IoT
 ---
 
-## device information-milesight indoor air quality monitor
+## IoT with Device(milesight indoor air quality monitor) and TTN
 
 ### Device
 
@@ -103,21 +103,32 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
 
 ### Network
 
-1. device EUI
-2. APP EUI (JoinEUI)
-3. Application Port
-4. LoRaWAN version
-5. Work Mode
-6. Join Type
-7. Application key
-8. Rejoin Node
-9. Set the number of detection signals sent
-10. Support Frequency
-11. ADR mode
-12. Sprading factor
-13. TXPower
-14. RX2 Data Rate
-15. RX2 Frequency
+#### Device Identification
+
+- Device EUI
+- APP EUI (JoinEUI)
+- Application Key
+
+#### Connection Parameters
+
+- LoRaWAN Version
+- Work Mode
+- Join Type
+- Rejoin Node
+- Application Port
+
+#### Radio Configuration
+
+- Support Frequency
+- ADR Mode
+- Spreading Factor
+- TXPower
+
+#### Reception Settings
+
+- RX2 Data Rate
+- RX2 Frequency
+- Number of Detection Signals
 
 ### Network Parameters
 
@@ -416,3 +427,309 @@ Key points about this flow:
   - Signal quality
   - Error messages
   - Battery status (if applicable)
+
+### Data Format
+
+```javascript
+/**
+ * Payload Decoder
+ *
+ * Copyright 2024 Milesight IoT
+ *
+ * @product AM307(v2) / AM308(v2) / AM319(v2)
+ */
+// Chirpstack v4
+function decodeUplink(input) {
+  var decoded = milesightDeviceDecode(input.bytes);
+  return { data: decoded };
+}
+
+// Chirpstack v3
+function Decode(fPort, bytes) {
+  return milesightDeviceDecode(bytes);
+}
+
+// The Things Network
+function Decoder(bytes, port) {
+  return milesightDeviceDecode(bytes);
+}
+
+function milesightDeviceDecode(bytes) {
+  var decoded = {};
+
+  for (var i = 0; i < bytes.length; ) {
+    var channel_id = bytes[i++];
+    var channel_type = bytes[i++];
+    // BATTERY
+    if (channel_id === 0x01 && channel_type === 0x75) {
+      decoded.battery = bytes[i];
+      i += 1;
+    }
+    // TEMPERATURE
+    else if (channel_id === 0x03 && channel_type === 0x67) {
+      // ℃
+      decoded.temperature = readInt16LE(bytes.slice(i, i + 2)) / 10;
+      i += 2;
+
+      // ℉
+      // decoded.temperature = readInt16LE(bytes.slice(i, i + 2)) / 10 * 1.8 + 32;
+      // i +=2;
+    }
+    // HUMIDITY
+    else if (channel_id === 0x04 && channel_type === 0x68) {
+      decoded.humidity = bytes[i] / 2;
+      i += 1;
+    }
+    // PIR
+    else if (channel_id === 0x05 && channel_type === 0x00) {
+      decoded.pir = bytes[i] === 1 ? "trigger" : "idle";
+      i += 1;
+    }
+    // LIGHT
+    else if (channel_id === 0x06 && channel_type === 0xcb) {
+      decoded.light_level = bytes[i];
+      i += 1;
+    }
+    // CO2
+    else if (channel_id === 0x07 && channel_type === 0x7d) {
+      decoded.co2 = readUInt16LE(bytes.slice(i, i + 2));
+      i += 2;
+    }
+    // TVOC (iaq)
+    else if (channel_id === 0x08 && channel_type === 0x7d) {
+      decoded.tvoc = readUInt16LE(bytes.slice(i, i + 2)) / 100;
+      i += 2;
+    }
+    // TVOC (ug/m3)
+    else if (channel_id === 0x08 && channel_type === 0xe6) {
+      decoded.tvoc = readUInt16LE(bytes.slice(i, i + 2));
+      i += 2;
+    }
+    // PRESSURE
+    else if (channel_id === 0x09 && channel_type === 0x73) {
+      decoded.pressure = readUInt16LE(bytes.slice(i, i + 2)) / 10;
+      i += 2;
+    }
+    // HCHO
+    else if (channel_id === 0x0a && channel_type === 0x7d) {
+      decoded.hcho = readUInt16LE(bytes.slice(i, i + 2)) / 100;
+      i += 2;
+    }
+    // PM2.5
+    else if (channel_id === 0x0b && channel_type === 0x7d) {
+      decoded.pm2_5 = readUInt16LE(bytes.slice(i, i + 2));
+      i += 2;
+    }
+    // PM10
+    else if (channel_id === 0x0c && channel_type === 0x7d) {
+      decoded.pm10 = readUInt16LE(bytes.slice(i, i + 2));
+      i += 2;
+    }
+    // O3
+    else if (channel_id === 0x0d && channel_type === 0x7d) {
+      decoded.o3 = readUInt16LE(bytes.slice(i, i + 2)) / 100;
+      i += 2;
+    }
+    // BEEP
+    else if (channel_id === 0x0e && channel_type === 0x01) {
+      decoded.beep = bytes[i] === 1 ? "yes" : "no";
+      i += 1;
+    }
+    // HISTORY DATA (AM307)
+    else if (channel_id === 0x20 && channel_type === 0xce) {
+      var data = {};
+      data.timestamp = readUInt32LE(bytes.slice(i, i + 4));
+      data.temperature = readInt16LE(bytes.slice(i + 4, i + 6)) / 10;
+      data.humidity = readUInt16LE(bytes.slice(i + 6, i + 8)) / 2;
+      data.pir = bytes[i + 8] === 1 ? "trigger" : "idle";
+      data.light_level = bytes[i + 9];
+      data.co2 = readUInt16LE(bytes.slice(i + 10, i + 12));
+      // unit: iaq
+      data.tvoc = readUInt16LE(bytes.slice(i + 12, i + 14)) / 100;
+      data.pressure = readUInt16LE(bytes.slice(i + 14, i + 16)) / 10;
+      i += 16;
+
+      decoded.history = decoded.history || [];
+      decoded.history.push(data);
+    }
+    // HISTORY DATA (AM308)
+    else if (channel_id === 0x20 && channel_type === 0xce) {
+      var data = {};
+      data.timestamp = readUInt32LE(bytes.slice(i, i + 4));
+      data.temperature = readInt16LE(bytes.slice(i + 4, i + 6)) / 10;
+      data.humidity = readUInt16LE(bytes.slice(i + 6, i + 8)) / 2;
+      data.pir = bytes[i + 8] === 1 ? "trigger" : "idle";
+      data.light_level = bytes[i + 9];
+      data.co2 = readUInt16LE(bytes.slice(i + 10, i + 12));
+      // unit: iaq
+      data.tvoc = readUInt16LE(bytes.slice(i + 12, i + 14)) / 100;
+      data.pressure = readUInt16LE(bytes.slice(i + 14, i + 16)) / 10;
+      data.pm2_5 = readUInt16LE(bytes.slice(i + 16, i + 18));
+      data.pm10 = readUInt16LE(bytes.slice(i + 18, i + 20));
+      i += 20;
+
+      decoded.history = decoded.history || [];
+      decoded.history.push(data);
+    }
+    // HISTORY DATA (AM319 CH2O)
+    else if (channel_id === 0x20 && channel_type === 0xce) {
+      var data = {};
+      data.timestamp = readUInt32LE(bytes.slice(i, i + 4));
+      data.temperature = readInt16LE(bytes.slice(i + 4, i + 6)) / 10;
+      data.humidity = readUInt16LE(bytes.slice(i + 6, i + 8)) / 2;
+      data.pir = bytes[i + 8] === 1 ? "trigger" : "idle";
+      data.light_level = bytes[i + 9];
+      data.co2 = readUInt16LE(bytes.slice(i + 10, i + 12));
+      // unit: iaq
+      data.tvoc = readUInt16LE(bytes.slice(i + 12, i + 14)) / 100;
+      data.pressure = readUInt16LE(bytes.slice(i + 14, i + 16)) / 10;
+      data.pm2_5 = readUInt16LE(bytes.slice(i + 16, i + 18));
+      data.pm10 = readUInt16LE(bytes.slice(i + 18, i + 20));
+      data.hcho = readUInt16LE(bytes.slice(i + 20, i + 22)) / 100;
+      i += 22;
+
+      decoded.history = decoded.history || [];
+      decoded.history.push(data);
+    }
+    // HISTORY DATA (AM319 O3)
+    else if (channel_id === 0x20 && channel_type === 0xce) {
+      var data = {};
+      data.timestamp = readUInt32LE(bytes.slice(i, i + 4));
+      data.temperature = readInt16LE(bytes.slice(i + 4, i + 6)) / 10;
+      data.humidity = readUInt16LE(bytes.slice(i + 6, i + 8)) / 2;
+      data.pir = bytes[i + 8] === 1 ? "trigger" : "idle";
+      data.light_level = bytes[i + 9];
+      data.co2 = readUInt16LE(bytes.slice(i + 10, i + 12));
+      // unit: iaq
+      data.tvoc = readUInt16LE(bytes.slice(i + 12, i + 14)) / 100;
+      data.pressure = readUInt16LE(bytes.slice(i + 14, i + 16)) / 10;
+      data.pm2_5 = readUInt16LE(bytes.slice(i + 16, i + 18));
+      data.pm10 = readUInt16LE(bytes.slice(i + 18, i + 20));
+      data.o3 = readUInt16LE(bytes.slice(i + 20, i + 22)) / 100;
+      i += 22;
+
+      decoded.history = decoded.history || [];
+      decoded.history.push(data);
+    } else {
+      break;
+    }
+  }
+
+  return decoded;
+}
+
+/* ******************************************
+ * bytes to number
+ ********************************************/
+function readUInt16LE(bytes) {
+  var value = (bytes[1] << 8) + bytes[0];
+  return value & 0xffff;
+}
+
+function readInt16LE(bytes) {
+  var ref = readUInt16LE(bytes);
+  return ref > 0x7fff ? ref - 0x10000 : ref;
+}
+
+function readUInt32LE(bytes) {
+  var value = (bytes[3] << 24) + (bytes[2] << 16) + (bytes[1] << 8) + bytes[0];
+  return (value & 0xffffffff) >>> 0;
+}
+
+function readInt32LE(bytes) {
+  var ref = readUInt32LE(bytes);
+  return ref > 0x7fffffff ? ref - 0x100000000 : ref;
+}
+```
+
+This code is a payload decoder that:
+
+1. **Supports Multiple Platforms**
+
+   - Chirpstack v3 and v4
+   - The Things Network (TTN)
+
+2. **Decodes Sensor Data**
+
+   - Temperature (°C/°F)
+   - Humidity (%)
+   - CO2 levels (ppm)
+   - TVOC (Total Volatile Organic Compounds)
+   - Light levels
+   - PIR (motion detection)
+   - Battery status
+   - Pressure
+
+3. **Data Format**
+
+   - Each measurement uses a channel_id and channel_type
+   - Data is encoded in bytes for efficient transmission
+   - Values are converted to human-readable format
+
+4. **Key Features**
+
+   - Handles different data types (integers, fixed-point numbers)
+   - Supports both signed and unsigned values
+   - Includes unit conversions (e.g., temperature scaling)
+   - Error handling for unknown channels
+
+5. **Usage**
+   - Deploy to TTN or Chirpstack console
+   - Automatically decodes incoming device data
+   - Returns JSON object with sensor readings
+   - Can be customized for specific needs
+
+### LoRaWAN Radio Overview
+
+LoRaWAN (Long Range Wide Area Network) is a low-power, long-range radio communication protocol designed specifically for IoT devices.
+
+#### Key Characteristics
+
+- **Long Range**
+
+  - Can reach 10-15 km in rural areas
+  - 2-5 km in urban environments
+  - Penetrates buildings effectively
+
+- **Low Power**
+
+  - Devices can operate for years on a single battery
+  - Optimized for infrequent data transmission
+  - Perfect for sensor networks
+
+- **Secure Communication**
+  - End-to-end encryption
+  - Two layers of security (network and application)
+  - Unique keys for each device
+
+#### How It Works
+
+1. **Physical Layer (LoRa)**
+
+   - Uses Chirp Spread Spectrum modulation
+   - Resistant to interference
+   - Multiple spreading factors for range vs. speed
+
+2. **Network Layer (LoRaWAN)**
+   - Manages device communication
+   - Handles message routing
+   - Controls data rates and power
+
+#### Advantages
+
+- **Cost-Effective**
+
+  - Free to use (unlicensed spectrum)
+  - Low-cost hardware
+  - Minimal infrastructure needed
+
+- **Flexible Deployment**
+
+  - Public or private networks
+  - Indoor and outdoor coverage
+  - Scalable from small to large networks
+
+- **Ideal for IoT**
+  - Optimized for sensor data
+  - Bidirectional communication
+  - Support for millions of devices
