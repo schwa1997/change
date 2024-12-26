@@ -6,6 +6,10 @@
 
 # Docs
 /docs/fiance/record.md
+/docs/tutorial-extras\grammar
+
+# blog
+/blog/2024-12-06-blog
 
 # Generated files
 .docusaurus
@@ -21,5 +25,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-/docs/fiance/record.md
