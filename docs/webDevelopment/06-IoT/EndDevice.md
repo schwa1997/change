@@ -9,7 +9,7 @@ title: End Device-Milesight AM307-LoRaWAN Indoor Air Quality Sensor (7 in 1)
 
 This smart IoT device is designed for comprehensive indoor air quality monitoring, providing real-time environmental data for offices, buildings, and indoor spaces.
 
-![device](image.png)
+![device](images/image.png)
 
 #### 1. Core Functions
 
@@ -145,22 +145,22 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
    - Used during the device activation process
    - 64-bit identifier that helps route messages to the correct application
 
-![appEUI](image-2.png)
+![appEUI](images/image-2.png)
 
-   Note: For TTN V3, the APP EUI is now called JoinEUI, but they serve the same purpose
+Note: For TTN V3, the APP EUI is now called JoinEUI, but they serve the same purpose
 
-   ### Application/Joining Server
+### Application/Joining Server
 
-   - A network server component that manages device activation and security
-   - Key responsibilities:
-     - Handles OTAA (Over-The-Air Activation) join procedures
-     - Manages application session keys
-     - Validates device authenticity
-     - Routes application data between devices and applications
-   - Security features:
-     - Stores root keys for devices
-     - Generates session keys for secure communication
-     - Ensures only authorized devices can join the network
+- A network server component that manages device activation and security
+- Key responsibilities:
+  - Handles OTAA (Over-The-Air Activation) join procedures
+  - Manages application session keys
+  - Validates device authenticity
+  - Routes application data between devices and applications
+- Security features:
+  - Stores root keys for devices
+  - Generates session keys for secure communication
+  - Ensures only authorized devices can join the network
 
 3. **Application Port**
 
@@ -187,10 +187,10 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
 
 7. **Application Key**
 
-![AppKey](image-1.png)
+![AppKey](images/image-1.png)
 
-   - 128-bit AES key used for secure device activation in OTAA
-   - Root key for deriving session keys
+- 128-bit AES key used for secure device activation in OTAA
+- Root key for deriving session keys
 
 8. **Rejoin Node**
 
@@ -300,9 +300,11 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
 
 5. **Data Flow with Join Server**
 
+```
    End Device → Gateway → Network Server ←→ Join Server(TTN cloud/local)
          ↑                     ↓downlink
          └─── Gateway ←─── Application
+```
 
 Key points about this flow:
 
@@ -716,6 +718,3 @@ LoRaWAN (Long Range Wide Area Network) is a low-power, long-range radio communic
   - Optimized for sensor data
   - Bidirectional communication
   - Support for millions of devices
-
-
-

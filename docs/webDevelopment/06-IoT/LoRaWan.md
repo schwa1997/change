@@ -19,11 +19,11 @@ Normal Communication Flow:
 - Opens RX2 window (~2-6 seconds later)
 - Goes back to sleep
 
-![classA](image-3.png)
+![classA](images/image-3.png)
 
 The network server can respond during the first receive window (RX1) or the second receive window (RX2), but does not use both windows. Let’s consider three situations for downlink messages as illustrated below.
 
-![classA-2](image-4.png)
+![classA-2](images/image-4.png)
 
 1. The end device opens both receive windows but it doesn’t receive an downlink message during either receive window.
 2. The end device receives a downlink during the first receive window and therefore it does not open the second receive window.
@@ -97,7 +97,7 @@ The high downlink latency occurs because:
   For example, if a device only sends uplinks every 10 minutes:
 - You want to send a configuration change
 - You must wait for the next uplink (up to 10 minutes)
-  ![10mins](image-5.png)
+  ![10mins](images/image-5.png)
 - Then use the RX windows to send your downlink
   in this case, axcctly 4-5 seconds after the uplink
 - If you miss those windows, wait another 10 minutes
@@ -108,20 +108,20 @@ The high downlink latency occurs because:
 ### change the report interval
 
 - change it to 20 minutes: ff03b004: 60 04=>04 b0=1200s=20 minutes
-  ![test](image-6.png)
+  ![test](images/image-6.png)
 - change the report interval to: ff03b003, 0x03b0=(3×256)+176=768+176=944seconds.
-  ![test2](image-7.png)
+  ![test2](images/image-7.png)
   From the app, it shows the report interval is changed to 15.73min
-  ![read](image-8.png)
+  ![read](images/image-8.png)
 
 ### screen operation
 
 - disbale the screen FF2D00
-  ![test3](image-9.png)
-  ![analysis](image-10.png)
+  ![test3](images/image-9.png)
+  ![analysis](images/image-10.png)
   After the uplink (red), there is rx wating time , the downlink is undergoing (blue area).
 - able the screen FF2D01
-  ![time](image-11.png)
+  ![time](images/image-11.png)
 
 #### Test cycle explanation
 
@@ -131,12 +131,12 @@ The high downlink latency occurs because:
      - This is a "bare" transmission or acknowledgment message
      - Contains minimal information, essentially just signaling that the device is communicating
      - Acts like a "hello" or "handshake" message
-       ![handshake](image-12.png)
+       ![handshake](images/image-12.png)
    - Network forwards uplink data message (Actual data payload)
      - This contains the actual sensor data/payload
      - Includes all the measurements and device status information
      - This is the "real data" that your application will use
-       ![datapayload](image-13.png)
+       ![datapayload](images/image-13.png)
 
 2. **Gateway Response**: Gateway server prepares downlink
 
@@ -144,7 +144,7 @@ The high downlink latency occurs because:
    - Sets RX1 delay to 5 seconds
    - Gateway ID: EBE8FB
    - sequenceDiagram
-     ![schedulegetaway](image-14.png)
+     ![schedulegetaway](images/image-14.png)
 
 Purpose of Gateway Response:
 After receiving the uplink messages, the gateway server prepares for potential downlink communication
@@ -157,13 +157,13 @@ Ensures the device knows when to listen for downlink messages
 Maintains synchronization between device and gateway
 
 3. **Downlink Transmission**: TTN messaging system
-   ![downlink](image-15.png)
+   ![downlink](images/image-15.png)
 
    - Device receives downlink data message
    - Command sent: FF2D01 (enable screen)
 
 4. **Confirmation Uplink**: Device acknowledges receipt
-   ![conformation](image-16.png)
+   ![conformation](images/image-16.png)
    - Successfully processes data message
    - Forwards confirmation uplink message
    - Note: Two uplink records appear in live data, with the second containing the actual data
