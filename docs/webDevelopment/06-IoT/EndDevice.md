@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: IoT
+title: End Device-Milesight AM307-LoRaWAN Indoor Air Quality Sensor (7 in 1)
 ---
 
 ## IoT with Device(milesight indoor air quality monitor) and TTN
@@ -145,25 +145,7 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
    - Used during the device activation process
    - 64-bit identifier that helps route messages to the correct application
 
-   #### Where to Find APP EUI:
-
-   1. **TTN Console**:
-
-      - Log into The Things Network Console
-      - Navigate to your application
-      - Under "Application Overview" or "Settings"
-      - Look for "JoinEUI" or "APP EUI"
-
-   2. **Device Manufacturer**:
-
-      - Device documentation
-      - Device configuration interface
-      - QR code or label on the device (some manufacturers)
-
-   3. **Self-Generated**:
-      - Can be generated when creating a new application in TTN
-      - Must be unique within your network
-      - Format: 8-byte hexadecimal (e.g., 70B3D57ED0008C3D)
+![appEUI](image-2.png)
 
    Note: For TTN V3, the APP EUI is now called JoinEUI, but they serve the same purpose
 
@@ -204,6 +186,8 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
    - ABP (Activation By Personalization): Static activation with pre-programmed keys
 
 7. **Application Key**
+
+![AppKey](image-1.png)
 
    - 128-bit AES key used for secure device activation in OTAA
    - Root key for deriving session keys
@@ -315,11 +299,10 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
    - Forwards messages to appropriate applications
 
 5. **Data Flow with Join Server**
-   ```
+
    End Device → Gateway → Network Server ←→ Join Server(TTN cloud/local)
-         ↑                     ↓
+         ↑                     ↓downlink
          └─── Gateway ←─── Application
-   ```
 
 Key points about this flow:
 
