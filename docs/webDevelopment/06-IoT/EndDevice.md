@@ -716,3 +716,6 @@ LoRaWAN (Long Range Wide Area Network) is a low-power, long-range radio communic
   - Optimized for sensor data
   - Bidirectional communication
   - Support for millions of devices
+
+
+
