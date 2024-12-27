@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Class A device In LoRaWAN network
+title: Uplink and Downlink of Class A device In LoRaWAN network
 ---
 
 The [LoRaWAN specification](https://www.thethingsnetwork.org/docs/lorawan/classes/) defines three device types: Class A, Class B, and Class C. All LoRaWAN devices must implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices. All device classes support bi-directional communication (uplink and downlink). During firmware upgrades over-the-air (FUOTA), a device must be switched to Class B or Class C.
@@ -83,7 +83,7 @@ If RX1 fails (due to interference or poor signal), the network can retry during 
 
 This dual-window approach is a key feature of LoRaWAN's reliability strategy, ensuring successful downlink communication while maintaining energy efficiency.
 
-### high downlink latency
+### High downlink latency
 
 - Class A end devices have very low power consumption. Therefore, they can operate with battery power. They spend most of their time in sleep mode and usually have long intervals between uplinks.
 - Additionally, Class A devices have high downlink latency, as they require sending an uplink to receive a downlink.
@@ -180,7 +180,7 @@ Maintains synchronization between device and gateway
     Gateway-->>Device: Downlink in RX1/RX2 window
 ```
 
-### Distinguishing Downlink Scenarios
+<!-- ### Distinguishing Downlink Scenarios
 
 1. **Scheduled Downlink from Gateway:**
 
@@ -197,4 +197,4 @@ Maintains synchronization between device and gateway
    - Appears in logs as "rx_timeout" or no entry
    - No confirmation uplink needed
 
-The key difference is that a scheduled downlink will show actual data transmission activity, while a "no response" scenario is characterized by the absence of any gateway transmission during the receive windows.
+The key difference is that a scheduled downlink will show actual data transmission activity, while a "no response" scenario is characterized by the absence of any gateway transmission during the receive windows. -->
