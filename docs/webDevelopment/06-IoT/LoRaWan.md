@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: Uplink and Downlink of Class A device In LoRaWAN network
+sidebar_position: 3
+title: 3- Uplink and Downlink test in TTN console with class A device
 ---
 
 The [LoRaWAN specification](https://www.thethingsnetwork.org/docs/lorawan/classes/) defines three device types: Class A, Class B, and Class C. All LoRaWAN devices must implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices. All device classes support bi-directional communication (uplink and downlink). During firmware upgrades over-the-air (FUOTA), a device must be switched to Class B or Class C.
@@ -123,6 +123,39 @@ The high downlink latency occurs because:
 - able the screen FF2D01
   ![time](images/image-11.png)
 
+### downlink timing test
+- disable the screen 
+![testtiming](image.png)
+To disble the screen. 
+
+![timingexaplina](image-1.png)
+Simulated downlink wont work until the window time of the next uplink. 
+Based on the previous testing, the downlink command will be working immediatly only it is sent in the window time. 
+![timegood](image-2.png)
+This one shows it gets the uplink feedback immediatly if the command is sent in the window time. 
+
+1. Message Storage
+When a downlink message is sent outside the receive windows, it is stored in the Network Server's queue
+The message remains there until the next uplink opportunity from the device
+This is specifically because Class A devices can only receive downlinks after their uplinks
+Storage Location
+Messages are stored in the Network Server (like The Things Network server)
+Each device has its own downlink queue
+Usually only one pending downlink message can be stored per device (though this can vary by network server implementation)
+
+sequenceDiagram
+    Application->>Network Server: Downlink message (outside RX window)
+    Note over Network Server: Stores message in queue
+    Device->>Network Server: Next uplink
+    Note over Network Server: Retrieves queued message
+    Network Server->>Device: Sends downlink in RX1/RX2 window
+### set the time zone 
+Set the current time zone to the GMT+1. ff170a00
+
+![timezone](image-3.png)
+
+
+
 #### Test cycle explanation
 
 1. **Initial Uplink**: Device sends scheduled uplink message
@@ -172,12 +205,24 @@ Maintains synchronization between device and gateway
     Note over App: TTN Console/Application, initiates downlink command
 
     Device->>Gateway: Uplink message
-    Gateway->>Network Serve: Forward uplink
-    Network Serve->>App: Forward to application
+    Gateway->>Network Server: Forward uplink
+    Network Server->>App: Forward to application
 
-    App->>Network Serve: Send downlink data
-    Network Serve->>Gateway: Schedule downlink
+    App->>Network Server: Send downlink data
+    Network Server->>Gateway: Schedule downlink
     Gateway-->>Device: Downlink in RX1/RX2 window
+
+1. For TTN (The Things Network):
+The Network Server is part of TTN's cloud infrastructure
+TTN operates multiple Network Servers in different regions globally
+When you use TTN, you're using their cloud-hosted Network Servers
+Physical locations include data centers in various regions (EU, US, Asia, etc.)
+
+
+At the beginning, the configuration chooses the EU network server. 
+
+
+
 ```
 
 <!-- ### Distinguishing Downlink Scenarios

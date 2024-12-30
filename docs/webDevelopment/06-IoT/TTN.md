@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: TTN Console Configuration and Parameters
+title: 2- set up in TTN Console Configuration and Parameters
 ---
 
 ## Device configuration

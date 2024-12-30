@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: End Device-Milesight AM307
+title: 1- know the End Device-Milesight AM307
 ---
 
 ## Milesight AM307 LoRaWAN Indoor Air Quality Sensor (7 in 1)
