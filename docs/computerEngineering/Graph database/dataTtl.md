@@ -1,5 +1,3 @@
-<img src="https://www.unidformazione.com/wp-content/uploads/2018/04/unipd-universita-di-padova.png" alt="University of Padova Logo" style="float: right; width: 150px;">
-
 # FLYDATA - RDF Dataset Documentation
 
 ## Table of Contents
@@ -39,18 +37,18 @@ Our primary objective is to transform diverse aviation-related CSV datasets into
 
 ### Dataset Statistics
 
-| Dataset           | Entities | Properties | Column Names |
-| ----------------- | -------- | ---------- | -------------------------- |
-| States.csv        | 52       | 2          | State, Abbreviation |
-| Cities.csv        | 31,120   | 17         | city, city_ascii, state_id, state_name, county_fips, county_name, lat, lng, population, density, source, military, incorporated, timezone, ranking, zips, id |
-| Airports.csv      | 1,512    | 14         | ID, Name, City, Country, IATA, ICAO, LAT, LONG ...   |
-| Carriers.csv      | 1,498    | 8          | AirlineID, Name, Alias, IATA, ICAO, Callsign, Country, Active |
-| Aircraft.csv      | 299,689  | 4          | AircraftID, ModelCode, AircraftType, RegisterCity  |
-| Models.csv        | 92,339   | 2          | ModelCode, ModelName |
-| Manufacturers.csv | 92,339   | 2          | ManufactureCode, ManufacturerName|
-| Routes.csv        | 67,663   | 9          | Airline, Airline ID, Source airport, Source airport ID, Destination airport, Destination airport ID, Codeshare, stops, Equipment  |
+| Dataset           | Entities | Properties | Column Names                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| States.csv        | 52       | 2          | State, Abbreviation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Cities.csv        | 31,120   | 17         | city, city_ascii, state_id, state_name, county_fips, county_name, lat, lng, population, density, source, military, incorporated, timezone, ranking, zips, id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Airports.csv      | 1,512    | 14         | ID, Name, City, Country, IATA, ICAO, LAT, LONG ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Carriers.csv      | 1,498    | 8          | AirlineID, Name, Alias, IATA, ICAO, Callsign, Country, Active                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Aircraft.csv      | 299,689  | 4          | AircraftID, ModelCode, AircraftType, RegisterCity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Models.csv        | 92,339   | 2          | ModelCode, ModelName                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Manufacturers.csv | 92,339   | 2          | ManufactureCode, ManufacturerName                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Routes.csv        | 67,663   | 9          | Airline, Airline ID, Source airport, Source airport ID, Destination airport, Destination airport ID, Codeshare, stops, Equipment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Flights.csv       | 552,218  | 23         | Marketing Carrier code, Marketing Carrier, Flight number, Scheduled Operating Carrier Code, Scheduled Operating Carrier Flight number, Actual Operating Carrier Code, Actual Operating Carrier Flight Number, Departure airport code, Arrival airport code, Date of flight operation, Day of the week of flight operation, Scheduled departure time as shown in Official Airline Guide(OAG), Scheduled departure time as shown in CRS(selected by the Carrier), Gate departure time (actual), Scheduled arrival time per OAG, Scheduled arrival time per CRS, Gate arrival time (actual), Difference between OAG and CRS scheduled departure times, Difference between OAG and CRS scheduled arrival times, Scheduled elapsed time per CRS, Actual gate-to-gate time, Departure delay time (actual minutes), Arrival delay time (actual minutes)... |
- |
+|  |
 
 ## RDF Model
 
@@ -135,13 +133,13 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
    ```python
    def read_data(file_path: Path) -> pd.DataFrame:
        """Reads and validates source CSV data from aircraft files
-       
+
        Args:
            file_path (Path): Path to the CSV file containing aircraft data
-           
+
        Returns:
            List[dict]: List of dictionaries containing aircraft data
-           
+
        Raises:
            Exception: If there's an error reading the file
        """
@@ -164,11 +162,11 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
 
    def serialize_to_ttl(graph: RDFGraph, output_path: Path):
        """Exports RDF graph to Turtle format and creates relationships
-       
+
        Args:
            graph (RDFGraph): The RDF graph to serialize
            output_path (Path): Path where the TTL file will be saved
-           
+
        Note:
            - Creates Aircraft nodes with their properties
            - Establishes hasModel relationships between Aircraft and Model nodes
@@ -180,10 +178,10 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
            # URL encode the aircraft number for valid URI
            encoded_n_number = quote(aircraft['n_number'].strip())
            aircraft_uri = FDO[encoded_n_number]
-           
+
            # Add aircraft type information
            g_aircraft.add((aircraft_uri, RDF.type, FDO.Aircraft))
-           g_aircraft.add((aircraft_uri, FDO.aircraftType, 
+           g_aircraft.add((aircraft_uri, FDO.aircraftType,
                           Literal(aircraft['aircraft_type'], datatype=XSD.string)))
 
            # Link aircraft to its model if found
@@ -192,7 +190,7 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
                    model_code = aircraft['model_code']
                    model_uri = FDO[model_code]
                    g_aircraft.add((aircraft_uri, FDO.hasModel, model_uri))
-           
+
            # Show progress
            print(f"{int(index/len(aircrafts)*100)} % complete \r", end="")
            index += 1
@@ -200,7 +198,6 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
        print(f"serialization \r")
        g_aircraft.serialize(destination=str(OUTPUT_AIRCRAFT_PATH), format='turtle')
    ```
-
 
 ## RDF Statistics
 
@@ -213,18 +210,18 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
 
 ### Entity Statistics
 
-| Dataset           | Entities | Property Count | Property Names   |
-| ----------------- | -------- | -------------- | ----------------------------------------- |
-| States.ttl        | 52       | 2              | abbreviation, name |
-| Cities.ttl        | 31,120   | 5              | name, population, isLocatedInState, lat, lng |
-| Airports.ttl      | 1,512    | 4              | name, isLocatedInCity, lat, lng |
-| Carriers.ttl      | 1,498    | 2              | name, callSign|
-| Aircraft.ttl      | 299,689  | 2              | aircraftType, hasModel  |
-| Models.ttl        | 92,339   | 2              | name, hasManufacturer |
-| Manufacturers.ttl | 92,339   | 1              | name|
-| Weather.ttl       | 647,458  | 3              | hasAirport, weatherDate, weatherType|
+| Dataset           | Entities | Property Count | Property Names                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| States.ttl        | 52       | 2              | abbreviation, name                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Cities.ttl        | 31,120   | 5              | name, population, isLocatedInState, lat, lng                                                                                                                                                                                                                                                                                                                                                                                   |
+| Airports.ttl      | 1,512    | 4              | name, isLocatedInCity, lat, lng                                                                                                                                                                                                                                                                                                                                                                                                |
+| Carriers.ttl      | 1,498    | 2              | name, callSign                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Aircraft.ttl      | 299,689  | 2              | aircraftType, hasModel                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Models.ttl        | 92,339   | 2              | name, hasManufacturer                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Manufacturers.ttl | 92,339   | 1              | name                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Weather.ttl       | 647,458  | 3              | hasAirport, weatherDate, weatherType                                                                                                                                                                                                                                                                                                                                                                                           |
 | Flights.ttl       | 552,218  | 23             | hasAircraft, hasRoute, isOperatedBy, ActualArrivalDelayTime, ActualDepartureDelayTime, ActualElapsedTimeDifference, ActualGate-to-gateTime, ActualGateArrivalTime, ActualGateDepartureTime, ActualWheels-offTime, ActualWheels-onTime, LateE, LateF, LateG, LateH, LateI, ScheduledArrivalTimePerCRS, ScheduledArrivalTimePerOAG, ScheduledDepartureCRSTime, ScheduledDepartureOAGTime, ScheduledElapsedTimePerCRS, flightDate |
-| Routes.ttl        | 67,663   | 3              | hasDepartureAirport, hasArrivalAirport, hasCarrier |
+| Routes.ttl        | 67,663   | 3              | hasDepartureAirport, hasArrivalAirport, hasCarrier                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### statistics of the RDF file
 
@@ -255,4 +252,3 @@ OUTPUT_PATH_CITY = OUTPUT_PATH / "city.ttl"
 | Airports.ttl      | <1s         | 6,085           |
 | Aircraft.ttl      | 10s         | 899,067         |
 | Flights.ttl       | >2m         | 14,789,917      |
-
