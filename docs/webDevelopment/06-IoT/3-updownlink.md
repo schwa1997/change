@@ -19,11 +19,11 @@ Normal Communication Flow:
 - Opens RX2 window (~2-6 seconds later)
 - Goes back to sleep
 
-![classA](images/image-3.png)
+![classA](images/3/image-3.png)
 
 The network server can respond during the first receive window (RX1) or the second receive window (RX2), but does not use both windows. Let’s consider three situations for downlink messages as illustrated below.
 
-![classA-2](images/image-4.png)
+![classA-2](images/3/image-4.png)
 
 1. The end device opens both receive windows but it doesn’t receive an downlink message during either receive window.
 2. The end device receives a downlink during the first receive window and therefore it does not open the second receive window.
@@ -97,7 +97,7 @@ The high downlink latency occurs because:
   For example, if a device only sends uplinks every 10 minutes:
 - You want to send a configuration change
 - You must wait for the next uplink (up to 10 minutes)
-  ![10mins](images/image-5.png)
+  ![10mins](images/3/image-5.png)
 - Then use the RX windows to send your downlink
   in this case, axcctly 4-5 seconds after the uplink
 - If you miss those windows, wait another 10 minutes
@@ -108,53 +108,55 @@ The high downlink latency occurs because:
 ### change the report interval
 
 - change it to 20 minutes: ff03b004: 60 04=>04 b0=1200s=20 minutes
-  ![test](images/image-6.png)
+  ![test](images/3/image-6.png)
 - change the report interval to: ff03b003, 0x03b0=(3×256)+176=768+176=944seconds.
-  ![test2](images/image-7.png)
+  ![test2](images/3/image-7.png)
   From the app, it shows the report interval is changed to 15.73min
-  ![read](images/image-8.png)
+  ![read](images/3/image-8.png)
 
 ### screen operation
 
 - disbale the screen FF2D00
-  ![test3](images/image-9.png)
-  ![analysis](images/image-10.png)
+  ![test3](images/3/image-9.png)
+  ![analysis](images/3/image-10.png)
   After the uplink (red), there is rx wating time , the downlink is undergoing (blue area).
 - able the screen FF2D01
-  ![time](images/image-11.png)
+  ![time](images/3/image-11.png)
 
 ### downlink timing test
-- disable the screen 
-![testtiming](image.png)
-To disble the screen. 
 
-![timingexaplina](image-1.png)
-Simulated downlink wont work until the window time of the next uplink. 
-Based on the previous testing, the downlink command will be working immediatly only it is sent in the window time. 
-![timegood](image-2.png)
-This one shows it gets the uplink feedback immediatly if the command is sent in the window time. 
+- disable the screen
+  The screen is disabled:
+
+  ![testtiming](images/3/image.png)
+
+![timingexaplina](images/3/image-1.png)
+Simulated downlink wont work until the window time of the next uplink.
+Based on the previous testing, the downlink command will be working immediatly only it is sent in the window time.
+![timegood](images/3/image-2.png)
+This one shows it gets the uplink feedback immediatly if the command is sent in the window time.
 
 1. Message Storage
-When a downlink message is sent outside the receive windows, it is stored in the Network Server's queue
-The message remains there until the next uplink opportunity from the device
-This is specifically because Class A devices can only receive downlinks after their uplinks
-Storage Location
-Messages are stored in the Network Server (like The Things Network server)
-Each device has its own downlink queue
-Usually only one pending downlink message can be stored per device (though this can vary by network server implementation)
+   When a downlink message is sent outside the receive windows, it is stored in the Network Server's queue
+   The message remains there until the next uplink opportunity from the device
+   This is specifically because Class A devices can only receive downlinks after their uplinks
+   Storage Location
+   Messages are stored in the Network Server (like The Things Network server)
+   Each device has its own downlink queue
+   Usually only one pending downlink message can be stored per device (though this can vary by network server implementation)
 
 sequenceDiagram
-    Application->>Network Server: Downlink message (outside RX window)
-    Note over Network Server: Stores message in queue
-    Device->>Network Server: Next uplink
-    Note over Network Server: Retrieves queued message
-    Network Server->>Device: Sends downlink in RX1/RX2 window
-### set the time zone 
+Application->>Network Server: Downlink message (outside RX window)
+Note over Network Server: Stores message in queue
+Device->>Network Server: Next uplink
+Note over Network Server: Retrieves queued message
+Network Server->>Device: Sends downlink in RX1/RX2 window
+
+### set the time zone
+
 Set the current time zone to the GMT+1. ff170a00
 
-![timezone](image-3.png)
-
-
+![timezone](images/3/image-17.png)
 
 #### Test cycle explanation
 
@@ -164,12 +166,12 @@ Set the current time zone to the GMT+1. ff170a00
      - This is a "bare" transmission or acknowledgment message
      - Contains minimal information, essentially just signaling that the device is communicating
      - Acts like a "hello" or "handshake" message
-       ![handshake](images/image-12.png)
+       ![handshake](images/3/image-12.png)
    - Network forwards uplink data message (Actual data payload)
      - This contains the actual sensor data/payload
      - Includes all the measurements and device status information
      - This is the "real data" that your application will use
-       ![datapayload](images/image-13.png)
+       ![datapayload](images/3/image-13.png)
 
 2. **Gateway Response**: Gateway server prepares downlink
 
@@ -177,7 +179,7 @@ Set the current time zone to the GMT+1. ff170a00
    - Sets RX1 delay to 5 seconds
    - Gateway ID: EBE8FB
    - sequenceDiagram
-     ![schedulegetaway](images/image-14.png)
+     ![schedulegetaway](images/3/image-14.png)
 
 Purpose of Gateway Response:
 After receiving the uplink messages, the gateway server prepares for potential downlink communication
@@ -190,13 +192,13 @@ Ensures the device knows when to listen for downlink messages
 Maintains synchronization between device and gateway
 
 3. **Downlink Transmission**: TTN messaging system
-   ![downlink](images/image-15.png)
+   ![downlink](images/3/image-15.png)
 
    - Device receives downlink data message
    - Command sent: FF2D01 (enable screen)
 
 4. **Confirmation Uplink**: Device acknowledges receipt
-   ![conformation](images/image-16.png)
+   ![conformation](images/3/image-16.png)
    - Successfully processes data message
    - Forwards confirmation uplink message
    - Note: Two uplink records appear in live data, with the second containing the actual data
@@ -219,9 +221,7 @@ When you use TTN, you're using their cloud-hosted Network Servers
 Physical locations include data centers in various regions (EU, US, Asia, etc.)
 
 
-At the beginning, the configuration chooses the EU network server. 
-
-
+At the beginning, the configuration chooses the EU network server.
 
 ```
 

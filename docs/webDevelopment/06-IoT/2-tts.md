@@ -5,4 +5,4 @@ title: 2- set up in TTN Console Configuration and Parameters
 
 ## Device configuration
 
-![alt text](images/image-18.png)
+![alt text](images/2/image-18.png)

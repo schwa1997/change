@@ -9,7 +9,7 @@ title: 1- know the End Device-Milesight AM307
 
 This smart IoT device is designed for comprehensive indoor air quality monitoring, providing real-time environmental data for offices, buildings, and indoor spaces.
 
-![device](images/image-17.png)
+![device](images/1/image-17.png)
 
 #### 1. Core Functions
 
@@ -145,7 +145,7 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
    - Used during the device activation process
    - 64-bit identifier that helps route messages to the correct application
 
-![appEUI](images/image-2.png)
+![appEUI](images/1/image-2.png)
 
 Note: For TTN V3, the APPEUI is now called JoinEUI, but they serve the same purpose
 
@@ -187,7 +187,7 @@ Note: For TTN V3, the APPEUI is now called JoinEUI, but they serve the same purp
 
 7. **Application Key**
 
-![AppKey](images/image-1.png)
+![AppKey](images/1/image-1.png)
 
 - 128-bit AES key used for secure device activation in OTAA
 - Root key for deriving session keys
