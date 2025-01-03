@@ -3,6 +3,16 @@ sidebar_position: 1
 title: Thesis
 ---
 
+# Table of Contents
+
+## List of Figures
+
+## List of Tables
+
+## List of Abbreviations
+
+## Acknowledgements
+
 ## Title
 
 **A Preliminary Study on Vowel Recognition using Convolutional Neural Networks for Individuals with Speech Disorders in the Italian Language**
@@ -38,56 +48,91 @@ The main innovations of this study include:
 
 The development of speech recognition technology has experienced an evolution from traditional methods to deep learning methods. Early research mainly relied on acoustic feature extraction and statistical models [4]. In recent years, deep learning, especially CNN, has made significant progress in the field of speech recognition [5]. However, through experimental comparison, it was found that in specific vowel recognition tasks, the traditional method still showed high accuracy and efficiency. This may be due to the relative simplicity of vowel features, which traditional methods have been able to capture well.
 
-## Proposed Method
+## Methodology
 
-A. Audio generation and collection
+### System Architecture
 
-- Establish a standardized recording environment
-- Design diverse sampling plans
+// Add system architecture diagram and description
 
-B. Waveform signal to image processing
+### Dataset
 
-- Generate spectrograms using short-time Fourier transform
-- Image preprocessing and normalization
+#### Data Collection
 
-C. Dataset construction
+// Add detailed dataset statistics
 
-- Collect speech samples from multiple speakers
-- Data enhancement and cleaning
+- Number of samples
+- Distribution across different categories
+- Speaker demographics
+- Recording environment specifications
 
-D. Network model training and evaluation
+#### Data Preprocessing
 
-- CNN model architecture design
-- Training parameter optimization
-- Cross validation
+// ... existing preprocessing content ...
 
-E. Comparative analysis with traditional methods
+### Model Architecture
 
-- Accuracy comparison
-- Comparison of computational efficiency
-  -Assessment of actual application scenarios
+#### CNN Structure
+
+// Add detailed CNN architecture description
+
+- Layer configuration
+- Parameters
+- Activation functions
+
+#### Training Process
+
+// Add training details
+
+- Hardware environment
+- Software environment
+- Hyperparameters
+- Training strategy
+
+## Experimental Setup
+
+### Environment
+
+// Add experimental environment details
+
+### Implementation Details
+
+// Add implementation specifics
+
+### Evaluation Metrics
+
+// Add description of evaluation metrics
 
 ## Results
 
-(Detailed experimental results to be added)
+### Performance Analysis
 
-##Conclusion
+// Add detailed results
 
-(To be supplemented by research conclusions)
+### Comparative Study
+
+// Add comparison with other methods
+
+### Discussion
+
+// Add result discussion
+
+## Conclusion
+
+- Main findings of the research
+- Summary of innovations
+- Limitations of the research
+- Contributions to the field
 
 ## Future Work
 
 In the future, the laboratory can further develop a speech-based AI training system based on this CNN model for speech training.
 
 - Collect more audio data from real people for training and testing
-- Collect more audio data from different languages ​​for training and testing
-- Collect more audio data from different age groups for training and testing
-- Collect more audio data from different genders and different accents for training and testing
 - In image conversion, you can focus on the features of the spectrogram that are most related to vowels, such as the shape of the spectrogram, the energy distribution of the spectrogram, the frequency distribution of the spectrogram, etc.
 - In model training, you can try to use more models, such as Transformer model, LSTM model, etc., to improve the performance of the model.
 - In model evaluation, you can try to use more evaluation indicators, such as F1 score, accuracy, recall, precision, etc., to evaluate the performance of the model.
 
-References
+## References
 
 [1] World Health Organization. (2021). World report on hearing.
 
@@ -98,3 +143,13 @@ References
 [4] Rabiner, L., & Juang, B. H. (1993). Fundamentals of speech recognition.
 
 [5] Zhang, X., et al. (2017). Deep learning for speech recognition: A comprehensive review.
+
+## Appendices
+
+### Appendix A: Dataset Details
+
+### Appendix B: Experimental Results
+
+### Appendix C: Code Implementation
+
+### Appendix D: Questionnaires and Protocols
