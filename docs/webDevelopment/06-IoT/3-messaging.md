@@ -1,9 +1,12 @@
 ---
 sidebar_position: 3
-title: 3- Uplink and Downlink test in TTN console with class A device
+title: 3- Uplink and Downlink in TTs
 ---
 
+## Device types
+
 The [LoRaWAN specification](https://www.thethingsnetwork.org/docs/lorawan/classes/) defines three device types: Class A, Class B, and Class C. All LoRaWAN devices must implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices. All device classes support bi-directional communication (uplink and downlink). During firmware upgrades over-the-air (FUOTA), a device must be switched to Class B or Class C.
+![alt text](images/3/image-18.png)
 
 - End devices can’t send uplink messages while they receive downlink messages.
 - the Milesight AM307-LoRaWAN Indoor Air Quality Sensor (7 in 1) is class A and it cant be changed in the configuration.
@@ -158,7 +161,7 @@ Set the current time zone to the GMT+1. ff170a00
 
 ![timezone](images/3/image-17.png)
 
-#### Test cycle explanation
+## Test cycle explanation
 
 1. **Initial Uplink**: Device sends scheduled uplink message
 

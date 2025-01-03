@@ -1,32 +1,34 @@
 ---
 sidebar_position: 1
-title: 1- know the End Device-Milesight AM307
+title: 1- Greet to LoRaWAN End Device-Milesight AM307
 ---
 
-## Milesight AM307 LoRaWAN Indoor Air Quality Sensor (7 in 1)
+## Device
 
-### Device Section
+#### Milesight AM307 LoRaWAN Indoor Air Quality Sensor (7 in 1)
 
 This smart IoT device is designed for comprehensive indoor air quality monitoring, providing real-time environmental data for offices, buildings, and indoor spaces.
 
 ![device](images/1/image-17.png)
 
-#### 1. Core Functions
+### 1. Core Functions
 
 - **Environmental Monitoring**
 
-  - Real-time air quality measurement
-  - Continuous data collection
-  - Automated alerts for threshold violations
-  - Historical data tracking
+```json
+{
+  "battery": 49,
+  "co2": 662,
+  "humidity": 41.5,
+  "light_level": 1,
+  "pir": "trigger",
+  "pressure": 976.9,
+  "temperature": 17.6,
+  "tvoc": 157
+}
+```
 
-- **Data Integration**
-  - Cloud connectivity via LoRaWAN
-  - Remote monitoring capabilities
-  - Integration with building management systems
-  - API access for custom applications
-
-#### 2. Device Configuration
+### 2. Device Configuration
 
 - **General Settings**
 
@@ -55,8 +57,6 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
     - Real-time monitoring
     - Air quality index calculation
 
-#### 3. Advanced Features
-
 - **Calibration Options**
 
   - Manual zero calibration
@@ -71,344 +71,117 @@ This smart IoT device is designed for comprehensive indoor air quality monitorin
   - TVOC alert levels
   - Customizable alert notifications
 
-#### 4. Applications
+## LoRaWAN/IoT Device
 
-- **Office Environment**
-  - Meeting room air quality monitoring
-  - Workspace comfort optimization
-  - HVAC system integration
-- **Building Management**
-  - Multi-zone monitoring
-  - Ventilation control
-  - Energy efficiency optimization
-- **Health & Safety**
-  - COVID-19 risk management
-  - Indoor air quality compliance
-  - Occupant comfort monitoring
+This is a LoRaWAN/IoT device.
 
-#### 5. Benefits
+### 1. LoRaWAN Protocol
 
-- **Health & Comfort**
-  - Improved indoor air quality
-  - Better occupant comfort
-  - Reduced sick building syndrome
-- **Operational**
-  - Energy savings
-  - Preventive maintenance
-  - Regulatory compliance
-- **Data-Driven Decisions**
-  - Real-time monitoring
-  - Trend analysis
-  - Performance optimization
+![loranwanprotocol](images/1/image.png)
 
-### Network
+```
+┌─────────────────┐
+│   Application   │ Layer 3: Application Layer
+├─────────────────┤
+│    LoRaWAN      │ Layer 2: MAC Layer (Data Link)
+├─────────────────┤
+│      LoRa       │ Layer 1: Physical Layer
+└─────────────────┘
+```
 
-#### Device Identification
+- Physical Layer (Milesight AM307)
+  - Handles radio modulation
+  - Manages RF parameters: Frequency, Spreading Factor (SF), Bandwidth, and Transmission Power
+- MAC Layer (Device EUI, APPEUI, Application Port, Application Key)
+  - Manages network access
+  - Device activation (OTAA/ABP)
+  - Handles: Message formatting, Security, Channel access, Adaptive Data Rate (ADR)
+- Application Layer (TTS)
+  - Carries the actual payload
+  - Handles end-application data
+  - Manages application-specific encoding/decoding
+
+### 2. Network configuration
 
 - Device EUI
+  - A globally unique 64-bit identifier for each device
+  - Similar to a MAC address for LoRaWAN devices
+  - Format: 8-byte hexadecimal number (e.g., 70B3D57ED0008C3D)
+  - Used for device identification and authentication
 - APP EUI (JoinEUI)
-- Application Key
 
-#### Connection Parameters
+  - Globally unique identifier for the application/joining server
+  - Used during the device activation process
+  - 64-bit identifier that helps route messages to the correct application
 
-- LoRaWAN Version
-- Work Mode
-- Join Type
-- Rejoin Node
+    ![appEUI](images/1/image-2.png)
+
 - Application Port
+  - Used to multiplex different data types/applications on the same device
+  - Values range from 1 to 223
+  - Helps distinguish between different types of payloads
+- LoRaWan Versiom
+  - Specifies the protocol version (e.g., 1.0.2, 1.0.3, 1.1)
+  - Determines available features and security mechanisms
+- Work Mode
 
-#### Radio Configuration
+  - Defines how the device operates (e.g., Class A, B, or C)
+  - Class A: Most energy efficient, bidirectional communication. This device is class A device.
+  - Class B: Scheduled receive windows
+  - Class C: Continuously listening
+
+    ![networkconfiguration](images/1/image-5.png)
+
+- Join Type
+  - OTAA (Over-the-Air Activation): Dynamic secure activation
+  - ABP (Activation By Personalization): Static activation with pre-programmed keys
+- Application Key
+  - 128-bit AES key used for secure device activation in OTAA(Over-The-Air Activation)
+  - Root key for deriving session keys
+  - You can generate from the TTS and copy paste here
+
+    ![AppKey](images/1/image-1.png)
+
+- Rejoin Node
+
+  - Configuration for periodic rejoin requests
+  - Helps maintain network security and connection reliability
+
+- Set the number of detection signals sent
+
+  - Defines how many times the device attempts to send join requests
+  - Affects connection reliability and power consumption
+
+    ![networkconfiguration2](images/1/image-6.jpg)
 
 - Support Frequency
+  - Frequency band used for communication (e.g., EU868, US915, AS923)
+  - Region-specific and must comply with local regulations
+- Frequency/MHz
+
+  ![networkconfiguration3](images/1/image-3.jpg)
+
 - ADR Mode
+  - Automatically optimizes data rates and power usage
+  - Balances range, airtime, and power consumption
 - Spreading Factor
+  - Determines the chirp duration (SF7-SF12)
+  - Higher SF = longer range but slower data rate
+  - Lower SF = shorter range but faster data rate
 - TXPower
 
-#### Reception Settings
+  - Transmission power level in dBm
+  - Affects communication range and battery life
+  - Must comply with regional regulations
 
 - RX2 Data Rate
+  - Data rate for the second receive window
+  - Used when the first receive window fails
+  - Region-specific parameter
 - RX2 Frequency
-- Number of Detection Signals
 
-### Network Parameters
+  - Frequency used for the second receive window
+  - Fixed frequency per region
+  - Backup communication channel
 
-1. **Device EUI (Extended Unique Identifier)**
-
-   - A globally unique 64-bit identifier for each device
-   - Similar to a MAC address for LoRaWAN devices
-   - Format: 8-byte hexadecimal number (e.g., 70B3D57ED0008C3D)
-   - Used for device identification and authentication
-
-2. **APP EUI (JoinEUI)**
-
-   - Globally unique identifier for the application/joining server
-   - Used during the device activation process
-   - 64-bit identifier that helps route messages to the correct application
-
-![appEUI](images/1/image-2.png)
-
-Note: For TTN V3, the APPEUI is now called JoinEUI, but they serve the same purpose
-
-### Application/Joining Server
-
-- A network server component that manages device activation and security
-- Key responsibilities:
-  - Handles OTAA (Over-The-Air Activation) join procedures
-  - Manages application session keys
-  - Validates device authenticity
-  - Routes application data between devices and applications
-- Security features:
-  - Stores root keys for devices
-  - Generates session keys for secure communication
-  - Ensures only authorized devices can join the network
-
-3. **Application Port**
-
-   - Used to multiplex different data types/applications on the same device
-   - Values range from 1 to 223
-   - Helps distinguish between different types of payloads
-
-4. **LoRaWAN Version**
-
-   - Specifies the protocol version (e.g., 1.0.2, 1.0.3, 1.1)
-   - Determines available features and security mechanisms
-
-5. **Work Mode**
-
-   - Defines how the device operates (e.g., Class A, B, or C)
-   - Class A: Most energy efficient, bidirectional communication
-   - Class B: Scheduled receive windows
-   - Class C: Continuously listening
-
-6. **Join Type**
-
-   - OTAA (Over-the-Air Activation): Dynamic secure activation
-   - ABP (Activation By Personalization): Static activation with pre-programmed keys
-
-7. **Application Key**
-
-![AppKey](images/1/image-1.png)
-
-- 128-bit AES key used for secure device activation in OTAA
-- Root key for deriving session keys
-
-8. **Rejoin Node**
-
-   - Configuration for periodic rejoin requests
-   - Helps maintain network security and connection reliability
-
-9. **Number of Detection Signals**
-
-   - Defines how many times the device attempts to send join requests
-   - Affects connection reliability and power consumption
-
-10. **Support Frequency**
-
-    - Frequency band used for communication (e.g., EU868, US915, AS923)
-    - Region-specific and must comply with local regulations
-
-11. **ADR Mode (Adaptive Data Rate)**
-
-    - Automatically optimizes data rates and power usage
-    - Balances range, airtime, and power consumption
-
-12. **Spreading Factor (SF)**
-
-    - Determines the chirp duration (SF7-SF12)
-    - Higher SF = longer range but slower data rate
-    - Lower SF = shorter range but faster data rate
-
-13. **TXPower**
-
-    - Transmission power level in dBm
-    - Affects communication range and battery life
-    - Must comply with regional regulations
-
-14. **RX2 Data Rate**
-
-    - Data rate for the second receive window
-    - Used when the first receive window fails
-    - Region-specific parameter
-
-15. **RX2 Frequency**
-    - Frequency used for the second receive window
-    - Fixed frequency per region
-    - Backup communication channel
-
-### Network Communication Flow
-
-#### End Device to TTN Communication
-
-1. **Device Activation**
-
-   - Device initiates join request using Device EUI and Join EUI (APP EUI)
-   - TTN validates device credentials through join server(getaway)
-   - Upon successful activation, session keys are established
-
-2. **Uplink Communication**
-
-   - End device collects sensor data
-   - Data is encrypted using session keys
-   - Device transmits data using LoRaWAN protocol
-   - Gateway receives and forwards to TTN
-   - TTN processes and routes data to appropriate application
-
-3. **Downlink Communication**
-   - TTN can send commands/configuration to devices
-   - Device opens two receive windows after each uplink:
-     - RX1: Uses same frequency as uplink
-     - RX2: Uses specific frequency and data rate
-   - Class A devices only receive after transmitting
-   - Class C devices can receive anytime
-
-#### Network Components
-
-1. **End Devices**
-
-   - Sensors/actuators with LoRa capability
-   - Transmit data periodically or on events
-   - Operate in different classes (A, B, C)
-
-2. **LoRa Gateways**
-
-   - Physical devices that act as a bridge between LoRa end devices and the internet(getway in the network room)
-   - Receives LoRa radio signals and converts them to IP packets
-   - Multiple gateways can receive the same device message
-   - Does NOT handle security or device activation
-
-3. **Join Server**
-
-   - Separate logical server that can be:
-     1. Part of TTN cloud infrastructure (default)
-     2. Self-hosted on your own infrastructure
-     3. Hosted by a third-party provider
-   - Implementation options:
-     - Software service running on TTN's cloud (most common)
-     - Software installed on your local server/computer
-     - Dedicated hardware appliance (less common)
-   - Physical location possibilities:
-     - Cloud: TTN's infrastructure (default setup)
-     - Local: Your network room or data center
-     - Hybrid: Combination of local and cloud services
-
-4. **The Things Network (TTN)**
-
-   - Network server that coordinates the entire system
-   - Routes messages between components
-   - Manages gateway connections
-   - Forwards messages to appropriate applications
-
-5. **Data Flow with Join Server**
-
-```
-   End Device → Gateway → Network Server ←→ Join Server(TTN cloud/local)
-         ↑                     ↓downlink
-         └─── Gateway ←─── Application
-```
-
-Key points about this flow:
-
-- End devices communicate only with gateways via LoRa radio
-- Gateways forward messages to the network server
-- Network server coordinates with join server for device activation
-- After activation, application data flows through network server to applications
-- Downlink messages follow the reverse path through the gateway
-
-#### Key Considerations
-
-- Signal strength and gateway proximity
-- Regional frequency plans and regulations
-- Duty cycle limitations
-- Power consumption vs. communication needs
-- Security and encryption requirements
-
-### Device Setup with TTN
-
-#### 1. TTN Console Setup
-
-1. Create TTN Account
-
-   - Go to TTN Console (console.cloud.thethings.network)
-   - Sign up for a new account if needed
-   - Select your region
-
-2. Create Application
-
-   - Click "Applications" → "Add Application"
-   - Fill in:
-     - Application ID (unique identifier)
-     - Application name
-     - Description (optional)
-   - Save the application
-
-3. Register Device
-   - In your application, go to "End devices"
-   - Click "Add end device"
-   - Choose registration method:
-     - **Recommended**: Register using device profile
-     - Manual registration
-   - Enter device information:
-     - Device ID
-     - Device EUI (from device label/interface)
-     - App EUI (JoinEUI)
-     - App Key (for OTAA)
-
-#### 2. Physical Device Configuration
-
-1. Access Device Interface
-
-   - Connect to device's configuration interface
-   - Usually via USB or web interface
-   - Follow manufacturer's instructions
-
-2. Configure Network Parameters
-
-   - Enter Device EUI
-   - Enter App EUI (JoinEUI)
-   - Enter App Key
-   - Set LoRaWAN version
-   - Select region/frequency plan
-   - Set join mode to OTAA
-
-3. Verify Settings
-   - Check frequency band matches your region
-   - Confirm network parameters match TTN console
-   - Ensure device is in range of a gateway
-
-#### 3. Testing Connection
-
-1. Initial Join
-
-   - Reset/power on the device
-   - Monitor TTN console for join request
-   - Check device status in TTN console
-   - Verify "Connected" status
-
-2. Test Uplink
-
-   - Wait for device to send data
-   - Check "Live data" in TTN console
-   - Verify payload is received
-
-3. Test Downlink
-   - Use TTN console to send downlink
-   - Schedule a downlink message
-   - Verify device receives data
-
-#### 4. Troubleshooting
-
-- Check gateway coverage
-- Verify credentials match exactly
-- Monitor device logs
-- Check signal strength (RSSI)
-- Verify frequency/region settings
-- Ensure proper antenna connection
-
-#### 5. Monitoring
-
-- Use TTN console to monitor:
-  - Device status
-  - Data flow
-  - Signal quality
-  - Error messages
-  - Battery status (if applicable)
+  ![networkconfiguration4](images/1/image-4.jpg)

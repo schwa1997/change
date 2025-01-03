@@ -12,9 +12,28 @@ The Things Network (TTN) offers several ways to integrate with cloud platforms. 
 ![structure](images/4/image.png)
 Follow this [instruction](https://www.thethingsindustries.com/docs/integrations/cloud-integrations/aws-iot/) to configure in both AWS and TTN to establish the connection between the AWS cloud and the TTN.
 
+1. Application Level: TTN Application ──(CrossAccountRoleArn)──> AWS Stack
+2. Device Level: LoRaWAN Device ── (devEUI) ── AWS IoT Thing
+
+
 ### AWS
 
+- AWS registration: get a AWS account
+- cloudformation- Stack -set up the stack in the cloudformation
+  ![AWSstack](images/4/image-1.png)
+
+ when creating stack, CrossAccountRoleArn is generated in the OutPut area and it's used to allow TTN (The Things Stack) to access your AWS resources across account. 
+
+- AWS IoT- Things-configuration of the device using the device number
+  ![aws configuration](images/4/image-12.png)
+  The device here has the device name using the devEUI as the unique identifier. The ARN here indicates the stack information and the device information. 
+  ![arn](images/4/image-13.png)
+  ARN: Amazon Resource Name.
+  
 ### TTS
+
+In the TTS, the role ARN is extremely important. It can be obtained and automatically filled.
+![ttsconfigura](images/4/image-2.png)
 
 ## Test
 
@@ -85,5 +104,33 @@ TTN forwards device status and metadata separately from the actual payload
 AWS IoT receives both the metadata and the actual uplink message
 This helps with device management and monitoring in AWS
 The actual LoRaWAN handshake happens at the TTN level, not at the AWS cloud level. AWS simply receives the forwarded messages from TTN, which is why you don't see the handshake mechanism in AWS.
+
 ### AWS Lambda
-AWS Lambda is the event-based serverless computing service for the AWS platform. Event-driven functions are compute events that happen automatically in response to various inputs known as triggers. This is sometimes called Functions-as-a-Service (FaaS), although the AWS Lambda ecosystem extends beyond that. 
+
+AWS Lambda is the event-based serverless computing service for the AWS platform. Event-driven functions are compute events that happen automatically in response to various inputs known as triggers. This is sometimes called Functions-as-a-Service (FaaS), although the AWS Lambda ecosystem extends beyond that.
+
+## IoT solution
+
+Device → LoRaWAN Gateway → The Things Stack (TTS) → AWS Cloud
+
+### Direct Integration with TTS using MQTT integration
+
+#### MQTT Webhooks
+
+MQTT is a publish/subscribe messaging protocol designed for IoT. Every application on TTS automatically exposes an MQTT endpoint. In order to connect to the MQTT server you need to create a new API key, which will function as connection password. You can also use an existing API key, as long as it has the necessary rights granted. The AWS is connected using the MQTT test
+
+#### MQTT and LoRaWan difference
+
+- Devices communicate with gateways using LoRaWAN
+- The Things Network receives the LoRaWAN messages
+- TTN then forwards these messages to AWS using MQTT
+
+![mqtt](images/4/image-3.png)
+
+How it works: TTS provides APIs, Webhooks, and MQTT integrations to access uplink data directly.
+Pros:
+Real-time data access via MQTT or Webhooks.
+Direct control over downlink messages using TTS APIs.
+Simplifies the architecture if your app service doesn’t require AWS features.
+Cons:
+Less flexibility if you later need to process or analyze the data at scale.
