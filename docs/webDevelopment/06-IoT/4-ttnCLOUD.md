@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: 4 - TTN and the AWS cloud
+title: 4-TTN and the AWS cloud
 ---
 
 # TTN Cloud Integration Options

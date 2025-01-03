@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: 1- Greet to LoRaWAN End Device-Milesight AM307
+title: 1-LoRaWAN End Device-Milesight AM307
 ---
 
 ## Device
@@ -136,6 +136,7 @@ This is a LoRaWAN/IoT device.
   - OTAA (Over-the-Air Activation): Dynamic secure activation
   - ABP (Activation By Personalization): Static activation with pre-programmed keys
 - Application Key
+
   - 128-bit AES key used for secure device activation in OTAA(Over-The-Air Activation)
   - Root key for deriving session keys
   - You can generate from the TTS and copy paste here
