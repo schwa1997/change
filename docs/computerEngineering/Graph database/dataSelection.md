@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+title: Data Selection
+---
 # FLYDATA - Domain and data selection
 
 ## Group Information

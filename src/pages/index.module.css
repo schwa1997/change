@@ -21,6 +21,46 @@
   align-items: center;
   justify-content: center;
 }
+
+
+/* CSS */
+.button {
+  --b: 3px;
+  /* border thickness */
+  --s: .45em;
+  /* size of the corner */
+  --color: white;
+
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover,
+.button:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+  color: white;
+  text-decoration: none;
+}
+
+.button:active {
+  background: var(--color);
+  color: #124429;
+}
+
 .bannerGrid {
   margin: 2rem auto;
   display: grid;
@@ -29,10 +69,12 @@
   max-width: 1200px;
   padding: 0 1rem;
 }
+
 .bannerContent {
   margin: 1rem 1rem;
   max-width: 1000px;
 }
+
 .sectionGrid {
   margin: 2rem auto;
   display: grid;
@@ -43,34 +85,107 @@
 }
 
 .section {
-  border: 1px solid #e0e0e0;
-  border-radius: 0.5rem;
-  padding: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+.sectionOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sectionContent {
-  margin: 1rem 1rem;
-  max-width: 500px;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  z-index: 1;
 }
+
+.sectionContent h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
 .sectionContent p {
-  text-align: left;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
-.paragraph {
-  margin: 1rem 0;
+
+.headerSection {
+  background: url('https://c4.wallpaperflare.com/wallpaper/690/588/992/minimalism-green-wallpaper-preview.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
+
+.notebookSection {
+  background: url('https://wallpapers.com/images/hd/solid-green-ibzph37qs0dekcwe.jpg') center/cover;
+}
+
+.blogSection {
+  background: url('https://www.wallpaperflare.com/static/770/573/210/paint-stain-light-bright-wallpaper.jpg') center/cover;
+}
+
 
 @media screen and (max-width: 768px) {
   .sectionGrid {
     grid-template-columns: 1fr;
   }
 
-  .bannerContent,
-  .sectionContent {
-    margin: 0.5rem;
-    max-width: 100%;
+  .section {
+    min-height: 300px;
   }
 
-  .section {
-    padding: 0.75rem;
+  .sectionContent {
+    padding: 1.5rem;
   }
+}
+
+.leftBanner {
+  padding: 2rem;
+  max-width: 600px;
+  color: white;
+}
+
+.bannerHeader {
+  padding: 2rem;
+  max-width: 600px;
+  color: white;
+}
+
+.bannerHeader h2 {
+  color: white;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: white;
+}
+
+.paragraph:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
