@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Change/陈记',
   tagline: 'I am a programmer, a game Changer. 陈是我的姓氏，这个是我的笔记本。',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.ico',
   url: 'http://schwa1997.github.io',
   baseUrl: '/',
   organizationName: 'schwa1997',
