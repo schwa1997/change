@@ -132,6 +132,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .notebookSection {
@@ -159,6 +160,8 @@
   .leftBanner {
     padding: 1rem;
     max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .paragraph {
@@ -168,6 +171,17 @@
   }
 
   .bannerHeader {
+    padding: 1rem;
+  }
+
+  .headerSection {
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .sectionOverlay {
+    flex-direction: column;
     padding: 1rem;
   }
 }
