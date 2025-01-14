@@ -17,7 +17,9 @@ export default function Home(): JSX.Element {
                   <Heading as="h2">陈记</Heading>
                   <Heading as="h2">CHANGE</Heading>
                 </div>
-                <div className={styles.leftBanner}>
+                <div
+                  className={`${styles.leftBanner} ${styles.responsiveBanner}`}
+                >
                   <p className={styles.paragraph}>
                     "陈" (Chen) is my family name.
                   </p>
