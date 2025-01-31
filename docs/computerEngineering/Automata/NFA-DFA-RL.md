@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+title: NFA-DFA-RL
+---
 
 ## 1. Basic Concepts
 ### what is automata? 
@@ -78,3 +82,4 @@ Proof:在一个正则语言的有限状态自动机中，因为状态数是有�
     - Regular language equivalence
 
 ### DFA minimization
+

@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+title: CFG
+---
+
 ## 1. Basic Concepts
 
 > We have learned CFG, NFA, and Regular languages. Regular languages have limitations - they can only count up to fixed numbers and cannot maintain relationships between counts. For example, regular languages cannot describe the language L = n个a和n个b (n 'a's followed by n 'b's). Context-Free Grammars (CFG) can solve this problem.
@@ -56,3 +61,23 @@ But CFG can describe palindromes:
 ### 4. 实现复杂度
 - RL：可以用有限自动机实现，计算效率高
 - CFG：需要下推自动机实现，计算复杂度相对更高
+
+
+## WHY CALLED CONTEXT FREE
+- Context-free means the rules used to generate or recognize the language don't depend on the surrounding context of symbols.
+
+## Properties of Context-Free Languages
+### Normal Forms for Context-Free Grammars
+### The Pumping Lemma for Context-Free Languages
+### Closure Properties of Context-Free Languages
+
+Push down automata - PDA
+
+
+Push down automata 
+
+
+## Introduction to Turing Machines
+
+## Undecidability
+### A Language That Is Not Recursively Enumerable RE
