@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: 2-Configuration in TTS
+title: 2-Configuration in TTI console
 ---
 
 ## Device configuration

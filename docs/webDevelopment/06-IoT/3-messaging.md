@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: 3-Uplink and Downlink in TTs
+title: 3-Uplink and Downlink in TTI console
 ---
 
 ## Device types

@@ -48,73 +48,164 @@ The main innovations of this study include:
 
 The development of speech recognition technology has experienced an evolution from traditional methods to deep learning methods. Early research mainly relied on acoustic feature extraction and statistical models [4]. In recent years, deep learning, especially CNN, has made significant progress in the field of speech recognition [5]. However, through experimental comparison, it was found that in specific vowel recognition tasks, the traditional method still showed high accuracy and efficiency. This may be due to the relative simplicity of vowel features, which traditional methods have been able to capture well.
 
+## Web application development
+
+
+
 ## Methodology
 
 ### System Architecture
 
-// Add system architecture diagram and description
+
 
 ### Dataset
 
 #### Data Collection
 
-// Add detailed dataset statistics
+The dataset consists of Italian vowel audio samples (/a/, /e/, /i/, /o/, /u/):
 
-- Number of samples
-- Distribution across different categories
-- Speaker demographics
-- Recording environment specifications
+- Total samples: 1000 audio files
+- Training set: 800 samples (80%)
+- Validation set: 200 samples (20%)
+- Class distribution: Balanced across 5 vowel classes
+- Audio generation: Used Google Text-to-Speech (gTTS) with various parameters
+- Sample variations: Multiple pronunciations, durations, and intonations
 
 #### Data Preprocessing
 
-// ... existing preprocessing content ...
+A. Audio Recording
+
+- Used gTTS library for generating synthetic speech
+- Multiple variations per vowel:
+  - Standard pronunciations
+  - Extended durations
+  - Emphasized pronunciations
+  - Combined sounds
+  - Soft pronunciations
+  - Tonal variations
+
+B. Converting wave signal to image form
+
+- Generated spectrograms from audio files
+- Image size: 55x55 pixels
+- Normalized pixel values to range [0,1]
+- Applied data augmentation:
+  - Width shift: ±10%
+  - Height shift: ±10%
+  - Zoom range: ±10%
+  - Brightness variation: ±20%
 
 ### Model Architecture
 
 #### CNN Structure
 
-// Add detailed CNN architecture description
+The final model uses a transfer learning approach with ResNet50V2:
 
-- Layer configuration
-- Parameters
-- Activation functions
+1. Base Model:
+
+- Pre-trained ResNet50V2 (weights='imagenet')
+- Input shape: (55, 55, 3)
+- Global average pooling
+- Trainable parameters frozen initially
+
+2. Classification Head:
+
+- Dense layer (256 units, ReLU activation)
+- Dropout (0.5)
+- Output layer (5 units, Softmax activation)
 
 #### Training Process
 
-// Add training details
+1. Training Strategy:
 
-- Hardware environment
-- Software environment
-- Hyperparameters
-- Training strategy
+- Two-phase training approach:
+  - Phase 1: Train only classification layers
+  - Phase 2: Fine-tune last 10 layers of base model
+
+2. Training Parameters:
+
+- Batch size: 32
+- Initial learning rate: 0.01
+- Optimizer: SGD with momentum (0.9)
+- Loss function: Categorical crossentropy
+- Epochs: 50 (with early stopping)
+
+3. Callbacks:
+
+- Early stopping (patience=5, monitor='val_accuracy')
+- Learning rate reduction (factor=0.2, patience=3)
+- Model checkpoint (save best weights)
 
 ## Experimental Setup
 
 ### Environment
 
-// Add experimental environment details
+
 
 ### Implementation Details
 
-// Add implementation specifics
+1. Development Environment:
+
+- Python 3.x
+- TensorFlow/Keras
+- Libraries: gTTS, numpy, matplotlib
+
+2. Data Processing Pipeline:
+
+- Audio generation using gTTS
+- Spectrogram conversion
+- Data augmentation
+- Train-validation split
+
+3. Model Implementation:
+
+- Transfer learning with ResNet50V2
+- Custom training loops
+- Callback implementations
+- Performance monitoring
 
 ### Evaluation Metrics
 
-// Add description of evaluation metrics
+
 
 ## Results
 
 ### Performance Analysis
 
-// Add detailed results
+The model achieved significant improvements through iterations:
+
+1. Initial Results:
+
+- Training accuracy: ~20%
+- Validation accuracy: ~20%
+
+2. After Transfer Learning:
+
+- Training accuracy: 78.01%
+- Validation accuracy: 85.50%
+- Training loss: 0.4548
+- Validation loss: 0.3831
+
+3. Training Progression:
+
+- Epoch 1: 52.50% validation accuracy
+- Epoch 4: 76.50% validation accuracy
+- Epoch 6: 81.00% validation accuracy
+- Epoch 7: 85.50% validation accuracy
+
+4. Key Observations:
+
+- Consistent improvement in both training and validation metrics
+- No significant overfitting (validation metrics better than training)
+- Stable learning curve with steady improvements
+- Effective transfer learning from ResNet50V2
 
 ### Comparative Study
 
-// Add comparison with other methods
+
 
 ### Discussion
 
-// Add result discussion
 
 ## Conclusion
 
