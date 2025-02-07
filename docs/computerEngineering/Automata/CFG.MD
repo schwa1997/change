@@ -31,11 +31,6 @@ But CFG can describe palindromes:
 
 
 
-
-
-
-
-
 ## CFG 和 RL 的关系
 
 ### 1. 包含关系
@@ -71,13 +66,17 @@ But CFG can describe palindromes:
 ### The Pumping Lemma for Context-Free Languages
 ### Closure Properties of Context-Free Languages
 
-Push down automata - PDA
+## CF grammar 
+G = (V,T, P, S)
+v: variables, strings of the cfg
+t: terminal symbol
+p: production
+s: initial state 
+## Push down automata - PDA
 
 
-Push down automata 
+Pumping Lemma for CFG
 
 
-## Introduction to Turing Machines
 
-## Undecidability
-### A Language That Is Not Recursively Enumerable RE
+
