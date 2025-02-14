@@ -3,10 +3,12 @@ sidebar_position: 1
 title: Exam Notes
 ---
 
+---
 ## 1. DEFINITION
-
+---
+---
 ### 1.1 DFA/REG
-
+---
 #### DFA
 - **Definition**: 
   ![definition of DFA](images/image-39.png)
@@ -22,14 +24,13 @@ States p and q are equivalent if:
   - Each state has 0 and 1 direction.
   - Use intermediate steps/tabular algorithm/inductive algorithm/XYq table to find equivalent states.
   - Remove equivalent states to create a minimal DFA.
-
+- **Solution**:
+  - q0 = q3, q1 = q4 and q2 = q5.（等价符号）
 - **Example 2**: Intermediate steps to minimize 
   ![Intermediate steps to minimize](images/image-91.png)
 
-- **Idea**:
-  - Each state has 0 and 1 direction.
-  - Use intermediate steps/tabular algorithm/inductive algorithm/XYq table to find equivalent states.
-  - Remove equivalent states to create a minimal DFA.
+- **Solution**:
+  - p0 = {q0, q5}, p1 = {q1, q3}, p2 = {q2, q4}.
 
 ##### Regular Expression with ϵ-NFA
 - **Examples 1**: Regular expression to minimize 
@@ -38,7 +39,9 @@ States p and q are equivalent if:
 - **Idea**:
   - Each state has 0 and 1 direction.
   - Eliminate the state using the regular expression.
-
+- **Solution**:
+  - ![elimination of q1](image-6.png)
+  - ![elimination of q3](image-7.png)
 - **Examples 2**: Regular expression to ϵ-NFA
 
   ![Regular expression for convert](images/image-83.png)
@@ -78,6 +81,16 @@ States p and q are equivalent if:
   ![NFA example 1](images/image-89.png)
 
 - **Solution**: Use regular expression to eliminate state.
+  - elimination of q1 
+  
+  ![elimination of q1 from](image-8.png)
+    - elimination of q3
+
+   ![elimination of q3 from A′](image-9.png)
+
+     - final regular expression 
+
+  ![final regular expression](image-10.png)
 
 - **Example 2**: Intermediate steps with induction
   ![NFA example 2](images/image-90.png)
@@ -94,40 +107,12 @@ States p and q are equivalent if:
 - **Solution**:
   ![Transform N into an equivalent deterministic finite automaton D](images/image-93.png)
 
+---
 ### 1.2 CFL
-- **Chomsky normal form**:
-
-
-
-- **Substitutions of CFL (7.3.1)**:
-  ![Substitutions](images/image-45.png)
-  ![Substitutions of CFL](images/image-46.png)
-
-
-
-
-
-
-
-
-
+---
 
 - **PDA**:
   ![PDA](images/image-22.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - **Language Accepted by Final State**:
   - The **language accepted by final state** is the set of strings that take a pushdown automaton (PDA) from its initial configuration to a configuration where:
@@ -144,11 +129,6 @@ States p and q are equivalent if:
     ![Language Accepted by Empty Stack](images/image-14.png)
     - Since final states are no longer relevant in this case, set F is not used in the definition.
 
-| **Aspect** | **Accepted by Final State** | **Accepted by Empty Stack** | 
-| --- | --- | --- | 
-| **Acceptance Condition** | Input consumed and machine reaches a final state. | Input consumed and stack is completely empty. | 
-| **Final Stack Content** | Stack content does not matter (can be non-empty). | Stack must be completely empty. | 
-
 - **From Empty Stack to Final State**:
   ![From empty stack to final state](images/image-19.png)
 
@@ -156,12 +136,15 @@ States p and q are equivalent if:
   ![From final state to empty stack](images/image-20.png)
 
 
+- **Substitutions of CFL (7.3.1)**:
+  ![Substitutions](images/image-45.png)
+  ![Substitutions of CFL](images/image-46.png)
 
+  - related to the closure property of CFL. Some closure method is a form of substitution. 
 
-
-
-
+---
 ### 1.3 TM/RE/REC
+---
 - **TM**:
   ![Turing machine](images/image-23.png)
 
@@ -179,11 +162,13 @@ States p and q are equivalent if:
   - A language L is recursive (REC) or, equivalently, the decision problem L represents is decidable, if L " LpMq for a TM M that halts for every input.
   - The class 𝑃 (languages that can be recognized in polynomial time by a Turing machine) is a subset of the class REC (recursive languages).
 
-- **Multi-tape TM**:
 
+---
 ## 2. GRAPH
-
+---
+---
 ### 2.1 DFA/REG
+---
 - **1.1 DFA**: XY-q Table - Inductive algorithm for detecting distinguishable state pairs
   ![inductive algorithm for detecting distinguishable state pairs](images/image-16.png)
 
@@ -206,8 +191,9 @@ States p and q are equivalent if:
   **Lazy Evaluation**: 
 
   ![lazy evaluation](images/image-42.png)
-
+---
 ### 2. CFL
+---
 - **2.1 CFL Production**:
   - **Example 1**:
     ![CFL Production example 1](images/image-24.png)
@@ -229,6 +215,16 @@ States p and q are equivalent if:
 
 #### Example 1
 ![CFG simplification Example 1](images/image-26.png)
+Solution
+- Eliminate the ϵ-productions
+![alt text](image-2.png)
+-  Eliminate the unary productions
+![alt text](image-3.png)
+![alt text](image-4.png)
+- Eliminate the useless symbols
+- Produce a CFG in Chomsky normal form equivalent to G.
+![alt text](image-5.png)
+
 
 ### 2.3 Membership in a CFL
 Given as input a string w, we want to decide whether w belongs to L(G), where G is some fixed CFG.
@@ -257,26 +253,39 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
 然后根据PDA，推出怎么样得出这样的string。
 
 **Example 2**:
+
 ![Example 1 Membership](images/image-27.png)
 - **dynamic programming algorithm**
 
-**Example**
-![alt text](images/image-3.png)
-**Solution**
-![alt text](images/image-2.png)
+![*dynamic programming algorithm](image-17.png)
 
+**Example**
+
+![dynamic programming algorithm 2](images/image-3.png)
+
+**Solution**
+
+![dynamic programming algorithm solution 2](images/image-2.png)
+
+---
 ### 3. TM/RE/REC
+---
 #### 3.1 REC
+
+Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Difference： 
 ![REC graph](images/image-43.png)
 
+---
 ## 判定题
+---
+---
+### 1. Closure Property
+---
 
-### DFA/REG/CFL
-#### Closure Property
 | **Operation** | **CFL** | **REG** | **RE** | **REC** | 
 | --- | --- | --- | --- | --- | 
 | **Union** | Yes | Yes | Yes | Yes |
-| **Intersection** | **NO**  | Yes | Yes | Yes | 
+| **∩ Intersection** | **NO**  | Yes | Yes | Yes | 
 | **Complementation** | **NO** | Yes | NO | Yes |
 | **Concatenation** | Yes | Yes | Yes | Yes |
 | **Kleene Star** | Yes | Yes | Yes |  |
@@ -284,13 +293,27 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
 | **Homomorphism同态** | Yes | Yes | |  |
 | **Reversal** | Yes | Yes | |  |
 | **空** | Yes | Yes | |  |
+---
+| **Operation** OF **CFL** and  **RL** | RESULT | 
+| --- | --- | 
+| CFL ∩ REG | CFL | 
+| CFL ∖ REG | CFL | 
+---
+| **Operation** | **REC** | Usage |
+| --- | --- |--- |
+| Complement | Yes | If L is in RE and L-(Complement) is not in RE, then L cannot be a recursive language. |
+|  |  | If L and L-(Complement) are in RE, then L is recursive. |
+|  |  | It is not possible that a language is recursive and the complement is RE but not recursive or not RE. |
+|  |  | It is not possible that a language and its complement are both RE but not recursive. |
+---
+**Proof**:
 
 **CFL**: 倒插门，戴帽子，来一刀 都不行
 - 倒插门有很简单的反例
 - 因为倒插门，所以证明戴帽子不行
 - 因为戴帽子，所以来一刀不行
 
-**Proof**:
+
 - **Intersection**: CFL 不闭合 
   ![counter example of cfl intersection no](images/image-54.png)
 - **CFL Complementation L- no**: 
@@ -302,10 +325,7 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
   = create contradiction of complementation using special case 
   ![create contradiction of complementation](images/image-58.png)
 
-| **Operation** OF **CFL** and  **RL** | RESULT | 
-| --- | --- | 
-| Intersection of CFL and REG | CFL | 
-| CFL ∖ REG | CFL | 
+
 
 - **Intersection between CFL and Regular Language**:
   ![Intersection between CFL and regular language](images/image-55.png)
@@ -320,20 +340,14 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
   = REG is CFL + REG complementation is CFL + intersection of 2 CFL 
   （这个就是CFL∖ CFL的特殊情况，但是还是CFL）
 
-| **Operation** | **REC** | Usage |
-| --- | --- |--- |
-| Complement | Yes | If L is in RE and L-(Complement) is not in RE, then L cannot be a recursive language. |
-|  |  | If L and L-(Complement) are in RE, then L is recursive. |
-|  |  | It is not possible that a language is recursive and the complement is RE but not recursive or not RE. |
-|  |  | It is not possible that a language and its complement are both RE but not recursive. |
-
 **Example**:
 - We have used Rice's theorem to prove Lp is not REC.
 - Then, how to find if L is RE or not? 
   - **NOT EMPTY**: We use the Lp- to prove it is RE. (We can construct a TM for this property)
   - **NOT TRIVIAL**: If Lp is also RE, it Lp should be REC. But we have proved it's not REC. So Lp can't be RE. It proves that Lp is also not RE. 
-
-### 3. RE REC TM
+---
+### 2. RE REC TM
+---
 ![Language classes](images/image-33.png)
 
 - **Lu** is in RE but is not recursive. (use contradiction and reduction)
@@ -345,7 +359,7 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
 
 - **Lne** is RE. Lne is non-recursive.
 - **Le** is not in RE. (use theorem: If L and L- are in RE, then L is recursive.)
-  ![definition of Lne and Le](images/image-34.png)
+![definition of Lne and Le](images/image-31.png)
 
 #### Pumping Lemma 
 - A language is not a regular language.
@@ -461,20 +475,54 @@ A property is non-trivial to prove not REC.
   ![Reduction solution 4](images/image-80.png)
 
 #### Mutual Induction
-- If L is regular, so is LR.
-  - We proceed by structural induction on E.
-  - **Base**: If E is ϵ, H, or a, then ER " E (easy to verify).
+#####  Closure properties of regular languages
+- **If L is regular, Closure under complement**.
 
-- If L is regular, so is L Kleene operation.
+![L is regular, Closure under complement](image-19.png)
+- **If L is regular, Kleene closure**.
   - Using structural induction, prove that a regular expression E over  without the Kleene operation is also Regular language.
   ![kleen operation closure](images/image-44.png)
+  - **If L is regular, intersection closure**.
+![Closure under intersection](image-20.png)
+- **If L is regular, Closure under reverse operator**.
+  - We proceed by struxctural induction on E.
+  - **Base**: If E is ϵ, H, or a, then ER " E (easy to verify).
+  ![L is regular, so is LR](image-18.png)
 
-**Key Point**: The length is finite.
-![induction on L](images/image-38.png)
-
+#####  Closure properties of CFL
 - **Regular language is CFL**:
   3+4 cases for induction.
   ![A regular language is always a CFL](images/image-21.png)
 
-#### TM Accepting Non-Empty Languages
-![Le](images/image-31.png)
+
+
+---
+### 5.  Difficult parts 
+---
+1. not TM but still
+- **Conversion complexity**:
+  - From NFA to DFA : computation takes exponential time
+  - From DFA to NFA : put set brackets around the states computation takes time O(n), that is, linear time
+
+- **Derivation of CFL**:
+  - Leftmost derivation
+  - Rightmost derivation
+  - Parse tree
+2. TM
+- **Multi-tape TM**:
+
+![Multi-tape TM](image-11.png)
+
+![Multi-tape TM2](image-12.png)
+
+Theorem： A language accepted by a multi-tape TM M is RE
+![Theorem of TM](image-13.png)
+- **Nondeterministic TM**:
+
+![theorem of NTM](image-14.png)
+
+- **TM with semi-infinite tape**:
+![TM with semi-infinite tape](image-15.png)
+
+- **Multi-Stack machine**:
+![Multi-Stack machine](image-16.png)
