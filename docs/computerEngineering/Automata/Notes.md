@@ -11,14 +11,14 @@ title: Exam Notes
 ---
 #### DFA
 - **Definition**: 
-  ![definition of DFA](images/image-39.png)
+  ![definition of DFA](./images/image-39.png)
 
 ##### Equivalent Pairs
 States p and q are equivalent if:
-![definition of equivalent pairs](images/image-12.png)
+![definition of equivalent pairs](./images/image-12.png)
 
 - **Example 1**: Intermediate steps to minimize 
-  ![Example 1 of DFA](images/image-81.png)
+  ![Example 1 of DFA](./images/image-81.png)
 
 - **Idea**:
   - Each state has 0 and 1 direction.
@@ -27,14 +27,14 @@ States p and q are equivalent if:
 - **Solution**:
   - q0 = q3, q1 = q4 and q2 = q5.（等价符号）
 - **Example 2**: Intermediate steps to minimize 
-  ![Intermediate steps to minimize](images/image-91.png)
+  ![Intermediate steps to minimize](./images/image-91.png)
 
 - **Solution**:
   - p0 = {q0, q5}, p1 = {q1, q3}, p2 = {q2, q4}.
 
 ##### Regular Expression with ϵ-NFA
 - **Examples 1**: Regular expression to minimize 
-  ![Example 2 of DFA](images/image-82.png)
+  ![Example 2 of DFA](./images/image-82.png)
 
 - **Idea**:
   - Each state has 0 and 1 direction.
@@ -44,25 +44,25 @@ States p and q are equivalent if:
   - ![elimination of q3](image-7.png)
 - **Examples 2**: Regular expression to ϵ-NFA
 
-  ![Regular expression for convert](images/image-83.png)
+  ![Regular expression for convert](./images/image-83.png)
 
 - **Solution**:
   - Base:
 
-    ![regular expression solution step 1](images/image-84.png)
+    ![regular expression solution step 1](./images/image-84.png)
   - Length = 2 + ϵ
 
-    ![regular expression solution step 2](images/image-85.png)
+    ![regular expression solution step 2](./images/image-85.png)
   - (10)∗
-    ![regular expression solution step 3](images/image-86.png)
+    ![regular expression solution step 3](./images/image-86.png)
   - γ(ϵ + 01):
-    ![regular expression solution step 4](images/image-87.png)
+    ![regular expression solution step 4](./images/image-87.png)
   - **Final Step**: R = (10)∗∅(ϵ + 01)
 
 - **Induction**:
   - **Example**:
 
-    ![Example 3 of DFA](images/image-88.png)
+    ![Example 3 of DFA](./images/image-88.png)
 
   - **Solution**:
     - Describe in words the language L(A).
@@ -74,11 +74,11 @@ States p and q are equivalent if:
 
 #### NFA
 - **Definition**: NFA has many empty transitions.
-  ![definition of NFA](images/image-40.png)
+  ![definition of NFA](./images/image-40.png)
 
 - **Example**:
 
-  ![NFA example 1](images/image-89.png)
+  ![NFA example 1](./images/image-89.png)
 
 - **Solution**: Use regular expression to eliminate state.
   - elimination of q1 
@@ -93,32 +93,32 @@ States p and q are equivalent if:
   ![final regular expression](image-10.png)
 
 - **Example 2**: Intermediate steps with induction
-  ![NFA example 2](images/image-90.png)
+  ![NFA example 2](./images/image-90.png)
 
 - **Assessment**: 
   - Determine if the string "abab" belongs to the language L(N) by computing the value of ˆδN(q0, abab).
   - Report all intermediate steps.
   
 - **Solution**:
-  ![Solution of NFA](images/image-92.png)
+  ![Solution of NFA](./images/image-92.png)
 
 - **Example 2**: Transform N into an equivalent deterministic finite automaton D. Depict the graphical representation of the function δD.
   
 - **Solution**:
-  ![Transform N into an equivalent deterministic finite automaton D](images/image-93.png)
+  ![Transform N into an equivalent deterministic finite automaton D](./images/image-93.png)
 
 ---
 ### 1.2 CFL
 ---
 
 - **PDA**:
-  ![PDA](images/image-22.png)
+  ![PDA](./images/image-22.png)
 
 - **Language Accepted by Final State**:
   - The **language accepted by final state** is the set of strings that take a pushdown automaton (PDA) from its initial configuration to a configuration where:
     - The input string is completely consumed.
     - The PDA is in a designated **final (accepting) state**.
-    ![Language Accepted by Final State](images/image-13.png)
+    ![Language Accepted by Final State](./images/image-13.png)
     - The stack does not necessarily need to be empty at the end of the computation.
     - The PDA cannot test the end of the string: this is an external condition in the definition of L(P).
 
@@ -126,19 +126,19 @@ States p and q are equivalent if:
   - The **language accepted by empty stack** is the set of strings that take a pushdown automaton (PDA) from its initial configuration to a configuration where:
     - The input string is completely consumed.
     - The stack is **completely empty**.
-    ![Language Accepted by Empty Stack](images/image-14.png)
+    ![Language Accepted by Empty Stack](./images/image-14.png)
     - Since final states are no longer relevant in this case, set F is not used in the definition.
 
 - **From Empty Stack to Final State**:
-  ![From empty stack to final state](images/image-19.png)
+  ![From empty stack to final state](./images/image-19.png)
 
 - **From Final State to Empty Stack**:
-  ![From final state to empty stack](images/image-20.png)
+  ![From final state to empty stack](./images/image-20.png)
 
 
 - **Substitutions of CFL (7.3.1)**:
-  ![Substitutions](images/image-45.png)
-  ![Substitutions of CFL](images/image-46.png)
+  ![Substitutions](./images/image-45.png)
+  ![Substitutions of CFL](./images/image-46.png)
 
   - related to the closure property of CFL. Some closure method is a form of substitution. 
 
@@ -146,16 +146,16 @@ States p and q are equivalent if:
 ### 1.3 TM/RE/REC
 ---
 - **TM**:
-  ![Turing machine](images/image-23.png)
+  ![Turing machine](./images/image-23.png)
 
 - **RE**:
   A language 𝐿 is in RE if there exists a Turing machine 𝑀 that halts and accepts for every string in 𝐿. If a string is not in 𝐿, the Turing machine may either reject or loop forever.
 
 - **PCP**:
   The Post Correspondence Problem (PCP) is a well-known undecidable problem in computability theory. It involves two lists of strings and asks whether there is a way to arrange these strings such that the concatenations from the two lists match exactly.
-  ![Post Correspondence Problem](images/image-17.png)
+  ![Post Correspondence Problem](./images/image-17.png)
   - **Example**:
-    ![Post Correspondence Problem Example](images/image-18.png)
+    ![Post Correspondence Problem Example](./images/image-18.png)
   - **Theorem**: PCP is undecidable.
 
 - **REC**:
@@ -170,7 +170,7 @@ States p and q are equivalent if:
 ### 2.1 DFA/REG
 ---
 - **1.1 DFA**: XY-q Table - Inductive algorithm for detecting distinguishable state pairs
-  ![inductive algorithm for detecting distinguishable state pairs](images/image-16.png)
+  ![inductive algorithm for detecting distinguishable state pairs](./images/image-16.png)
 
   **Question**: 
   Apply to A the tabular algorithm from the textbook for detecting pairs of equivalent states, reporting all the intermediate steps.
@@ -186,21 +186,21 @@ States p and q are equivalent if:
 
 - **1.2 NFA**: Lazy Evaluation
 
-  ![NFA example](images/image-41.png)
+  ![NFA example](./images/image-41.png)
 
   **Lazy Evaluation**: 
 
-  ![lazy evaluation](images/image-42.png)
+  ![lazy evaluation](./images/image-42.png)
 ---
 ### 2. CFL
 ---
 - **2.1 CFL Production**:
   - **Example 1**:
-    ![CFL Production example 1](images/image-24.png)
+    ![CFL Production example 1](./images/image-24.png)
 
     **Solution**:
 
-    ![CFL Production solution 1](images/image-25.png)
+    ![CFL Production solution 1](./images/image-25.png)
 
     **Explanation**:
     - 因为中间的那个b，的左右两边都有pumping，但是右边的a比左边的a多，所以构造最后的落脚点都在ba就可以保证右边的比左边多，这个就是B的逻辑。
@@ -214,7 +214,7 @@ States p and q are equivalent if:
   - Useless symbols
 
 #### Example 1
-![CFG simplification Example 1](images/image-26.png)
+![CFG simplification Example 1](./images/image-26.png)
 Solution
 - Eliminate the ϵ-productions
 ![alt text](image-2.png)
@@ -235,11 +235,11 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
   **Prerequisite**: Starts with a CNF grammar G =(V, T, P, S) for a language L. 
 
 1. Construct a triangular parse table and explain each element for the table, for example, for a 5-element string:  
-   ![The table constructed by the CYK algorithm](images/image-15.png)
-   ![parse table](images/image-30.png)
+   ![The table constructed by the CYK algorithm](./images/image-15.png)
+   ![parse table](./images/image-30.png)
 
 2. **Induction**: 
-   ![Induction](images/image-29.png)
+   ![Induction](./images/image-29.png)
 
   - **Example 1**: 
 
@@ -255,18 +255,18 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
 
 **Example 2**:
 
-![Example 1 Membership](images/image-27.png)
+![Example 1 Membership](./images/image-27.png)
 - **dynamic programming algorithm**
 
 ![*dynamic programming algorithm](image-17.png)
 
 **Example**
 
-![dynamic programming algorithm 2](images/image-3.png)
+![dynamic programming algorithm 2](./images/image-3.png)
 
 **Solution**
 
-![dynamic programming algorithm solution 2](images/image-2.png)
+![dynamic programming algorithm solution 2](./images/image-2.png)
 
 ---
 ### 3. TM/RE/REC
@@ -277,7 +277,7 @@ Language classes：
 ![Language classes](image-21.png)
 
 Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Difference： 
-![REC graph](images/image-43.png)
+![REC graph](./images/image-43.png)
 
 
 
@@ -288,9 +288,9 @@ Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Dif
 ### 1. Closure Property
 ---
 
-| **Operation** | **CFL** | **REG** | **RE** | **REC** | 
-| --- | --- | --- | --- | --- | 
-| **Union** | Yes | Yes | Yes | Yes |
+| **Operation** | **CFL** | **REG** | **RE** | **REC** |
+|--------------|---------|----------|---------|----------|
+| **Union**    | Yes     | Yes      | Yes     | Yes      |
 | **∩ Intersection** | **NO**  | Yes | Yes | Yes | 
 | **Complementation** | **NO** | Yes | NO | Yes |
 | **Concatenation** | Yes | Yes | Yes | Yes |
@@ -321,20 +321,20 @@ Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Dif
 
 
 - **Intersection**: CFL 不闭合 
-  ![counter example of cfl intersection no](images/image-54.png)
+  ![counter example of cfl intersection no](./images/image-54.png)
 - **CFL Complementation L- no**: 
 
-  ![CFL1 ∖ CFL2](images/image-57.png)
+  ![CFL1 ∖ CFL2](./images/image-57.png)
 
   = create contradiction of intersection + Intersection NO closure  
 - **CFL1 ∖ CFL2**:
   = create contradiction of complementation using special case 
-  ![create contradiction of complementation](images/image-58.png)
+  ![create contradiction of complementation](./images/image-58.png)
 
 
 
 - **Intersection between CFL and Regular Language**:
-  ![Intersection between CFL and regular language](images/image-55.png)
+  ![Intersection between CFL and regular language](./images/image-55.png)
   （这个就是CFL倒插门REG的特殊情况，但是还是CFL）
 
 **理解**:
@@ -342,7 +342,7 @@ Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Dif
 - CFL ∩ 正则语言：正则语言只提供有限的约束，不会让 CFL 变得更复杂，因此交集仍然是 CFL。
 
 - **CFL ∖ REG**:
-  ![CFL ∖ REG is also a CFL](images/image-56.png)
+  ![CFL ∖ REG is also a CFL](./images/image-56.png)
   = REG is CFL + REG complementation is CFL + intersection of 2 CFL 
   （这个就是CFL∖ CFL的特殊情况，但是还是CFL）
 
@@ -354,18 +354,18 @@ Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Dif
 ---
 ### 2. RE REC TM
 ---
-![Language classes](images/image-33.png)
+![Language classes](./images/image-33.png)
 
 - **Lu** is in RE but is not recursive. (use contradiction and reduction)
-  ![definition of Lu](images/image-36.png)
+  ![definition of Lu](./images/image-36.png)
 - **Ld** is not in RE. (use contradiction to prove this)
-  ![definition of Ld](images/image-35.png)
+  ![definition of Ld](./images/image-35.png)
 - **Lh** is a RE language, Lh is not recursive.
-  ![definition of Lh](images/image-37.png)
+  ![definition of Lh](./images/image-37.png)
 
 - **Lne** is RE. Lne is non-recursive.
 - **Le** is not in RE. (use theorem: If L and L- are in RE, then L is recursive.)
-![definition of Lne and Le](images/image-31.png)
+![definition of Lne and Le](./images/image-31.png)
 
 ---
 ### MUST-KNOW 
@@ -399,41 +399,41 @@ A property is non-trivial to prove not REC.
 
 **Examples**:
 - **Example 1**:
-  ![Rice's theorem.](images/image-32.png)
+  ![Rice's theorem.](./images/image-32.png)
 
 - **Example 2**:
-  ![Example 2 of Rice's theorem.](images/image-59.png)
+  ![Example 2 of Rice's theorem.](./images/image-59.png)
   **Proof**:
-  ![Proof](images/image-60.png)
+  ![Proof](./images/image-60.png)
 
 - **Example 3**:
-  ![Example 3 of Rice's theorem.](images/image-61.png)
+  ![Example 3 of Rice's theorem.](./images/image-61.png)
   **Proof**:
-  ![Proof 3 of Rice's theorem](images/image-62.png)
+  ![Proof 3 of Rice's theorem](./images/image-62.png)
 
 - **Example 4**:
-  ![Example 4 of Rice's theorem](images/image-63.png)
+  ![Example 4 of Rice's theorem](./images/image-63.png)
   **Proof**:
-  ![Proof 4 of Rice's theorem](images/image-64.png)
+  ![Proof 4 of Rice's theorem](./images/image-64.png)
 
 - **Example 5**:
-  ![Example 5 of Rice's theorem](images/image-65.png)
+  ![Example 5 of Rice's theorem](./images/image-65.png)
   **Proof**:
-  ![Proof 5 of Rice's theorem](images/image-66.png)
+  ![Proof 5 of Rice's theorem](./images/image-66.png)
 
 - **Example 6**:
-  ![Example 6 of Rice's theorem](images/image-67.png)
+  ![Example 6 of Rice's theorem](./images/image-67.png)
   **Proof**:
-  ![Proof 6 of Rice's theorem](images/image-68.png)
+  ![Proof 6 of Rice's theorem](./images/image-68.png)
 
 - **Example 7**:
-  ![Example 7 of Rice's theorem](images/image-69.png)
+  ![Example 7 of Rice's theorem](./images/image-69.png)
   **Proof**:
-  ![Proof 7 of Rice's theorem](images/image-70.png)
+  ![Proof 7 of Rice's theorem](./images/image-70.png)
 
 - **Example 8**:
-  ![Example 8 of Rice's theorem](images/image-71.png)
-  ![Proof 8 of Rice's theorem](images/image-72.png)
+  ![Example 8 of Rice's theorem](./images/image-71.png)
+  ![Proof 8 of Rice's theorem](./images/image-72.png)
 
 ---
 #### Reduction 
@@ -444,22 +444,22 @@ A property is non-trivial to prove not REC.
 
 **Examples**:
 - **Example 1**:
-  ![Reduction exp 1](images/image-73.png)
+  ![Reduction exp 1](./images/image-73.png)
 
   **Solution**: 
   - This one is not related to the previous question, so I think of something else. 
   - It reminds me of the le and lne. In the lecture, Lne is RE but not REC (reduction from Lu), Le is not in RE (if they are, they should be REC, but lne is not REC). 
-  - So I use the reduction of the Le<m L3. 
+  - So I use the reduction of the Le ＜m  L3. 
   - We need to map enc(M) ∈ Le, 
     - iff definition of Le (first thing first, let the dog out): L(M)=空（这里的M就是Le，用Le定义这个M）
     - definition of complementation (the property we use): L(M)的反 （因为下面的reduction要用）
     - definition of reduction (Le和L3的关系): 从题目中摘取这个reduction （上面已经用了M，下面就用M1，M2，刚好和题目里面一样）
-    - definition of L3 (last thing is the L we want to get): enc(M1, M2) ∈ L3 （最后得到我们的enc(M)属于L3，就是Le<m L3）
+    - definition of L3 (last thing is the L we want to get): enc(M1, M2) ∈ L3 （最后得到我们的enc(M)属于L3，就是Le ＜m  L3）
 
-  ![Reduction solution 1](images/image-74.png)
+  ![Reduction solution 1](./images/image-74.png)
 
 - **Example 2**:
-  ![example 2 of reduction](images/image-75.png)
+  ![example 2 of reduction](./images/image-75.png)
 
   **Solution**:
   - The first part has used Rice's theorem to prove that Lp is not REC. The second question needs to use reduction to prove L is REC or not. 
@@ -472,32 +472,32 @@ A property is non-trivial to prove not REC.
     - reduction of Lp and L: Lp ∈ RE, here M已经表示了Lp，我们用M' M''表示我们的L，L(M') \ L(M'') ≠元素的集合
     - L definition: enc(M) ∈ L: the reduction format enc(M', M'') ∈ L
 
-  ![Reduction solution 2](images/image-77.png)
+  ![Reduction solution 2](./images/image-77.png)
 
 - **Example 3**:
-  ![example 3 of reduction](images/image-76.png)
+  ![example 3 of reduction](./images/image-76.png)
 
   **Solution**:
-  - Lp不是re, Lp<m L, enc(M1, M2) ∈ Lp
+  - Lp不是re, Lp＜m  L, enc(M1, M2) ∈ Lp
   - Iff definition
     - Lp definition: L(M) ∈ Lp   
     - property: L(M) ⊆ {111} · Σ∗    
     - reduction: L(M1) ⊆ L(M2)
     - L: enc(M1, M2) ∈ L
 
-  ![Reduction solution 3](images/image-78.png)
+  ![Reduction solution 3](./images/image-78.png)
 
 - **Example 4**:
-  ![example 4 of reduction](images/image-79.png)
+  ![example 4 of reduction](./images/image-79.png)
 
   **Solution**:
-  - Lp不是re, Lp<m L, enc(M1, M2, M3) ∈ Lp
+  - Lp不是re, Lp＜m  L, enc(M1, M2, M3) ∈ Lp
   - Iff definition
     - Lp definition: L(M) ⊆ Lc   
     - property: ∅ ⊆ L(M) ⊆ Lc 
     - reduction: L(M1) ⊆ L(M2) ⊆ L(M3) 
     - L: enc(M1, M2, M3) ∈ L
-  ![Reduction solution 4](images/image-80.png)
+  ![Reduction solution 4](./images/image-80.png)
 
 #### Mutual Induction
 #####  Closure properties of regular languages
@@ -506,7 +506,7 @@ A property is non-trivial to prove not REC.
 ![L is regular, Closure under complement](image-19.png)
 - **If L is regular, Kleene closure**.
   - Using structural induction, prove that a regular expression E over  without the Kleene operation is also Regular language.
-  ![kleen operation closure](images/image-44.png)
+  ![kleen operation closure](./images/image-44.png)
   - **If L is regular, intersection closure**.
 ![Closure under intersection](image-20.png)
 - **If L is regular, Closure under reverse operator**.
@@ -517,7 +517,7 @@ A property is non-trivial to prove not REC.
 #####  Closure properties of CFL
 - **Regular language is CFL**:
   3+4 cases for induction.
-  ![A regular language is always a CFL](images/image-21.png)
+  ![A regular language is always a CFL](./images/image-21.png)
 
 
 
