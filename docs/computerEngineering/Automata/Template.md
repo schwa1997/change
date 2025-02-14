@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+title: Answer Template
+---
+
 ## Pumping Lemma to prove NOT REG
 1. Definition of pumping lemma:
 L is not in REG. To show this, we apply the pumping lemma for the class REG. 
