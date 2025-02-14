@@ -241,16 +241,17 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
 2. **Induction**: 
    ![Induction](images/image-29.png)
 
-**Example 1**: 
-|  |  |  |  |  | 
-| --- | --- | --- | --- | --- | 
-| abcde |  
-| abcd | bcde |  
-| abc | bcd | cde | 
-| ab | bc | cd | de |  
-| a | b | c | d | e | 
+  - **Example 1**: 
 
-然后根据PDA，推出怎么样得出这样的string。
+    |  |  |  |  |  | 
+    | --- | --- | --- | --- | --- | 
+    | abcde |  
+    | abcd | bcde |  
+    | abc | bcd | cde | 
+    | ab | bc | cd | de |  
+    | a | b | c | d | e | 
+
+    然后根据PDA，推出怎么样得出这样的string。
 
 **Example 2**:
 
@@ -271,9 +272,14 @@ Given as input a string w, we want to decide whether w belongs to L(G), where G 
 ### 3. TM/RE/REC
 ---
 #### 3.1 REC
+Language classes：
+
+![Language classes](image-21.png)
 
 Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Difference： 
 ![REC graph](images/image-43.png)
+
+
 
 ---
 ## 判定题
@@ -361,14 +367,31 @@ Given two languages L1 and L2 in REC, the language L1 r L2 is always in REC. Dif
 - **Le** is not in RE. (use theorem: If L and L- are in RE, then L is recursive.)
 ![definition of Lne and Le](images/image-31.png)
 
-#### Pumping Lemma 
+---
+### MUST-KNOW 
+---
+---
+#### REG or CFL？
+---
 - A language is not a regular language.
-- A language is not CFL.
+- **Example 1**:
+![A language is not a regular language Example 1](image-25.png)
 
 - Regular language can use regular grammar or can prove the language is a finite language.
-- CFL can use PDA to represent or can use the grammar to present.
 
-### REC/RE
+
+- A language is not CFL.
+- **Example 1**:
+![A language is not CFL Example 1](image-22.png)
+![A language is not CFL Example 1-2](image-23.png)
+- A language is a CFL.
+  - use closure property of Union
+![alt text](image-24.png)
+  - CFL can use PDA to represent or can use the grammar to present.
+
+---
+### REC/RE ? 
+---
 #### Rice's Theorem for Undecidability 
 A property is non-trivial to prove not REC.
 - **NOT EMPTY**: A case suits the language property.
@@ -412,7 +435,9 @@ A property is non-trivial to prove not REC.
   ![Example 8 of Rice's theorem](images/image-71.png)
   ![Proof 8 of Rice's theorem](images/image-72.png)
 
+---
 #### Reduction 
+---
 **Format**:
 - To specify a reduction LP ≤m L, we need to describe a mapping from strings enc(M) [Lp] to strings enc(M1, M2) [L] with the property that **enc(M) ∈ LP** if and only if the associated string **enc(M1, M2) ∈ L**.
 - Our mapping then sets M1 = M... and M2 = ...
