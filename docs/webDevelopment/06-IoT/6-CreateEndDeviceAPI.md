@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: 7-Add device using API
+title: 6-Add device using API
 ---
 
 ## step 1: POST

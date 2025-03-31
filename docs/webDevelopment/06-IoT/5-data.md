@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: 5- Understand the data flow
+title: 5-Understand the data flow
 ---
 
 ## Message Types used in LoRaWAN

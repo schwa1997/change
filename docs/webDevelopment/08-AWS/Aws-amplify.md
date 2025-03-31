@@ -1,6 +1,6 @@
 ---
-sidebar_position: 5
-title: 6-AWS amplofy + DynamoDB
+sidebar_position: 3
+title: AWS amplofy + DynamoDB
 ---
 
 ## AWS system
