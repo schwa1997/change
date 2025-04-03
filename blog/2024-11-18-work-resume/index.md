@@ -1,6 +1,6 @@
 ---
 slug: resume
-title: Resume-HuiminChen
+title: 【Resume】-HuiminChen
 authors: [schwa1997]
 tags: [Work,Career]
 ---

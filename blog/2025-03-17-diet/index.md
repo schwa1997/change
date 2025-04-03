@@ -1,17 +1,19 @@
 ---
 slug: diet diary
-title: 哈哈哈哈哈我也有吃苦的时候 
+title: 【减肥】哈哈哈哈哈我也有吃苦的时候 
 authors: [schwa1997]
 tags: [Life]
 ---
 # 哈哈哈哈 重生之我让deepseek和我一起减肥 
 
+<center>
 ![hahaha我太好笑了](image.png)
+</center>
 
 # 📅 哈哈哈哈 看Deepseek给我总结的我的第一周
-
+<center>
 ![看我这个愚蠢的碳基生物](image2.png)
-
+</center>
 ## 📊 基础数据
 
 | 日期   | 晨重（斤） | 较前一天变化 | 运动内容         | 饮食备注           |

@@ -1,6 +1,6 @@
 ---
 slug: dream
-title: dreaming is the most fun and free activity
+title: 【Dream】dreaming is the most fun and free activity
 authors: [schwa1997]
 tags: [Life]
 ---

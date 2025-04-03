@@ -1,6 +1,6 @@
 ---
 slug: 科学饮食
-title: 2024年碳基生物怎么吃？
+title: 【吃】2024年碳基生物怎么吃？
 authors: [schwa1997]
 tags: [Health,Diet]
 ---

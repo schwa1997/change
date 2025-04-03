@@ -1,6 +1,6 @@
 ---
 slug: weekly-planner-template
-title: Weekly Planner Template
+title: 【Planner】Weekly Planner Template
 authors: [schwa1997]
 tags: [Work, TimeManagement]
 ---

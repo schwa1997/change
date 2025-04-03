@@ -1,6 +1,6 @@
 ---
 slug: move
-title: Living comfortably is amazing
+title: 【Moving】Living comfortably is amazing
 authors: [schwa1997]
 tags: [Life]
 ---

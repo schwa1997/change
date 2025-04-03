@@ -1,6 +1,6 @@
 ---
 slug: watch-review
-title: 我最近binge watch了两部剧
+title: 【看剧】我最近binge watch了两部剧
 authors: [schwa1997]
 tags: [Life,MediaReview]
 ---
