@@ -1,6 +1,6 @@
 ---
 slug: obituary
-title: 【大s】她活成了我们不敢活的样子
+title: 【大s】她这辈子：仙女在世
 authors: [schwa1997]
 tags: [Life]
 ---
