@@ -26,4 +26,3 @@ array.reduce(
 ) => accumulator: Any
 ```
 
-[application](./01-Language/Javascript.md#5-use-reduce-for-complex-array-transformations)
