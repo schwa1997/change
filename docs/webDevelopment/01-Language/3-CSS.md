@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
-title: CSS
+title: CSS & Tailwind CSS
 ---
 *CSS fundamentals and components, Tailwind CSS*
+> After learning the JS/TS, you can start developing both the front-end and back-end of the app. However, the front-end needs some styling for making it more appealing. Thats why i put it here right after the TS/JS.
 
 ## Index
 | Section | Link | Key Points |
