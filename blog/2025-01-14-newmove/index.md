@@ -19,8 +19,6 @@ Here's the cherry on top: my roommates won't arrive until February, so I'm livin
 
 Living here feels like I've stumbled into a lifestyle magazine. Yesterday, I had my own private fitness studio moment - working out in front of the mirror while watching the tutorial videos. Who knew feeling fancy could be this easy? My champagne problem now is what exercise to do.
 
-![workout](3af30930d893b9684bb04e9b9fe0c63.jpg)
-
 ## Living Solo: The Good, The Bad, and The Snacks 🍕
 
 Let's talk about the elephant in the room - the solo life s really good? Here's the truth: I'm alone but not lonely (there's a difference!) and I am enjoying it. Sure, boredom occasionally knocks on my door, but I always have an answer ready - either to workout or study or simply, embrace the boredom. The only real challenge? My relationship with food. Let's just say my "eating alone" portions would make my self-deciplined and not self-loving chen raise an eyebrow, but hey - life's too short to count calories when you're a foodie! I will do exercise anyway.
