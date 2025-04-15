@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: 股票研究
+title: 【投资】股票研究
 ---
 
 # 热门股票
