@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: 核心语法(4)：名词/形容词+接续
+title: 【语法】核心语法(4)：名词/形容词+接续
 ---
 
 ## **接续的形式名词まとめ（Formal Nouns with Continuation）**
