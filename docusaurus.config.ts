@@ -4,9 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Change/陈记',
-  tagline: 'I am a programmer, a game Changer. 陈是我的姓氏，这个是我的笔记本。',
+  tagline: 'To rememeber every little thing.',
   favicon: 'img/logo.ico',
-  url: 'http://schwa1997.github.io',
+  url: 'https://change-ten.vercel.app/',
   baseUrl: '/',
   organizationName: 'schwa1997',
   projectName: 'https://github.com/schwa1997/change',
@@ -72,7 +72,14 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    mermaid: {
+      theme: {light: 'neutral', dark: 'forest'},
+    },
     docs: {
       sidebar: {
         hideable: true,

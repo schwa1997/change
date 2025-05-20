@@ -1,5 +1,5 @@
 ---
-slug: diet diary
+slug: haha
 title: 【自律】上班族的自律 
 authors: [schwa1997]
 tags: [Life]
