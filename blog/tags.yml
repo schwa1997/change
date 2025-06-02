@@ -19,6 +19,10 @@ PhysicalWellness:
   label: PhysicalWellness
   permalink: /physical-wellness
   description: PhysicalWellness tag description
+Posture:
+  label: Posture
+  permalink: /posture
+  description: Posture tag description
 
 # Work: how to work better and make more money
 Work:

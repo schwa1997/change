@@ -1,5 +1,5 @@
 ---
-slug: diet diary
+slug: dietDiary
 title: 【减肥】哈哈哈哈哈我也有吃苦的时候 
 authors: [schwa1997]
 tags: [Life]
