@@ -1,5 +1,5 @@
 ---
-slug: watch-review
+slug: 20241115
 title: 【看剧】我最近binge watch了两部剧
 authors: [schwa1997]
 tags: [Life,MediaReview]

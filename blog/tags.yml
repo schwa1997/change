@@ -3,14 +3,6 @@ Health:
   label: Health
   permalink: /health
   description: Health tag description
-Workout:
-  label: Workout
-  permalink: /workout
-  description: Workout tag description
-Diet:
-  label: Diet
-  permalink: /diet
-  description: Diet tag description
 MentalHealth:
   label: MentalHealth
   permalink: /mental-health
@@ -19,10 +11,6 @@ PhysicalWellness:
   label: PhysicalWellness
   permalink: /physical-wellness
   description: PhysicalWellness tag description
-Posture:
-  label: Posture
-  permalink: /posture
-  description: Posture tag description
 
 # Work: how to work better and make more money
 Work:
@@ -51,3 +39,7 @@ MediaReview:
   label: MediaReview
   permalink: /media-review
   description: Review tag description
+Writing:
+  label: writing
+  permalink: /writing
+  description: writing tag description

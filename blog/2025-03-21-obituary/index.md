@@ -1,8 +1,8 @@
 ---
-slug: obituary
-title: 【大s】她这辈子：仙女在世
+slug: 20250321
+title: 【大s讣告】她这辈子：仙女在世
 authors: [schwa1997]
-tags: [Life]
+tags: [Life,Writing]
 ---
 
 
