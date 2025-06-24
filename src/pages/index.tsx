@@ -68,18 +68,6 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
             </section>
-
-            {/* <section className={styles.section}>
-              <div className={styles.sectionContent}>
-                <Heading as="h2">🔒 Private</Heading>
-                <p>
-                 You need a password to access this section.
-                </p>
-                <Link className="button button--primary button--lg" to="/private/verify">
-                  Private
-                </Link>
-              </div>
-            </section> */}
           </div>
         </div>
       </main>
