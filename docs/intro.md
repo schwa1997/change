@@ -14,7 +14,7 @@ title: Introduction
   - 🀄 Chinese (mother tongue + family dialect)
   - 🌐 English (primary work/life language)
   - 🍕 Italian (master's degree requirement, A2 level)
-  - 💃 Spanish (current learning focus[my practice website](https://craft-eta.vercel.app/spanish/))
+  - 💃 Spanish (current learning focus and please check [my own learning tool](https://craft-eta.vercel.app/spanish/))
   - 🌸 Japanese (hobby learning)
 
 ### ✨ Personal Corner
