@@ -1,6 +1,6 @@
 ---
 slug: 20250630
-title: 【置顶】我在西班牙减肥
+title: 【完结撒花】我在西班牙减肥
 authors: [schwa1997]
 tags: [Health，PhysicalWellness]
 ---
@@ -64,3 +64,11 @@ tags: [Health，PhysicalWellness]
 
 💡 **最大收获**：  
 时间真的是最好的催化剂，不知不觉养成了更健康的生活习惯！
+
+总结下:这个阶段还是发生了些许质变的！超级开心！
+我竟然能够在夏日选择做一个超级超级简单的沙拉，而不是和之前一样怎么样也得吃一个辣的麻辣烫！
+虽然中间有起起伏伏，也有很多变化， 但是真的感谢自己去学习改变！
+开启下一阶段大作战辣！
+
+[这里](https://craft-eta.vercel.app/goal/1)有我的这个三个月挑战的记录哦，
+然后我也开启了新的[体态健身房挑战](https://craft-eta.vercel.app/goal/2)！
