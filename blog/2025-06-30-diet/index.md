@@ -1,6 +1,6 @@
 ---
 slug: 20250630
-title: 【置顶】我在西班牙减肥
+title: 【完结撒花】我在西班牙减肥
 authors: [schwa1997]
 tags: [Health，PhysicalWellness]
 ---
