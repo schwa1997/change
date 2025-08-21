@@ -1,0 +1,8 @@
+{
+  "label": "Posture",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Alphbetic order of notes."
+  }
+}

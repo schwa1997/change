@@ -1,6 +1,6 @@
 ---
-slug: 20250602
-title: 【体态】改变骨盆前移+膝超伸
+slug: 20250712
+title: 【置顶】改变骨盆前移+膝超伸
 authors: [schwa1997]
 tags: [Health, PhysicalWellness]
 ---
@@ -21,6 +21,33 @@ graph TD
     style B fill:#ffd699,stroke:#ff9933
     style C fill:#ffffcc,stroke:#ffcc00
     style F fill:#ccffff,stroke:#66ccff
+```
+
+### **左足足外翻连锁反应**
+```mermaid
+graph TD
+    A[左侧足外翻] --> B[胫骨内旋+膝外翻]
+    B --> C[股骨内旋+髋内收]
+    C --> D[骨盆左侧下沉]
+    D --> E[腰椎右凸侧弯]
+    E --> F[胸椎左旋+右肩抬高]
+    F --> G[头颈左倾+前引]
+    G --> H[舌骨肌群紧张]
+    H --> I[TMJ紊乱]
+    D --> J[骶髂关节错位]
+    J --> K[步态不对称]
+    K --> A
+    G --> L[胸锁乳突肌紧张]
+    L --> I
+    E --> M[核心失稳]
+    M --> N[膈肌呼吸受限]
+    N --> O[肩颈代偿]
+    O --> G
+
+    style A fill:#ff9999,stroke:#ff0000
+    style I fill:#99ccff,stroke:#0066cc
+    style E fill:#ccffff,stroke:#66ccff
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11 stroke:#ff6666,stroke-width:2px
 ```
 
 ---
