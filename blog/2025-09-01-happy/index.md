@@ -1,6 +1,6 @@
 ---
 slug: 20250901
-title: 【生活】I want it, I get it
+title: 【Life update】I want it, I get it
 authors: [schwa1997]
 tags: [Career,TimeManagement,Life,Health]
 ---
@@ -15,7 +15,7 @@ This feels life-changing. My mood is stable, my meals are joyful, and I finally 
 
 ![meme](https://media.tenor.com/z-oBTP1WqfgAAAAM/excited.gif)
 
-GET 2: P → J for work
+GET 2: P → J for work personality
 
 The biggest change since becoming a full-time engineer? I’ve become way more of a J-type person in daily life. And honestly, I enjoy it. I wanted structure for my work life, and I got it.
 
